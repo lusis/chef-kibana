@@ -1,0 +1,35 @@
+<VirtualHost <%= @listen_address %>:<%= @listen_port %>>
+  ServerName <%= @server_name %>
+
+  ServerAlias <%= @server_aliases.join(" ") %>
+ 
+  DocumentRoot <%= @kibana_dir %>/current
+  <Directory <%= @kibana_dir %>/current>
+    Allow from all
+    Options -Multiviews
+  </Directory>
+ 
+  LogLevel debug
+  ErrorLog /var/log/apache2/<%= @server_name %>.error.log
+  CustomLog /var/log/apache2/<%= @server_name %>.access.log combined
+ 
+  # Set global proxy timeouts
+  <Proxy http://<%= @es_server %>:<%= @es_port %>>
+    Order allow,deny
+    Allow from all
+    ProxySet connectiontimeout=5 timeout=90
+  </Proxy>
+ 
+  # Proxy for _aliases and .*/_search
+  <LocationMatch "^(/_aliases|.*/_search)$">
+    ProxyPassMatch http://<%= @es_server %>:<%= @es_port %>
+    ProxyPassReverse http://<%= @es_server %>:<%= @es_port %>
+  </LocationMatch>
+ 
+  # Proxy for kibana-int/{dashboard,temp} stuff (if you don't want auth on /, then you will want these to be protected)
+  <LocationMatch "^(/kibana-int/dashboard/|/kibana-int/temp).*$">
+    ProxyPassMatch http://<%= @es_server %>:<%= @es_port %>
+    ProxyPassReverse http://<%= @es_server %>:<%= @es_port %>
+  </LocationMatch>
+ 
+</VirtualHost>
