@@ -49,4 +49,9 @@ template "#{node['kibana']['installdir']}/current/config.js" do
   user kibana_user
 end
 
+link "#{node['kibana']['installdir']}/current/dashboards/default.json" do
+  to "logstash.json"
+  only_if { !File::symlink?("#{node['kibana']['installdir']}/current/dashboard/default.json")
+end
+
 include_recipe "kibana::#{node['kibana']['webserver']}"
