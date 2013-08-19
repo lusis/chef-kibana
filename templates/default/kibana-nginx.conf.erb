@@ -17,7 +17,10 @@ server {
     proxy_pass http://<%= @es_server %>:<%= @es_port %>;
     proxy_read_timeout 90;
   }
-  
+  location ~ ^/.*/_mapping$ {
+    proxy_pass http://<%= @es_server %>:<%= @es_port %>;
+    proxy_read_timeout 90;
+  }
   # Password protected end points
   location ~ ^/kibana-int/dashboard/.*$ {
     proxy_pass http://<%= @es_server %>:<%= @es_port %>;
