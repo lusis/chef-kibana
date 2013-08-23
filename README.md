@@ -76,9 +76,19 @@ Contributing
 
 License and Authors
 -------------------
-Authors:
+Primary author:
 
 - John E. Vincent <lusis.org+github.com@gmail.com>
+
+Contributors:
+
+- Jeff Hubbard (@lord2800)
+- @mouadino
+- Ben P (@benwtr)
+- Chris Ferry (@chrisferry)
+- Ian Neubert (@ianneub)
+- kellam (@klamontagne)
+- Paul Czarkowski (@paulczar)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
