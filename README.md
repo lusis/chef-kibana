@@ -55,7 +55,7 @@ The default recipe will:
 If you wish to swap `apache` for `nginx`, simply set `node['kibana']['webserver']` to `apache` in a role/environment/node somewhere.
 
 If you don't want this cookbook to handle the webserver config simply set `node['kibana']['webserver']` to `''` in a role/environment/node somewhere.
-Please not in this case you have to set `node['kibana']['user']`.
+Please note that in this case you have to set `node['kibana']['user']`.
 
 Both cookbooks, by default, will configure the appropriate proxy to your ElasticSearch server such that you don't have to expose it to the world.
 
