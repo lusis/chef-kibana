@@ -61,4 +61,6 @@ link "#{node['kibana']['installdir']}/current/dashboards/default.json" do
   only_if { !File::symlink?("#{node['kibana']['installdir']}/current/dashboard/default.json") }
 end
 
-include_recipe "kibana::#{node['kibana']['webserver']}"
+unless node['kibana']['webserver'].empty?
+  include_recipe "kibana::#{node['kibana']['webserver']}"
+end
