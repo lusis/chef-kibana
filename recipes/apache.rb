@@ -21,6 +21,7 @@
 node.set['apache2']['default_site_enabled'] = node['kibana']['apache']['enable_default_site']
 
 include_recipe "apache2"
+include_recipe "apache2::mod_dir"
 include_recipe "apache2::mod_proxy"
 include_recipe "apache2::mod_proxy_http"
 
