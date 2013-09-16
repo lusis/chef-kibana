@@ -49,16 +49,16 @@ link "#{node['kibana']['installdir']}/current" do
   to "#{node['kibana']['installdir']}/#{node['kibana']['branch']}"
 end
 
-template "#{node['kibana']['installdir']}/current/config.js" do
+template "#{node['kibana']['installdir']}/current/dist/config.js" do
   source node['kibana']['config_template']
   cookbook node['kibana']['config_cookbook']
   mode "0750"
   user kibana_user
 end
 
-link "#{node['kibana']['installdir']}/current/dashboards/default.json" do
+link "#{node['kibana']['installdir']}/current/dist/app/dashboards/default.json" do
   to "logstash.json"
-  only_if { !File::symlink?("#{node['kibana']['installdir']}/current/dashboard/default.json") }
+  only_if { !File::symlink?("#{node['kibana']['installdir']}/current/dist/app/dashboards/default.json") }
 end
 
 include_recipe "kibana::#{node['kibana']['webserver']}"
