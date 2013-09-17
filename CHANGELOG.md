@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of kibana.
 
+## 1.1.3
+
+* Rename dist to src symlink as per latest kibana folder structure change
+
 ## 1.1.2
 
 * Update config.js.erb to be the same as the new config.js source from kibana
