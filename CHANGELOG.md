@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of kibana.
 
+## 1.1.4
+
+* Update configuration to use proxy_pass setup by cookbook
+
 ## 1.1.3
 
 * Rename dist to src symlink as per latest kibana folder structure change
