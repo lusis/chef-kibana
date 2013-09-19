@@ -17,10 +17,14 @@ As with most cookbooks I write, this one is hopefully flexible enough to be wrap
 
 #### kibana::default
 
-- `node['kibana']['repo']` - The git repo to use for Kibana3
-- `node['kibana']['branch']` - The sha or branch name to use
+- `node['kibana']['install_type']` - The type of install we are going to use either 'repo' or 'zipfile' -- at some point might have package available
+- `node['kibana']['install_url']` - The install URL for the latest kibana build
+- `node['kibana']['repo_branch']` - The sha256 of the latest kibana build
+- `node['kibana']['zipfile_url']` - The zipfile URL for the latest kibana build
+- `node['kibana']['zipfile_checksum']` - The sha256 of the kibana zipfile
 - `node['kibana']['webserver']` - Which webserver to use: apache or nginx
-- `node['kibana']['installdir']` - The directory to checkout into. A `current` symlink will be created in this directory as well.
+- `node['kibana']['install_path']` - The root directory where kibana will be installed
+- `node['kibana']['install_dir']` - The directory to checkout into. A `current` symlink will be created in this directory as well.
 - `node['kibana']['es_server']` - The ipaddress or hostname of your elasticsearch server
 - `node['kibana']['es_port']` - The port of your elasticsearch server's http interface
 - `node['kibana']['es_role']` - **unused** eventually for wiring up discovery of your elasticsearch server
@@ -52,6 +56,7 @@ The default recipe will:
 - install kibana3 from `master` into `/opt/kibana/master` and create a symlink called `current` in the same directory to `master`
 - install `nginx` and serve the kibana application
 
+If you want to use the zipfile distribution of Kibana update `node['kibana']['install_type']` attribute to `zipfile`.  Set `node['kibana']['zipfile_checksum']` to appropriate value of latest release.
 If you wish to swap `apache` for `nginx`, simply set `node['kibana']['webserver']` to `apache` in a role/environment/node somewhere.
 
 Both cookbooks, by default, will configure the appropriate proxy to your ElasticSearch server such that you don't have to expose it to the world.

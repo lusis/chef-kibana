@@ -26,14 +26,14 @@ include_recipe "apache2::mod_proxy_http"
 
 web_app "#{node['kibana']['webserver_hostname']}-#{node['kibana']['webserver_port']}" do
   cookbook       "kibana"
-  docroot        node['kibana']['installdir']
+  docroot        node['kibana']['source_dir']
   server_name    node['kibana']['webserver_hostname']
   template       node['kibana']['apache']['template']
   es_server      node['kibana']['es_server']
   es_port        node['kibana']['es_port']
   server_name    node['kibana']['webserver_hostname']
   server_aliases node['kibana']['webserver_aliases']
-  kibana_dir     node['kibana']['installdir']
+  kibana_dir     node['kibana']['source_dir']
   listen_address node['kibana']['webserver_listen']
   listen_port    node['kibana']['webserver_port']
 end

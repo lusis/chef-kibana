@@ -1,12 +1,12 @@
 server {
   listen                <%= @listen_address %>:<%= @listen_port %>;
-  
+
   server_name           <%= @server_name %> <%= @server_aliases.join(" ") %>;
   access_log            /var/log/nginx/<%= @server_name %>.access.log;
 
   location / {
-    root  <%= @kibana_dir %>/current;
-    index  index.html  index.htm; 
+    root  <%= @kibana_dir %>;
+    index  index.html  index.htm;
   }
 
   location ~ ^/_aliases$ {

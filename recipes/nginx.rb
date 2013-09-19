@@ -31,7 +31,7 @@ template "/etc/nginx/sites-available/kibana" do
     :es_port   => node['kibana']['es_port'],
     :server_name => node['kibana']['webserver_hostname'],
     :server_aliases => node['kibana']['webserver_aliases'],
-    :kibana_dir => node['kibana']['installdir'],
+    :kibana_dir => node['kibana']['source_dir'],
     :listen_address => node['kibana']['webserver_listen'],
     :listen_port => node['kibana']['webserver_port']
   )

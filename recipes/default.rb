@@ -33,32 +33,44 @@ else
   kibana_user = node['kibana']['user']
 end
 
-directory node['kibana']['installdir'] do
+directory node['kibana']['install_dir'] do
   owner kibana_user
   mode "0755"
 end
 
-git "#{node['kibana']['installdir']}/#{node['kibana']['branch']}" do
-  repository node['kibana']['repo']
-  reference node['kibana']['branch']
-  action :sync
-  user kibana_user
+case  node['kibana']['install_type']
+  when "repo"
+    git "#{node['kibana']['install_dir']}/#{node['kibana']['repo_branch']}" do
+      repository node['kibana']['repo_url']
+      reference node['kibana']['repo_branch']
+      action :sync
+      user kibana_user
+    end
+    link "#{node['kibana']['install_dir']}/current" do
+      to "#{node['kibana']['install_dir']}/#{node['kibana']['repo_branch']}"
+    end
+    node.set['kibana']['source_dir'] = "#{node['kibana']['install_dir']}/current/src"
+  when "zipfile"
+    ark 'kibana' do
+       url node['kibana']['zipfile_url']
+       path node['kibana']['install_path']
+       checksum  node['kibana']['zipfile_checksum']
+       owner kibana_user
+       action :put
+    end
+    node.set['kibana']['source_dir'] = node['kibana']['install_dir']
 end
 
-link "#{node['kibana']['installdir']}/current" do
-  to "#{node['kibana']['installdir']}/#{node['kibana']['branch']}"
-end
-
-template "#{node['kibana']['installdir']}/current/config.js" do
+template "#{node['kibana']['source_dir']}/config.js" do
   source node['kibana']['config_template']
   cookbook node['kibana']['config_cookbook']
   mode "0750"
   user kibana_user
 end
 
-link "#{node['kibana']['installdir']}/current/dashboards/default.json" do
+link "#{node['kibana']['source_dir']}/app/dashboards/default.json" do
   to "logstash.json"
-  only_if { !File::symlink?("#{node['kibana']['installdir']}/current/dashboard/default.json") }
+  only_if { !File::symlink?("#{node['kibana']['source_dir']}/app/dashboards/default.json") }
 end
 
 include_recipe "kibana::#{node['kibana']['webserver']}"
