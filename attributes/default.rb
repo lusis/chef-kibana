@@ -1,4 +1,4 @@
-default['kibana']['install_type'] = "zipfile" # repo | zipfile
+default['kibana']['install_type'] = "repo" # repo | zipfile
 default['kibana']['repo_url'] = "git://github.com/elasticsearch/kibana"
 default['kibana']['repo_branch'] = "master"
 default['kibana']['zipfile_url'] = "http://download.elasticsearch.org/kibana/kibana/kibana-latest.zip"
