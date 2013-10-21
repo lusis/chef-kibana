@@ -46,7 +46,7 @@ git "#{node['kibana']['installdir']}/#{node['kibana']['branch']}" do
 end
 
 link "#{node['kibana']['installdir']}/current" do
-  to "#{node['kibana']['installdir']}/#{node['kibana']['branch']}"
+  to "#{node['kibana']['installdir']}/#{node['kibana']['branch']}/src"
 end
 
 template "#{node['kibana']['installdir']}/current/config.js" do
@@ -56,9 +56,9 @@ template "#{node['kibana']['installdir']}/current/config.js" do
   user kibana_user
 end
 
-link "#{node['kibana']['installdir']}/current/dashboards/default.json" do
+link "#{node['kibana']['installdir']}/current/app/dashboards/default.json" do
   to "logstash.json"
-  only_if { !File::symlink?("#{node['kibana']['installdir']}/current/dashboard/default.json") }
+  only_if { !File::symlink?("#{node['kibana']['installdir']}/current/app/dashboards/default.json") }
 end
 
 include_recipe "kibana::#{node['kibana']['webserver']}"
