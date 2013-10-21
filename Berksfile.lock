@@ -1,0 +1,46 @@
+{
+  "sources": {
+    "kibana": {
+      "path": "."
+    },
+    "yum": {
+      "locked_version": "2.3.4"
+    },
+    "apt": {
+      "locked_version": "2.2.0"
+    },
+    "nginx": {
+      "locked_version": "2.0.0"
+    },
+    "apache2": {
+      "locked_version": "1.8.4"
+    },
+    "git": {
+      "locked_version": "2.6.0"
+    },
+    "bluepill": {
+      "locked_version": "2.3.0"
+    },
+    "rsyslog": {
+      "locked_version": "1.9.0"
+    },
+    "build-essential": {
+      "locked_version": "1.4.2"
+    },
+    "ohai": {
+      "locked_version": "1.1.12"
+    },
+    "runit": {
+      "locked_version": "1.2.0"
+    },
+    "dmg": {
+      "locked_version": "2.0.0"
+    },
+    "windows": {
+      "locked_version": "1.10.0"
+    },
+    "chef_handler": {
+      "locked_version": "1.1.4"
+    }
+  }
+}
