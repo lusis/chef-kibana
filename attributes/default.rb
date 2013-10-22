@@ -1,4 +1,4 @@
-default['kibana']['repo'] = "git://github.com/elasticsearch/kibana"
+default['kibana']['repo'] = "https://github.com/elasticsearch/kibana"
 default['kibana']['branch'] = "master"
 default['kibana']['webserver'] = "nginx"
 default['kibana']['installdir'] = "/opt/kibana"

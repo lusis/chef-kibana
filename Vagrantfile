@@ -18,15 +18,35 @@ Vagrant.configure("2") do |config|
       {
         kibana: { 
           webserver_listen: "0.0.0.0"
-        }
+        },
+        elasticsearch: {
+          min_mem: '64m',
+          max_mem: '64m',
+          limits: {
+              nofile: 1024,
+              memlock: 512
+          }
+        },
       }
-    chef.run_list = [ "recipe[apt::default]", "recipe[kibana::default]" ]
+    chef.run_list = [ 
+      "recipe[apt::default]",
+      "recipe[java::default]",
+      "recipe[elasticsearch::default]",
+      "recipe[kibana::default]"
+    ]
   end
+
+  config.vm.provision :shell, :inline => <<-FAKELOGSTASH
+    INDEX=logstash-`date +"%Y.%m.%d"`
+    TIMESTAMP=`date --iso-8601=seconds`
+    curl -s -XPUT "http://localhost:9200/${INDEX}/"
+    curl -s -XPOST "http://localhost:9200/${INDEX}/test/" -d '{ "@timestamp" : "'${TIMESTAMP}'", "message" : "I am not a real log" }'
+  FAKELOGSTASH
 
   # Ubuntu 12.04 Config
   config.vm.define :ubuntu1204 do |ubuntu1204|
     ubuntu1204.vm.hostname = "ubuntu1204"
-    ubuntu1204.vm.box = "opscode-ubuntu-12.04"
+    ubuntu1204.vm.box = "precise64" #opscode-ubuntu-12.04"
     ubuntu1204.vm.box_url = "https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box"
   end
 
