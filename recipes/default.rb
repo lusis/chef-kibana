@@ -41,7 +41,11 @@ end
 git "#{node['kibana']['installdir']}/#{node['kibana']['branch']}" do
   repository node['kibana']['repo']
   reference node['kibana']['branch']
-  action :checkout
+  if node['kibana']['git']['checkout'] 
+    action :checkout
+  else
+    action :sync
+  end
   user kibana_user
 end
 

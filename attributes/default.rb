@@ -1,5 +1,6 @@
 default['kibana']['repo'] = "https://github.com/elasticsearch/kibana"
 default['kibana']['branch'] = "master"
+default['kibana']['git']['checkout'] = false
 default['kibana']['webserver'] = "nginx"
 default['kibana']['installdir'] = "/opt/kibana"
 default['kibana']['es_server'] = "127.0.0.1"
