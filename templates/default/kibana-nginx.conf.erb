@@ -13,6 +13,10 @@ server {
     proxy_pass http://<%= @es_server %>:<%= @es_port %>;
     proxy_read_timeout 90;
   }
+  location ~ ^/_nodes$ {
+    proxy_pass http://<%= @es_server %>:<%= @es_port %>;
+    proxy_read_timeout 90;
+  }
   location ~ ^/.*/_search$ {
     proxy_pass http://<%= @es_server %>:<%= @es_port %>;
     proxy_read_timeout 90;
