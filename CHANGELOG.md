@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of kibana.
 
+## 1.1.5
+
+* Added Strainer test suite
+* Allow installing kibana without a webserver
+* Boolean Attribute kibana['git']['checkout'] to allow default git behavior to be checkout rather than sync.
+
+
 ## 1.1.4
 
 * Update configuration to use proxy_pass setup by cookbook
