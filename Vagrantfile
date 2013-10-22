@@ -46,7 +46,7 @@ Vagrant.configure("2") do |config|
   # Ubuntu 12.04 Config
   config.vm.define :ubuntu1204 do |ubuntu1204|
     ubuntu1204.vm.hostname = "ubuntu1204"
-    ubuntu1204.vm.box = "precise64" #opscode-ubuntu-12.04"
+    ubuntu1204.vm.box = "opscode-ubuntu-12.04"
     ubuntu1204.vm.box_url = "https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box"
   end
 
