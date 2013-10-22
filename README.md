@@ -110,8 +110,6 @@ $ bundle exec berks install
 $ bundle exec strainer test
 ```
 
-To stand up a kibana test environment in Vagrant simply run either `vagrant up ubuntu1204` or  `vagrant up ubuntu1304`.  This will stand up a Kibana server listening on `http://33.33.33.88`.   It's incredibly bare boned and you should probably set up the appropriate attributes ( see above ) to get it talking to an elasticsearch server.
-
 Contributing
 ------------
 - Fork the repository on Github
