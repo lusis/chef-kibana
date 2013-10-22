@@ -29,7 +29,7 @@ end
 if node['kibana']['user'].empty?
   unless node['kibana']['webserver'].empty?
     webserver = node['kibana']['webserver']
-    kibana_user = "#{node[webserver]['user']}"
+    kibana_user = node[webserver]['user']
   else
     kibana_user = "nobody"
   end
@@ -45,7 +45,7 @@ end
 git "#{node['kibana']['installdir']}/#{node['kibana']['branch']}" do
   repository node['kibana']['repo']
   reference node['kibana']['branch']
-  if node['kibana']['git']['checkout'] 
+  if node['kibana']['git']['checkout']
     action :checkout
   else
     action :sync

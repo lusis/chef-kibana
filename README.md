@@ -77,6 +77,39 @@ Requires Vagrant >= 1.2 with the following plugins :
 * vagrant-berkshef
 * vagrant-omnibus
 
+```
+$ vagrant up ubuntu1204
+```
+
+If you get the following error then run `vagrant provision ubuntu1204`.  For some reason on my box it's occasionally failing to launch the shell provisioner.
+
+```
+[ubuntu1204] Running: inline script
+stdin: is not a tty
+The following SSH command responded with a non-zero exit status.
+Vagrant assumes that this means the command failed!
+
+chmod +x /tmp/vagrant-shell && /tmp/vagrant-shell
+```
+
+#### Vagabond
+
+This should be a quicker test suite than Vagrant.   However I'm currently hitting 
+this bug : https://github.com/chrisroberts/vagabond/issues/40.   In theory the following should work
+
+```
+vagabond up ubuntu1204
+```
+
+
+#### Strainer
+
+```
+$ bundle install
+$ bundle exec berks install
+$ bundle exec strainer test
+```
+
 To stand up a kibana test environment in Vagrant simply run either `vagrant up ubuntu1204` or  `vagrant up ubuntu1304`.  This will stand up a Kibana server listening on `http://33.33.33.88`.   It's incredibly bare boned and you should probably set up the appropriate attributes ( see above ) to get it talking to an elasticsearch server.
 
 Contributing
@@ -86,6 +119,7 @@ Contributing
 - Write you change
 - Write tests for your change (if applicable)
 - Run the tests, ensuring they all pass
+-- `bundle exec strainer test`
 - Submit a Pull Request using Github
 
 License and Authors

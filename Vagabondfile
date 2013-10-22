@@ -1,0 +1,28 @@
+{
+    :nodes => {
+        :ubuntu1204 => {
+            :template => "ubuntu_1204",
+            :ipaddress => "33.33.33.87",
+            :run_list => [
+              "recipe[apt::default]",
+              "recipe[kibana::default]"
+            ]
+        },
+        :ubuntu1304 => {
+            :template => "ubuntu_1304",
+            :ipaddress => "33.33.33.87",
+            :run_list => [
+              "recipe[apt::default]",
+              "recipe[kibana::default]"
+            ]
+        }
+    }
+   :local_chef_server => {
+       :zero => false,
+       :berkshelf => true,
+       :librarian => false,
+       :enabled => true,
+       :auto_upload => true
+   },
+   :sudo => true
+}    
