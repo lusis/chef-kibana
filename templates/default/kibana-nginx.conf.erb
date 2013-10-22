@@ -1,37 +1,36 @@
 server {
   listen                <%= @listen_address %>:<%= @listen_port %>;
-  
+
   server_name           <%= @server_name %> <%= @server_aliases.join(" ") %>;
   access_log            /var/log/nginx/<%= @server_name %>.access.log;
 
   location / {
-    root  <%= @kibana_dir %>/current;
-    index  index.html  index.htm; 
+    root  <%= @kibana_dir %>;
+    index  index.html  index.htm;
   }
 
   location ~ ^/_aliases$ {
-    proxy_pass http://<%= @es_server %>:<%= @es_port %>;
+    proxy_pass <%= @es_scheme %><%= @es_server %>:<%= @es_port %>;
     proxy_read_timeout 90;
   }
   location ~ ^/_nodes$ {
-    proxy_pass http://<%= @es_server %>:<%= @es_port %>;
+    proxy_pass <%= @es_scheme %><%= @es_server %>:<%= @es_port %>;
     proxy_read_timeout 90;
   }
   location ~ ^/.*/_search$ {
-    proxy_pass http://<%= @es_server %>:<%= @es_port %>;
+    proxy_pass <%= @es_scheme %><%= @es_server %>:<%= @es_port %>;
     proxy_read_timeout 90;
   }
   location ~ ^/.*/_mapping$ {
-    proxy_pass http://<%= @es_server %>:<%= @es_port %>;
+    proxy_pass <%= @es_scheme %><%= @es_server %>:<%= @es_port %>;
     proxy_read_timeout 90;
   }
-  # Password protected end points
   location ~ ^/kibana-int/dashboard/.*$ {
-    proxy_pass http://<%= @es_server %>:<%= @es_port %>;
+    proxy_pass <%= @es_scheme %><%= @es_server %>:<%= @es_port %>;
     proxy_read_timeout 90;
   }
   location ~ ^/kibana-int/temp.*$ {
-    proxy_pass http://<%= @es_server %>:<%= @es_port %>;
+    proxy_pass <%= @es_scheme %><%= @es_server %>:<%= @es_port %>;
     proxy_read_timeout 90;
   }
 }

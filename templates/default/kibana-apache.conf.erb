@@ -2,34 +2,34 @@
   ServerName <%= @params[:server_name] %>
 
   ServerAlias <%= @params[:server_aliases].join(" ") %>
- 
-  DocumentRoot <%= @params[:kibana_dir] %>/current
-  <Directory <%= @params[:kibana_dir] %>/current>
+
+  DocumentRoot <%= @params[:kibana_dir] %>
+  <Directory <%= @params[:kibana_dir] %>>
     Allow from all
     Options -Multiviews
   </Directory>
- 
+
   LogLevel debug
   ErrorLog <%= node['apache']['log_dir'] %>/<%= @params[:server_name] %>.error.log
   CustomLog <%= node['apache']['log_dir'] %>/<%= @params[:server_name] %>.access.log combined
- 
+
   # Set global proxy timeouts
-  <Proxy http://<%= @params[:es_server] %>:<%= @params[:es_port] %>>
+  <Proxy <%= @params[:es_scheme] %><%= @params[:es_server] %>:<%= @params[:es_port] %>>
     Order allow,deny
     Allow from all
     ProxySet connectiontimeout=5 timeout=90
   </Proxy>
- 
+
   # Proxy for _aliases and .*/_search
   <LocationMatch "^(/_aliases|/_nodes|/.*/_mapping|.*/_search)$">
-    ProxyPassMatch http://<%= @params[:es_server] %>:<%= @params[:es_port] %>
-    ProxyPassReverse http://<%= @params[:es_server] %>:<%= @params[:es_port] %>
+    ProxyPassMatch <%= @params[:es_scheme] %><%= @params[:es_server] %>:<%= @params[:es_port] %>
+    ProxyPassReverse <%= @params[:es_scheme] %><%= @params[:es_server] %>:<%= @params[:es_port] %>
   </LocationMatch>
- 
+
   # Proxy for kibana-int/{dashboard,temp} stuff (if you don't want auth on /, then you will want these to be protected)
   <LocationMatch "^(/kibana-int/dashboard/|/kibana-int/temp).*$">
-    ProxyPassMatch http://<%= @params[:es_server] %>:<%= @params[:es_port] %>
-    ProxyPassReverse http://<%= @params[:es_server] %>:<%= @params[:es_port] %>
+    ProxyPassMatch <%= @params[:es_scheme] %><%= @params[:es_server] %>:<%= @params[:es_port] %>
+    ProxyPassReverse <%= @params[:es_scheme] %><%= @params[:es_server] %>:<%= @params[:es_port] %>
   </LocationMatch>
- 
+
 </VirtualHost>

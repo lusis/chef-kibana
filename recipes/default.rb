@@ -37,36 +37,52 @@ else
   kibana_user = node['kibana']['user']
 end
 
-directory node['kibana']['installdir'] do
+directory node['kibana']['install_dir'] do
   owner kibana_user
   mode "0755"
 end
 
-git "#{node['kibana']['installdir']}/#{node['kibana']['branch']}" do
-  repository node['kibana']['repo']
-  reference node['kibana']['branch']
-  if node['kibana']['git']['checkout']
-    action :checkout
-  else
-    action :sync
-  end
-  user kibana_user
+case  node['kibana']['install_type']
+  when "git"
+    git "#{node['kibana']['install_dir']}/#{node['kibana']['git']['branch']}" do
+      repository node['kibana']['git']['url']
+      reference node['kibana']['git']['branch']
+      case  node['kibana']['git']['type']
+        when "checkout"
+          action :checkout
+        when "sync"
+          action :sync
+      end
+      user kibana_user
+    end
+    link "#{node['kibana']['install_dir']}/current" do
+      to "#{node['kibana']['install_dir']}/#{node['kibana']['git']['branch']}"
+    end
+    node.set['kibana']['web_dir'] = "#{node['kibana']['install_dir']}/current/src"
+  when "file"
+    case node['kibana']['file']['type']
+      when "zip"
+        ark 'kibana' do
+          url node['kibana']['file']['url']
+          path node['kibana']['install_path']
+          checksum  node['kibana']['file']['checksum']
+          owner kibana_user
+          action :put
+        end
+        node.set['kibana']['web_dir'] = node['kibana']['install_dir']
+    end
 end
 
-link "#{node['kibana']['installdir']}/current" do
-  to "#{node['kibana']['installdir']}/#{node['kibana']['branch']}/src"
-end
-
-template "#{node['kibana']['installdir']}/current/config.js" do
+template "#{node['kibana']['web_dir']}/config.js" do
   source node['kibana']['config_template']
   cookbook node['kibana']['config_cookbook']
   mode "0750"
   user kibana_user
 end
 
-link "#{node['kibana']['installdir']}/current/app/dashboards/default.json" do
+link "#{node['kibana']['web_dir']}/app/dashboards/default.json" do
   to "logstash.json"
-  only_if { !File::symlink?("#{node['kibana']['installdir']}/current/app/dashboards/default.json") }
+  only_if { !File::symlink?("#{node['kibana']['web_dir']}/app/dashboards/default.json") }
 end
 
 unless node['kibana']['webserver'].empty?

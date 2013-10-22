@@ -18,7 +18,8 @@ Vagrant.configure("2") do |config|
       {
         kibana: { 
           webserver_listen: "0.0.0.0",
-          webserver: "nginx"
+          webserver: "nginx",
+          install_type: "file"
         },
         elasticsearch: {
           min_mem: '64m',

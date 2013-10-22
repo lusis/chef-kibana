@@ -2,6 +2,14 @@
 
 This file is used to list changes made in each version of kibana.
 
+## 1.2.0:
+
+* Add ability to choose install type of either git repo or zipfile
+* Add web_dir attribute to handle kibana location for different install types
+* Add attributes for http scheme for both webserver and es, helpful if they're managed outside of this cookbook.
+* Some Attribute namespace cleanup,  read through carefully if upgrading.
+?????? * Update config.js to newer format
+
 ## 1.1.5
 
 * Added Strainer test suite

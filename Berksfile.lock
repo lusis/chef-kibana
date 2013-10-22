@@ -21,6 +21,9 @@
     "java": {
       "locked_version": "1.14.0"
     },
+    "ark": {
+      "locked_version": "0.4.0"
+    },
     "elasticsearch": {
       "locked_version": "0.3.4",
       "git": "git://github.com/elasticsearch/cookbook-elasticsearch.git",
@@ -58,9 +61,6 @@
     },
     "monit": {
       "locked_version": "0.7.1"
-    },
-    "ark": {
-      "locked_version": "0.4.0"
     }
   }
 }

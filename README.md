@@ -17,20 +17,27 @@ As with most cookbooks I write, this one is hopefully flexible enough to be wrap
 
 #### kibana::default
 
-- `node['kibana']['repo']` - The git repo to use for Kibana3
-- `node['kibana']['branch']` - The sha or branch name to use
-- `node['kibana']['webserver']` - Which webserver to use: apache, nginx or '' 
-- `node['kibana']['installdir']` - The directory to checkout into. A `current` symlink will be created in this directory as well.
+- `node['kibana']['install_type']` - The type of install we are going to use either `git` or `zipfile`
+- `node['kibana']['git']['url']` - The url for the git repo to use for Kibana3
+- `node['kibana']['git']['branch']` - The sha or branch name to use
+- `node['kibana']['file']['type']` - the type of archive file.  `zip` only at this stage
+- `node['kibana']['file']['url']` - The zipfile URL for the latest kibana build
+- `node['kibana']['file']['checksum']` - The sha256 of the kibana zipfile
+- `node['kibana']['install_path']` - The root directory where kibana will be installed
+- `node['kibana']['install_dir']` - The directory to checkout into. A `current` symlink will be created in this directory as well.
 - `node['kibana']['es_server']` - The ipaddress or hostname of your elasticsearch server
 - `node['kibana']['es_port']` - The port of your elasticsearch server's http interface
 - `node['kibana']['es_role']` - **unused** eventually for wiring up discovery of your elasticsearch server
+- `node['kibana']['es_scheme']` - Scheme helper if elasticsearch is outside of this cookbook `http://` or `https://`
 - `node['kibana']['user']` - The user who will own the files from the git checkout. (default: the web server user)
 - `node['kibana']['config_template']` - The template to use for kibana's `config.js`
 - `node['kibana']['config_cookbook']` - The cookbook that contains said config template
+- `node['kibana']['webserver']` - Which webserver to use: apache, nginx or '' 
 - `node['kibana']['webserver_hostname']` - The primary vhost the web server will use for kibana
 - `node['kibana']['webserver_aliases']` - Array of any secondary hostnames that are valid vhosts
 - `node['kibana']['webserver_listen']` - The ip address the web server will listen on
 - `node['kibana']['webserver_port']` - The port the webserver will listen on
+- `node['kibana']['webserver_scheme']` - Scheme helper if webserver is outside of this cookbook `http://` or `https://`
 
 #### kibana::nginx
 
@@ -51,6 +58,8 @@ The default recipe will:
 
 - install kibana3 from `master` into `/opt/kibana/master` and create a symlink called `current` in the same directory to `master`
 - install `nginx` and serve the kibana application
+
+If you want to use the zipfile distribution of Kibana update `node['kibana']['install_type']` attribute to `zipfile`.  Set `node['kibana']['zipfile_checksum']` to appropriate sha256 value of latest zipfile.
 
 If you wish to swap `apache` for `nginx`, simply set `node['kibana']['webserver']` to `apache` in a role/environment/node somewhere.
 
