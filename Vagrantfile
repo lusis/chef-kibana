@@ -17,7 +17,8 @@ Vagrant.configure("2") do |config|
     chef.json = 
       {
         kibana: { 
-          webserver_listen: "0.0.0.0"
+          webserver_listen: "0.0.0.0",
+          webserver: "nginx"
         },
         elasticsearch: {
           min_mem: '64m',

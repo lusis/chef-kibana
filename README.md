@@ -19,7 +19,7 @@ As with most cookbooks I write, this one is hopefully flexible enough to be wrap
 
 - `node['kibana']['repo']` - The git repo to use for Kibana3
 - `node['kibana']['branch']` - The sha or branch name to use
-- `node['kibana']['webserver']` - Which webserver to use: apache or nginx
+- `node['kibana']['webserver']` - Which webserver to use: apache, nginx or '' 
 - `node['kibana']['installdir']` - The directory to checkout into. A `current` symlink will be created in this directory as well.
 - `node['kibana']['es_server']` - The ipaddress or hostname of your elasticsearch server
 - `node['kibana']['es_port']` - The port of your elasticsearch server's http interface
@@ -53,6 +53,9 @@ The default recipe will:
 - install `nginx` and serve the kibana application
 
 If you wish to swap `apache` for `nginx`, simply set `node['kibana']['webserver']` to `apache` in a role/environment/node somewhere.
+
+If you don't want this cookbook to handle the webserver config simply set `node['kibana']['webserver']` to `''` in a role/environment/node somewhere.
+Please note that in this case you have to set `node['kibana']['user']`.
 
 Both cookbooks, by default, will configure the appropriate proxy to your ElasticSearch server such that you don't have to expose it to the world.
 
