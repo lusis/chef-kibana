@@ -62,6 +62,7 @@ case  node['kibana']['install_type']
   when "file"
     case node['kibana']['file']['type']
       when "zip"
+        include_recipe 'ark::default'
         ark 'kibana' do
           url node['kibana']['file']['url']
           path node['kibana']['install_path']
