@@ -38,6 +38,7 @@ else
 end
 
 directory node['kibana']['install_dir'] do
+  recursive true
   owner kibana_user
   mode "0755"
 end
