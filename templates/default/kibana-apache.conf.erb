@@ -21,7 +21,7 @@
   </Proxy>
 
   # Proxy for _aliases and .*/_search
-  <LocationMatch "^(/_aliases|/_nodes|/.*/_mapping|.*/_search)$">
+  <LocationMatch "^(/_aliases|/_nodes|/.*/_mapping|/.*/_search|/.*/_aliases)$">
     ProxyPassMatch <%= @params[:es_scheme] %><%= @params[:es_server] %>:<%= @params[:es_port] %>
     ProxyPassReverse <%= @params[:es_scheme] %><%= @params[:es_server] %>:<%= @params[:es_port] %>
   </LocationMatch>
