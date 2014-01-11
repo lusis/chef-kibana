@@ -45,6 +45,9 @@ Vagrant.configure("2") do |config|
     curl -s -XPOST "http://localhost:9200/${INDEX}/test/" -d '{ "@timestamp" : "'${TIMESTAMP}'", "message" : "I am not a real log" }'
   FAKELOGSTASH
 
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network "forwarded_port", guest: 9200, host: 9200
+
   # Ubuntu 12.04 Config
   config.vm.define :ubuntu1204 do |ubuntu1204|
     ubuntu1204.vm.hostname = "ubuntu1204"

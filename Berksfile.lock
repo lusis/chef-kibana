@@ -30,10 +30,10 @@
       "ref": "42db58c0e672fbac407245e935406b3d0f3082d6"
     },
     "bluepill": {
-      "locked_version": "2.3.0"
+      "locked_version": "2.3.1"
     },
     "rsyslog": {
-      "locked_version": "1.9.0"
+      "locked_version": "1.10.2"
     },
     "build-essential": {
       "locked_version": "1.4.2"
@@ -42,13 +42,13 @@
       "locked_version": "1.1.12"
     },
     "runit": {
-      "locked_version": "1.2.0"
+      "locked_version": "1.4.0"
     },
     "dmg": {
-      "locked_version": "2.0.0"
+      "locked_version": "2.0.8"
     },
     "windows": {
-      "locked_version": "1.10.0"
+      "locked_version": "1.11.0"
     },
     "chef_handler": {
       "locked_version": "1.1.4"
