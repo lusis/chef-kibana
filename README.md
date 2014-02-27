@@ -77,6 +77,11 @@ If you would like to modify the `nginx` or `apache` parameters, you should:
 - modify the template as you see fit (add auth, setup ssl)
 - use the appropriate webserver template attributes to point to your cookbook and template
 
+To modify the webserver log path, set the attributes for your selected webserver:
+
+- `node['apache']['log_dir'] = '/var/log/httpd'`
+- `node['nginx']['log_dir'] = '/var/log/nginx'`
+
 Testing
 -------
 #### Vagrant
