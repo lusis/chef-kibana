@@ -27,13 +27,16 @@ Vagrant.configure("2") do |config|
           limits: {
               nofile: 1024,
               memlock: 512
-          }
+          },
+          deb_url: 'https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.10.deb',
+          deb_sha: '599a8ff133f0800bb58032f1bf4ec0b1746c307befb57c65ee9d32af9f407c04'
         },
       }
     chef.run_list = [ 
       "recipe[apt::default]",
       "recipe[java::default]",
-      "recipe[elasticsearch::default]",
+      "recipe[elasticsearch::deb]",
+      "recipe[elasticsearch::curl]",
       "recipe[kibana::default]"
     ]
   end

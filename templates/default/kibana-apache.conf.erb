@@ -20,6 +20,12 @@
     ProxySet connectiontimeout=5 timeout=90
   </Proxy>
 
+   # Proxy for cluster health
+   <LocationMatch "^(/_cluster/health)$">
+    ProxyPassMatch http://<%= @params[:es_server] %>:<%= @params[:es_port] %>
+    ProxyPassReverse http://<%= @params[:es_server] %>:<%= @params[:es_port] %>
+  </LocationMatch>
+
   # Proxy for _aliases and .*/_search
   <LocationMatch "^(/_aliases|/_nodes|/.*/_mapping|/.*/_search|/.*/_aliases)$">
     ProxyPassMatch <%= @params[:es_scheme] %><%= @params[:es_server] %>:<%= @params[:es_port] %>
