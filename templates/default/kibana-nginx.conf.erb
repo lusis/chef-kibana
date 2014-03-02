@@ -9,7 +9,11 @@ server {
     index  index.html  index.htm;
   }
 
-  location ~ ^/_aliases$ {
+location ~ ^/_aliases$ {
+    proxy_pass <%= @es_scheme %><%= @es_server %>:<%= @es_port %>;
+    proxy_read_timeout 90;
+  }
+  location ~ ^/.*/_aliases$ {
     proxy_pass <%= @es_scheme %><%= @es_server %>:<%= @es_port %>;
     proxy_read_timeout 90;
   }
@@ -25,14 +29,12 @@ server {
     proxy_pass <%= @es_scheme %><%= @es_server %>:<%= @es_port %>;
     proxy_read_timeout 90;
   }
-  location ~ ^/.*/_aliases$ {
+  location ~ ^/_cluster/health$ {
     proxy_pass <%= @es_scheme %><%= @es_server %>:<%= @es_port %>;
     proxy_read_timeout 90;
   }
-  location ~ ^/_cluster/health$ {
-    proxy_pass http://<%= @es_server %>:<%= @es_port %>;
-    proxy_read_timeout 90;
-  }
+
+  # password protected end points
   location ~ ^/kibana-int/dashboard/.*$ {
     proxy_pass <%= @es_scheme %><%= @es_server %>:<%= @es_port %>;
     proxy_read_timeout 90;

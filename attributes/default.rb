@@ -20,4 +20,13 @@ default['kibana']['webserver_aliases'] = [node.ipaddress]
 default['kibana']['webserver_listen'] = node.ipaddress
 default['kibana']['webserver_port'] = 80
 default['kibana']['webserver_scheme'] = "http://"
+default['kibana']['config']['kibana_index']  = "kibana-int"
+default['kibana']['config']['panel_names']   =  [ 
+  'histogram', 'map', 'pie', 'table', 'filtering', 'timepicker', 'text', 'fields',
+  'hits', 'dashcontrol','column', 'derivequeries', 'trends', 'bettermap', 'query', 'terms'
+]
+default['kibana']['config']['default_route'] = '/dashboard/file/logstash.json'
 
+# include quote inside this next variable if not using window.location style variables...
+# e.g.  = "'http://elasticsearch.example.com:9200'"
+default['kibana']['config']['elasticsearch'] = "window.location.protocol+\"//\"+window.location.hostname+\":\"+window.location.port"

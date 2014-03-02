@@ -4,6 +4,8 @@ This file is used to list changes made in each version of kibana.
 
 ## 1.2.1:
 * proxy backend healthcheck
+* update proxy templates to match kibana master
+* changed config.js template to pull from attributes
 
 ## 1.2.0:
 

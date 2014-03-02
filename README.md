@@ -38,6 +38,7 @@ As with most cookbooks I write, this one is hopefully flexible enough to be wrap
 - `node['kibana']['webserver_listen']` - The ip address the web server will listen on
 - `node['kibana']['webserver_port']` - The port the webserver will listen on
 - `node['kibana']['webserver_scheme']` - Scheme helper if webserver is outside of this cookbook `http://` or `https://`
+- `node['kibana']['config']['elasticsearch']` - The URL or a javascript expression with for the elasticsearch server to connect to
 
 #### kibana::nginx
 
