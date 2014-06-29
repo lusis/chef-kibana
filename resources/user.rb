@@ -1,6 +1,6 @@
 # Encoding: utf-8
 # Cookbook Name:: kibana
-# Resource:: web
+# Resource:: user
 # Author:: John E. Vincent
 # Author:: Paul Czarkowski
 # Copyright 2014, John E. Vincent

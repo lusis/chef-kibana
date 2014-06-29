@@ -6,7 +6,7 @@
 # Copyright 2014, John E. Vincent
 # License:: Apache 2.0
 
-actions :create, :delete
+actions :create, :remove
 
 default_action :create if defined?(default_action)
 

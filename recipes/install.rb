@@ -24,7 +24,7 @@ kibana_user 'kibana' do
   home '/opt/kibana'
 end
 
-kibana_install 'default' do
+kibana_install 'file' do
   name 'web'
   user 'kibana'
   group 'kibana'
@@ -38,4 +38,17 @@ kibana_install 'git' do
   group 'kibana'
   install_dir '/opt/kibana-git'
   install_type 'git'
+end
+
+kibana_web 'kibana_file' do
+  type 'apache'
+  docroot '/opt/kibana/current'
+  listen_port '8080'
+end
+
+kibana_web 'kibana_git' do
+  type 'nginx'
+  docroot '/opt/kibana-git/current'
+  es_port '2900'
+  listen_port '8081'
 end

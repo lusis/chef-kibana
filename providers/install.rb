@@ -12,7 +12,7 @@ require 'chef/mixin/language'
 include Chef::Mixin::ShellOut
 
 def load_current_resource
-  @kibana_resource = new_resource.clone
+  kb_args = kibana_resources
 end
 
 action :delete do
