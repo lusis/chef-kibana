@@ -1,0 +1,41 @@
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'test/support/**'
+    - 'bin/**/*'
+  Include:
+    - '**/Rakefile'
+    - '**/Gemfile'
+    - '**/Vagrantfile'
+    - '**/Berksfile'
+CyclomaticComplexity:
+  Enabled: false
+
+LineLength:
+  Enabled: true
+  Max: 200
+
+MethodLength:
+  Enabled: true
+  Max: 20
+
+AccessorMethodName:
+  Enabled: false
+
+ClassAndModuleChildren:
+  Enabled: false
+
+UselessAssignment:
+  Enabled: false
+
+BlockNesting:
+  Max: 4
+
+Documentation:
+  Enabled: false
+
+MethodLength:
+  Max: 50
+
+SingleSpaceBeforeFirstArg:
+  Enabled: false

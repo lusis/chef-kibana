@@ -1,0 +1,180 @@
+I, [2014-06-28T16:20:31.177009 #30435]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-28T16:20:32.449534 #30435]  INFO -- Kitchen: -----> Creating <default-ubuntu-1204>...
+I, [2014-06-28T16:21:21.122783 #30435]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+E, [2014-06-28T16:21:21.718179 #30435] ERROR -- Kitchen: ------Exception-------
+E, [2014-06-28T16:21:21.718290 #30435] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2014-06-28T16:21:21.718332 #30435] ERROR -- Kitchen: Message: Failed to complete #converge action: [Berkshelf::NoAPISourcesDefined]
+E, [2014-06-28T16:21:21.718628 #30435] ERROR -- Kitchen: ---Nested Exception---
+E, [2014-06-28T16:21:21.718671 #30435] ERROR -- Kitchen: Class: Berkshelf::NoAPISourcesDefined
+E, [2014-06-28T16:21:21.718714 #30435] ERROR -- Kitchen: Message: Berkshelf::NoAPISourcesDefined
+E, [2014-06-28T16:21:21.718752 #30435] ERROR -- Kitchen: ------Backtrace-------
+E, [2014-06-28T16:21:21.718828 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/berkshelf-3.1.3/lib/berkshelf/berksfile.rb:191:in `sources'
+E, [2014-06-28T16:21:21.718868 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/berkshelf-3.1.3/lib/berkshelf/installer.rb:17:in `build_universe'
+E, [2014-06-28T16:21:21.718915 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/berkshelf-3.1.3/lib/berkshelf/installer.rb:156:in `install_from_universe'
+E, [2014-06-28T16:21:21.718962 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/berkshelf-3.1.3/lib/berkshelf/installer.rb:39:in `run'
+E, [2014-06-28T16:21:21.719013 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/berkshelf-3.1.3/lib/berkshelf/berksfile.rb:371:in `install'
+E, [2014-06-28T16:21:21.719052 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/berkshelf-3.1.3/lib/berkshelf/berksfile.rb:590:in `vendor'
+E, [2014-06-28T16:21:21.719096 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/provisioner/chef/berkshelf.rb:55:in `block in resolve'
+E, [2014-06-28T16:21:21.719214 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/shell/basic.rb:20:in `mute'
+E, [2014-06-28T16:21:21.719262 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/provisioner/chef/berkshelf.rb:51:in `resolve'
+E, [2014-06-28T16:21:21.719303 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/provisioner/chef_base.rb:394:in `block in resolve_with_berkshelf'
+E, [2014-06-28T16:21:21.719344 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/provisioner/chef_base.rb:393:in `synchronize'
+E, [2014-06-28T16:21:21.719386 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/provisioner/chef_base.rb:393:in `resolve_with_berkshelf'
+E, [2014-06-28T16:21:21.719430 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/provisioner/chef_base.rb:259:in `prepare_cookbooks'
+E, [2014-06-28T16:21:21.719469 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/provisioner/chef_base.rb:120:in `create_sandbox'
+E, [2014-06-28T16:21:21.719508 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/provisioner/chef_solo.rb:33:in `create_sandbox'
+E, [2014-06-28T16:21:21.719549 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/driver/ssh_base.rb:40:in `converge'
+E, [2014-06-28T16:21:21.719590 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/kitchen-vagrant-0.15.0/lib/kitchen/driver/vagrant.rb:75:in `converge'
+E, [2014-06-28T16:21:21.719634 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:280:in `public_send'
+E, [2014-06-28T16:21:21.719712 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:280:in `block in perform_action'
+E, [2014-06-28T16:21:21.719759 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:315:in `call'
+E, [2014-06-28T16:21:21.719913 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:315:in `synchronize_or_call'
+E, [2014-06-28T16:21:21.719974 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:290:in `block in action'
+E, [2014-06-28T16:21:21.720032 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/2.1.0/benchmark.rb:279:in `measure'
+E, [2014-06-28T16:21:21.720100 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:289:in `action'
+E, [2014-06-28T16:21:21.720138 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:280:in `perform_action'
+E, [2014-06-28T16:21:21.720183 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:263:in `converge_action'
+E, [2014-06-28T16:21:21.720226 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:253:in `block in transition_to'
+E, [2014-06-28T16:21:21.720269 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:252:in `each'
+E, [2014-06-28T16:21:21.720307 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:252:in `transition_to'
+E, [2014-06-28T16:21:21.720348 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:119:in `converge'
+E, [2014-06-28T16:21:21.720392 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/command.rb:109:in `public_send'
+E, [2014-06-28T16:21:21.720430 #30435] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/command.rb:109:in `block (2 levels) in run_action'
+E, [2014-06-28T16:21:21.720468 #30435] ERROR -- Kitchen: ----------------------
+I, [2014-06-28T16:22:42.339874 #32102]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-28T16:22:43.624470 #32102]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+E, [2014-06-28T16:22:44.029056 #32102] ERROR -- Kitchen: ------Exception-------
+E, [2014-06-28T16:22:44.029109 #32102] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2014-06-28T16:22:44.029139 #32102] ERROR -- Kitchen: Message: Failed to complete #converge action: [Berkshelf::NoAPISourcesDefined]
+E, [2014-06-28T16:22:44.029310 #32102] ERROR -- Kitchen: ---Nested Exception---
+E, [2014-06-28T16:22:44.029339 #32102] ERROR -- Kitchen: Class: Berkshelf::NoAPISourcesDefined
+E, [2014-06-28T16:22:44.029393 #32102] ERROR -- Kitchen: Message: Berkshelf::NoAPISourcesDefined
+E, [2014-06-28T16:22:44.029422 #32102] ERROR -- Kitchen: ------Backtrace-------
+E, [2014-06-28T16:22:44.029451 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/berkshelf-3.1.3/lib/berkshelf/berksfile.rb:191:in `sources'
+E, [2014-06-28T16:22:44.029589 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/berkshelf-3.1.3/lib/berkshelf/installer.rb:17:in `build_universe'
+E, [2014-06-28T16:22:44.029624 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/berkshelf-3.1.3/lib/berkshelf/installer.rb:156:in `install_from_universe'
+E, [2014-06-28T16:22:44.029652 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/berkshelf-3.1.3/lib/berkshelf/installer.rb:39:in `run'
+E, [2014-06-28T16:22:44.029686 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/berkshelf-3.1.3/lib/berkshelf/berksfile.rb:371:in `install'
+E, [2014-06-28T16:22:44.029738 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/berkshelf-3.1.3/lib/berkshelf/berksfile.rb:590:in `vendor'
+E, [2014-06-28T16:22:44.029766 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/provisioner/chef/berkshelf.rb:55:in `block in resolve'
+E, [2014-06-28T16:22:44.029852 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/shell/basic.rb:20:in `mute'
+E, [2014-06-28T16:22:44.029882 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/provisioner/chef/berkshelf.rb:51:in `resolve'
+E, [2014-06-28T16:22:44.029914 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/provisioner/chef_base.rb:394:in `block in resolve_with_berkshelf'
+E, [2014-06-28T16:22:44.029942 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/provisioner/chef_base.rb:393:in `synchronize'
+E, [2014-06-28T16:22:44.029976 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/provisioner/chef_base.rb:393:in `resolve_with_berkshelf'
+E, [2014-06-28T16:22:44.030005 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/provisioner/chef_base.rb:259:in `prepare_cookbooks'
+E, [2014-06-28T16:22:44.030059 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/provisioner/chef_base.rb:120:in `create_sandbox'
+E, [2014-06-28T16:22:44.030087 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/provisioner/chef_solo.rb:33:in `create_sandbox'
+E, [2014-06-28T16:22:44.030114 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/driver/ssh_base.rb:40:in `converge'
+E, [2014-06-28T16:22:44.030144 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/kitchen-vagrant-0.15.0/lib/kitchen/driver/vagrant.rb:75:in `converge'
+E, [2014-06-28T16:22:44.030172 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:280:in `public_send'
+E, [2014-06-28T16:22:44.030202 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:280:in `block in perform_action'
+E, [2014-06-28T16:22:44.030232 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:315:in `call'
+E, [2014-06-28T16:22:44.030264 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:315:in `synchronize_or_call'
+E, [2014-06-28T16:22:44.030294 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:290:in `block in action'
+E, [2014-06-28T16:22:44.030329 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/2.1.0/benchmark.rb:279:in `measure'
+E, [2014-06-28T16:22:44.030357 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:289:in `action'
+E, [2014-06-28T16:22:44.030391 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:280:in `perform_action'
+E, [2014-06-28T16:22:44.030419 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:263:in `converge_action'
+E, [2014-06-28T16:22:44.030466 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:253:in `block in transition_to'
+E, [2014-06-28T16:22:44.030506 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:252:in `each'
+E, [2014-06-28T16:22:44.030539 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:252:in `transition_to'
+E, [2014-06-28T16:22:44.030569 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:119:in `converge'
+E, [2014-06-28T16:22:44.030597 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/command.rb:109:in `public_send'
+E, [2014-06-28T16:22:44.030628 #32102] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/command.rb:109:in `block (2 levels) in run_action'
+E, [2014-06-28T16:22:44.030664 #32102] ERROR -- Kitchen: ----------------------
+I, [2014-06-28T16:23:41.829514 #32218]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-28T16:23:43.129768 #32218]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+I, [2014-06-28T16:24:39.621885 #32218]  INFO -- Kitchen: -----> Kitchen is finished. (0m57.79s)
+I, [2014-06-28T16:27:30.545637 #32460]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-28T16:27:31.826880 #32460]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+E, [2014-06-28T16:28:00.712451 #32460] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1204>.
+I, [2014-06-28T16:31:54.695165 #32714]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-28T16:31:55.983198 #32714]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+E, [2014-06-28T16:32:24.676685 #32714] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1204>.
+I, [2014-06-28T16:32:57.008451 #349]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-28T16:32:58.291489 #349]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+E, [2014-06-28T16:33:26.923650 #349] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1204>.
+I, [2014-06-28T16:37:43.911568 #569]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-28T16:37:45.197408 #569]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+I, [2014-06-28T16:38:13.964610 #569]  INFO -- Kitchen: -----> Kitchen is finished. (0m30.05s)
+I, [2014-06-28T17:01:35.465852 #1520]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-28T17:01:36.745947 #1520]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+E, [2014-06-28T17:02:07.075386 #1520] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1204>.
+I, [2014-06-28T17:09:04.525051 #2270]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-28T17:09:05.804637 #2270]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+I, [2014-06-28T17:09:34.880647 #2270]  INFO -- Kitchen: -----> Kitchen is finished. (0m30.36s)
+I, [2014-06-28T17:12:47.797915 #2483]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-28T17:12:49.080364 #2483]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+E, [2014-06-28T17:13:18.526716 #2483] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1204>.
+I, [2014-06-28T17:16:14.543949 #2683]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-28T17:16:15.868919 #2683]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+E, [2014-06-28T17:16:45.354636 #2683] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1204>.
+I, [2014-06-28T17:18:26.023811 #2816]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-28T17:18:27.323021 #2816]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+E, [2014-06-28T17:20:00.696274 #2816] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1204>.
+I, [2014-06-28T17:20:39.297795 #2986]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-28T17:20:40.573648 #2986]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+E, [2014-06-28T17:21:09.945565 #2986] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1204>.
+I, [2014-06-28T17:24:34.945646 #3336]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-28T17:24:36.227874 #3336]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+E, [2014-06-28T17:25:07.649513 #3336] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1204>.
+I, [2014-06-28T17:29:04.679766 #3639]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-28T17:29:05.980370 #3639]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+I, [2014-06-28T17:29:39.745738 #3639]  INFO -- Kitchen: -----> Kitchen is finished. (0m35.07s)
+I, [2014-06-28T17:32:37.665302 #3878]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-28T17:32:38.971610 #3878]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+E, [2014-06-28T17:33:08.486917 #3878] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1204>.
+I, [2014-06-28T17:33:18.285716 #3985]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-28T17:33:19.593200 #3985]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+E, [2014-06-28T17:33:49.112432 #3985] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1204>.
+I, [2014-06-28T17:41:09.677767 #4377]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-28T17:41:10.981087 #4377]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+I, [2014-06-28T17:42:48.081365 #4377]  INFO -- Kitchen: -----> Kitchen is finished. (1m38.40s)
+I, [2014-06-28T17:53:29.442678 #4946]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-28T17:53:30.722543 #4946]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+I, [2014-06-28T17:54:04.092206 #4946]  INFO -- Kitchen: -----> Kitchen is finished. (0m34.65s)
+I, [2014-06-28T17:56:20.786393 #5125]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-28T17:56:22.061151 #5125]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+I, [2014-06-28T17:56:54.625542 #5125]  INFO -- Kitchen: -----> Kitchen is finished. (0m33.84s)
+I, [2014-06-28T17:59:22.840517 #5322]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-28T17:59:24.117920 #5322]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+I, [2014-06-28T17:59:42.054601 #5424]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-28T17:59:43.333354 #5424]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+E, [2014-06-28T18:00:17.270851 #5424] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1204>.
+I, [2014-06-29T09:42:05.962142 #9364]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-29T09:42:07.259305 #9364]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+E, [2014-06-29T09:42:41.517389 #9364] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1204>.
+I, [2014-06-29T09:51:12.128897 #9729]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-29T09:51:13.405603 #9729]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+E, [2014-06-29T09:51:43.766791 #9729] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1204>.
+I, [2014-06-29T09:52:08.065392 #9840]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-29T09:52:09.349591 #9840]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+E, [2014-06-29T09:52:39.597978 #9840] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1204>.
+I, [2014-06-29T09:55:34.057589 #10086]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-29T09:55:35.347121 #10086]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+E, [2014-06-29T09:56:05.634213 #10086] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1204>.
+I, [2014-06-29T10:00:37.954004 #10306]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-29T10:00:39.227351 #10306]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+E, [2014-06-29T10:01:09.444333 #10306] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1204>.
+I, [2014-06-29T10:01:32.566412 #10416]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-29T10:01:33.857966 #10416]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+E, [2014-06-29T10:02:08.075333 #10416] ERROR -- Kitchen: Converge failed on instance <default-ubuntu-1204>.
+I, [2014-06-29T10:07:31.145122 #10953]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-29T10:07:32.420097 #10953]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+I, [2014-06-29T10:08:41.723258 #10953]  INFO -- Kitchen: -----> Kitchen is finished. (1m10.58s)
+I, [2014-06-29T10:10:15.873766 #11156]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-29T10:10:17.161464 #11156]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+I, [2014-06-29T10:10:50.744879 #11156]  INFO -- Kitchen: -----> Kitchen is finished. (0m34.87s)
+I, [2014-06-29T10:12:37.712835 #11320]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-29T10:12:39.017105 #11320]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+I, [2014-06-29T10:13:14.759022 #11320]  INFO -- Kitchen: -----> Kitchen is finished. (0m37.05s)
+I, [2014-06-29T10:24:46.490099 #11981]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-29T10:24:47.767607 #11981]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+I, [2014-06-29T10:25:21.126417 #11981]  INFO -- Kitchen: -----> Kitchen is finished. (0m34.64s)
+I, [2014-06-29T10:28:42.056847 #12189]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-29T10:28:43.335544 #12189]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+I, [2014-06-29T10:29:27.596752 #12189]  INFO -- Kitchen: -----> Kitchen is finished. (0m45.54s)
+I, [2014-06-29T10:29:43.238589 #12367]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.2.dev)
+I, [2014-06-29T10:29:44.522226 #12367]  INFO -- Kitchen: -----> Converging <default-ubuntu-1204>...
+I, [2014-06-29T10:30:18.830350 #12367]  INFO -- Kitchen: -----> Kitchen is finished. (0m35.59s)

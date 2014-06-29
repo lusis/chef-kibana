@@ -1,0 +1,8 @@
+image: paulczar/meez
+env:
+  - CI=drone
+  - USE_SYSTEM_GECODE=1
+script:
+  - bundle install
+  - bundle exec berks install
+  - bundle exec rake style spec

@@ -17,25 +17,24 @@
 # limitations under the License.
 #
 
-
 node.set['nginx']['default_site_enabled'] = node['kibana']['nginx']['enable_default_site']
 
-include_recipe "nginx"
+include_recipe 'nginx'
 
-template "/etc/nginx/sites-available/kibana" do
+template '/etc/nginx/sites-available/kibana' do
   source node['kibana']['nginx']['template']
   cookbook node['kibana']['nginx']['template_cookbook']
-  notifies :reload, "service[nginx]"
+  notifies :reload, 'service[nginx]'
   variables(
-    :es_server        => node['kibana']['es_server'],
-    :es_port          => node['kibana']['es_port'],
-    :server_name      => node['kibana']['webserver_hostname'],
-    :server_aliases   => node['kibana']['webserver_aliases'],
-    :kibana_dir       => node['kibana']['web_dir'],
-    :listen_address   => node['kibana']['webserver_listen'],
-    :listen_port      => node['kibana']['webserver_port'],
-    :es_scheme        => node['kibana']['es_scheme']
+    es_server: node['kibana']['es_server'],
+    es_port: node['kibana']['es_port'],
+    server_name: node['kibana']['webserver_hostname'],
+    server_aliases: node['kibana']['webserver_aliases'],
+    kibana_dir: node['kibana']['web_dir'],
+    listen_address: node['kibana']['webserver_listen'],
+    listen_port: node['kibana']['webserver_port'],
+    es_scheme: node['kibana']['es_scheme']
   )
 end
 
-nginx_site "kibana"
+nginx_site 'kibana'
