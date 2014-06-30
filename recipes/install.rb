@@ -1,9 +1,8 @@
 #
 # Cookbook Name:: kibana
-# Recipe:: install
+# Recipe:: default
 #
 # Copyright 2013, John E. Vincent
-# Copyright 2014, John E. Vincent
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,37 +17,53 @@
 # limitations under the License.
 #
 
-kibana_user 'kibana' do
-  name 'kibana'
-  group 'kibana'
-  home '/opt/kibana'
+unless Chef::Config[:solo]
+  es_server_results = search(:node, "roles:#{node['kibana']['es_role']} AND chef_environment:#{node.chef_environment}")
+  unless es_server_results.empty?
+    node.set['kibana']['es_server'] = es_server_results[0]['ipaddress']
+  end
 end
 
-kibana_install 'file' do
-  name 'web'
-  user 'kibana'
-  group 'kibana'
-  install_dir '/opt/kibana'
-  install_type 'file'
+if node['kibana']['user'].empty?
+  if !node['kibana']['webserver'].empty?
+    webserver = node['kibana']['webserver']
+    kibana_user = node[webserver]['user']
+  else
+    kibana_user = 'nobody'
+  end
+else
+  kibana_user kibana_user do
+    name kibana_user
+    group kibana_user
+    home node['kibana']['install_dir']
+    action :create
+  end
 end
 
-kibana_install 'git' do
-  name 'kibana-git'
-  user 'kibana'
-  group 'kibana'
-  install_dir '/opt/kibana-git'
-  install_type 'git'
+kibana_install 'kibana' do
+  user kibana_user
+  group kibana_user
+  install_dir node['kibana']['install_dir']
+  install_type node['kibana']['install_type']
+  action :create
 end
 
-kibana_web 'kibana_file' do
-  type 'apache'
-  docroot '/opt/kibana/current'
-  listen_port '8080'
+template "#{node['kibana']['install_dir']}/current/config.js" do
+  source node['kibana']['config_template']
+  cookbook node['kibana']['config_cookbook']
+  mode '0750'
+  user kibana_user
 end
 
-kibana_web 'kibana_git' do
-  type 'nginx'
-  docroot '/opt/kibana-git/current'
-  es_port '2900'
-  listen_port '8081'
+link "#{node['kibana']['install_dir']}/current/app/dashboards/default.json" do
+  to 'logstash.json'
+  only_if { !File.symlink?("#{node['kibana']['install_dir']}/current/app/dashboards/default.json") }
+end
+
+unless node['kibana']['webserver'].empty?
+  kibana_web 'kibana' do
+    type node['kibana']['webserver']
+    docroot "#{node['kibana']['install_dir']}/current"
+    es_server = node['kibana']['es_server']
+  end
 end

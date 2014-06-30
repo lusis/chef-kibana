@@ -55,7 +55,12 @@ As with most cookbooks I write, this one is hopefully flexible enough to be wrap
 Usage
 -----
 #### kibana::default
-The default recipe will:
+
+The default recipe does nothing except for allow access to the LWRPs.   
+
+#### kibana::install
+
+The install recipe will:
 
 - install kibana3 from `master` into `/opt/kibana/master` and create a symlink called `current` in the same directory to `master`
 - install `nginx` and serve the kibana application
@@ -77,6 +82,10 @@ If you would like to modify the `nginx` or `apache` parameters, you should:
 - copy the template for the webserver you wish to use to your cookbook
 - modify the template as you see fit (add auth, setup ssl)
 - use the appropriate webserver template attributes to point to your cookbook and template
+
+#### kibana::examples
+
+The examples cookbook lists further examples using the LWRPs to install and configure kibana.
 
 Testing
 -------

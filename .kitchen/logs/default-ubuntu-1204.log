@@ -10366,3 +10366,1240 @@ I, [2014-06-29T13:15:36.498849 #16779]  INFO -- default-ubuntu-1204: [2014-06-29
 I, [2014-06-29T13:15:36.498875 #16779]  INFO -- default-ubuntu-1204: Chef Client finished, 5/64 resources updated in 27.321597351 seconds[0m
 I, [2014-06-29T13:15:36.505775 #16779]  INFO -- default-ubuntu-1204: 
 I, [2014-06-29T13:15:36.932653 #16779]  INFO -- default-ubuntu-1204: Finished converging <default-ubuntu-1204> (0m51.00s).
+I, [2014-06-29T18:42:30.470727 #18965]  INFO -- default-ubuntu-1204: -----> Destroying <default-ubuntu-1204>...
+==> default: Forcing shutdown of VM...==> default: Destroying VM and associated drives...I, [2014-06-29T18:42:34.982143 #18965]  INFO -- default-ubuntu-1204: Vagrant instance <default-ubuntu-1204> destroyed.
+I, [2014-06-29T18:42:34.983796 #18965]  INFO -- default-ubuntu-1204: Finished destroying <default-ubuntu-1204> (0m4.51s).
+I, [2014-06-29T18:42:45.318314 #19359]  INFO -- default-ubuntu-1204: -----> Cleaning up any prior instances of <default-ubuntu-1204>
+I, [2014-06-29T18:42:45.318549 #19359]  INFO -- default-ubuntu-1204: -----> Destroying <default-ubuntu-1204>...
+I, [2014-06-29T18:42:45.319366 #19359]  INFO -- default-ubuntu-1204: Finished destroying <default-ubuntu-1204> (0m0.00s).
+I, [2014-06-29T18:42:45.319594 #19359]  INFO -- default-ubuntu-1204: -----> Testing <default-ubuntu-1204>
+I, [2014-06-29T18:42:45.319750 #19359]  INFO -- default-ubuntu-1204: -----> Creating <default-ubuntu-1204>...
+I, [2014-06-29T18:42:46.497462 #19359]  INFO -- default-ubuntu-1204: Bringing machine 'default' up with 'virtualbox' provider...
+I, [2014-06-29T18:42:47.120533 #19359]  INFO -- default-ubuntu-1204: ==> default: Importing base box 'opscode-ubuntu-12.04'...
+[KProgress: 10%[KProgress: 20%[KProgress: 40%[KProgress: 70%[KProgress: 80%[KProgress: 90%[KI, [2014-06-29T18:43:04.933703 #19359]  INFO -- default-ubuntu-1204: ==> default: Matching MAC address for NAT networking...
+I, [2014-06-29T18:43:05.786976 #19359]  INFO -- default-ubuntu-1204: ==> default: Setting the name of the VM: default-ubuntu-1204_default_1404085385727_15436
+I, [2014-06-29T18:43:07.009430 #19359]  INFO -- default-ubuntu-1204: ==> default: Clearing any previously set network interfaces...
+I, [2014-06-29T18:43:07.135490 #19359]  INFO -- default-ubuntu-1204: ==> default: Preparing network interfaces based on configuration...
+I, [2014-06-29T18:43:07.135963 #19359]  INFO -- default-ubuntu-1204:     default: Adapter 1: nat
+I, [2014-06-29T18:43:07.263031 #19359]  INFO -- default-ubuntu-1204: ==> default: Forwarding ports...
+I, [2014-06-29T18:43:07.375238 #19359]  INFO -- default-ubuntu-1204:     default: 22 => 2222 (adapter 1)
+I, [2014-06-29T18:43:10.060709 #19359]  INFO -- default-ubuntu-1204: ==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...I, [2014-06-29T18:43:10.696008 #19359]  INFO -- default-ubuntu-1204:     default: SSH address: 127.0.0.1:2222
+I, [2014-06-29T18:43:10.696240 #19359]  INFO -- default-ubuntu-1204:     default: SSH username: vagrant
+I, [2014-06-29T18:43:10.696358 #19359]  INFO -- default-ubuntu-1204:     default: SSH auth method: private key
+    default: Warning: Connection timeout. Retrying...==> default: Machine booted and ready!==> default: Checking for guest additions in VM...==> default: Setting hostname...==> default: Machine not provisioning because `--no-provision` is specified.I, [2014-06-29T18:43:33.897691 #19359]  INFO -- default-ubuntu-1204: Vagrant instance <default-ubuntu-1204> created.
+I, [2014-06-29T18:43:33.899192 #19359]  INFO -- default-ubuntu-1204: Finished creating <default-ubuntu-1204> (0m48.58s).
+I, [2014-06-29T18:43:33.899319 #19359]  INFO -- default-ubuntu-1204: -----> Converging <default-ubuntu-1204>...
+I, [2014-06-29T18:43:33.900168 #19359]  INFO -- default-ubuntu-1204: Preparing files for transfer
+I, [2014-06-29T18:43:33.900622 #19359]  INFO -- default-ubuntu-1204: Resolving cookbook dependencies with Berkshelf 3.1.3...
+I, [2014-06-29T18:43:34.807488 #19359]  INFO -- default-ubuntu-1204: Removing non-cookbook files before transfer
+-----> Installing Chef Omnibus (true)I, [2014-06-29T18:43:35.100428 #19359]  INFO -- default-ubuntu-1204: 
+downloading https://www.getchef.com/chef/install.shI, [2014-06-29T18:43:35.100792 #19359]  INFO -- default-ubuntu-1204: 
+  to file /tmp/install.shI, [2014-06-29T18:43:35.101038 #19359]  INFO -- default-ubuntu-1204: 
+trying wget...I, [2014-06-29T18:43:35.101278 #19359]  INFO -- default-ubuntu-1204: 
+Downloading Chef  for ubuntu...I, [2014-06-29T18:43:35.639104 #19359]  INFO -- default-ubuntu-1204: 
+downloading https://www.getchef.com/chef/metadata?v=&prerelease=false&nightlies=false&p=ubuntu&pv=12.04&m=x86_64I, [2014-06-29T18:43:35.646261 #19359]  INFO -- default-ubuntu-1204: 
+  to file /tmp/install.sh.1132/metadata.txtI, [2014-06-29T18:43:35.646821 #19359]  INFO -- default-ubuntu-1204: 
+trying wget...I, [2014-06-29T18:43:35.647137 #19359]  INFO -- default-ubuntu-1204: 
+url	https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chef_11.12.8-2_amd64.debI, [2014-06-29T18:43:35.906853 #19359]  INFO -- default-ubuntu-1204: 
+md5	34ae5622fda468e31dd898491b4be867I, [2014-06-29T18:43:35.907796 #19359]  INFO -- default-ubuntu-1204: 
+sha256	3da7460e9f03fc5d68baeeb1f50a768f880c4154626aaf78f22dac8a89e64e74I, [2014-06-29T18:43:35.908467 #19359]  INFO -- default-ubuntu-1204: 
+downloaded metadata file looks valid...I, [2014-06-29T18:43:35.927545 #19359]  INFO -- default-ubuntu-1204: 
+downloading https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chef_11.12.8-2_amd64.debI, [2014-06-29T18:43:35.977777 #19359]  INFO -- default-ubuntu-1204: 
+  to file /tmp/install.sh.1132/chef_11.12.8-2_amd64.debI, [2014-06-29T18:43:35.978192 #19359]  INFO -- default-ubuntu-1204: 
+trying wget...I, [2014-06-29T18:43:35.978631 #19359]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:43:47.975986 #19359]  INFO -- default-ubuntu-1204: Comparing checksum with sha256sum...
+Installing Chef I, [2014-06-29T18:43:48.202245 #19359]  INFO -- default-ubuntu-1204: 
+installing with dpkg...I, [2014-06-29T18:43:48.202827 #19359]  INFO -- default-ubuntu-1204: 
+Selecting previously unselected package chef.I, [2014-06-29T18:43:48.383419 #19359]  INFO -- default-ubuntu-1204: 
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 56035 files and directories currently installed.)I, [2014-06-29T18:43:48.559388 #19359]  INFO -- default-ubuntu-1204: 
+Unpacking chef (from .../chef_11.12.8-2_amd64.deb) ...I, [2014-06-29T18:43:48.564411 #19359]  INFO -- default-ubuntu-1204: 
+Setting up chef (11.12.8-2) ...I, [2014-06-29T18:43:53.947999 #19359]  INFO -- default-ubuntu-1204: 
+Thank you for installing Chef!I, [2014-06-29T18:43:54.059102 #19359]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:43:54.156105 #19359]  INFO -- default-ubuntu-1204: Transferring files to <default-ubuntu-1204>
+[2014-06-29T23:44:24+00:00] INFO: Forking chef instance to converge...I, [2014-06-29T18:44:15.908709 #19359]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:44:24+00:00] WARN: I, [2014-06-29T18:44:15.931234 #19359]  INFO -- default-ubuntu-1204: 
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * I, [2014-06-29T18:44:15.931906 #19359]  INFO -- default-ubuntu-1204: 
+SSL validation of HTTPS requests is disabled. HTTPS connections are stillI, [2014-06-29T18:44:15.932738 #19359]  INFO -- default-ubuntu-1204: 
+encrypted, but chef is not able to detect forged replies or man in the middleI, [2014-06-29T18:44:15.933489 #19359]  INFO -- default-ubuntu-1204: 
+attacks.I, [2014-06-29T18:44:15.934153 #19359]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:44:15.938844 #19359]  INFO -- default-ubuntu-1204: 
+To fix this issue add an entry like this to your configuration file:I, [2014-06-29T18:44:15.939396 #19359]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:44:15.939570 #19359]  INFO -- default-ubuntu-1204: 
+```I, [2014-06-29T18:44:15.941815 #19359]  INFO -- default-ubuntu-1204: 
+  # Verify all HTTPS connections (recommended)I, [2014-06-29T18:44:15.942390 #19359]  INFO -- default-ubuntu-1204: 
+  ssl_verify_mode :verify_peerI, [2014-06-29T18:44:15.942816 #19359]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:44:15.943099 #19359]  INFO -- default-ubuntu-1204: 
+  # OR, Verify only connections to chef-serverI, [2014-06-29T18:44:15.943555 #19359]  INFO -- default-ubuntu-1204: 
+  verify_api_cert trueI, [2014-06-29T18:44:15.944004 #19359]  INFO -- default-ubuntu-1204: 
+```I, [2014-06-29T18:44:15.944469 #19359]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:44:15.944545 #19359]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:44:15.944616 #19359]  INFO -- default-ubuntu-1204: To check your SSL configuration, or troubleshoot errors, you can use the
+I, [2014-06-29T18:44:15.944687 #19359]  INFO -- default-ubuntu-1204: `knife ssl check` command like so:
+I, [2014-06-29T18:44:15.944755 #19359]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:44:15.944824 #19359]  INFO -- default-ubuntu-1204: ```
+I, [2014-06-29T18:44:15.944951 #19359]  INFO -- default-ubuntu-1204:   knife ssl check -c /tmp/kitchen/solo.rb
+I, [2014-06-29T18:44:15.945021 #19359]  INFO -- default-ubuntu-1204: ```
+I, [2014-06-29T18:44:15.945090 #19359]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:44:15.945159 #19359]  INFO -- default-ubuntu-1204: * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+I, [2014-06-29T18:44:15.945228 #19359]  INFO -- default-ubuntu-1204: 
+Starting Chef Client, version 11.12.8[0mI, [2014-06-29T18:44:16.031954 #19359]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:44:24+00:00] INFO: *** Chef 11.12.8 ***I, [2014-06-29T18:44:16.032512 #19359]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:44:24+00:00] INFO: Chef-client pid: 1218I, [2014-06-29T18:44:16.032874 #19359]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:44:29+00:00] INFO: Setting the run_list to ["recipe[kibana::default]"] from CLI optionsI, [2014-06-29T18:44:21.226118 #19359]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:44:29+00:00] INFO: Run List is [recipe[kibana::default]]I, [2014-06-29T18:44:21.239415 #19359]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:44:29+00:00] INFO: Run List expands to [kibana::default]I, [2014-06-29T18:44:21.239780 #19359]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:44:29+00:00] INFO: Starting Chef Run for default-ubuntu-1204I, [2014-06-29T18:44:21.241472 #19359]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:44:29+00:00] INFO: Running start handlersI, [2014-06-29T18:44:21.241953 #19359]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:44:29+00:00] INFO: Start handlers complete.I, [2014-06-29T18:44:21.242305 #19359]  INFO -- default-ubuntu-1204: 
+Compiling Cookbooks...[0mI, [2014-06-29T18:44:21.294062 #19359]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:44:30+00:00] INFO: WindowsPackage light-weight resource already initialized -- overriding!I, [2014-06-29T18:44:21.617855 #19359]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:44:21.692687 #19359]  INFO -- default-ubuntu-1204: 
+================================================================================[0mI, [2014-06-29T18:44:21.692996 #19359]  INFO -- default-ubuntu-1204: 
+[31mRecipe Compile Error in /tmp/kitchen/cookbooks/kibana/recipes/default.rb[0mI, [2014-06-29T18:44:21.693294 #19359]  INFO -- default-ubuntu-1204: 
+================================================================================[0mI, [2014-06-29T18:44:21.694004 #19359]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:44:21.694451 #19359]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:44:21.694763 #19359]  INFO -- default-ubuntu-1204: 
+NoMethodError[0mI, [2014-06-29T18:44:21.695299 #19359]  INFO -- default-ubuntu-1204: 
+-------------[0mI, [2014-06-29T18:44:21.695611 #19359]  INFO -- default-ubuntu-1204: 
+undefined method `es_server' for Chef::Resource::KibanaInstall[0mI, [2014-06-29T18:44:21.696182 #19359]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:44:21.696371 #19359]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:44:21.697484 #19359]  INFO -- default-ubuntu-1204: [0m
+I, [2014-06-29T18:44:21.697526 #19359]  INFO -- default-ubuntu-1204: Cookbook Trace:[0m
+I, [2014-06-29T18:44:21.697585 #19359]  INFO -- default-ubuntu-1204: ---------------[0m
+I, [2014-06-29T18:44:21.697614 #19359]  INFO -- default-ubuntu-1204:   /tmp/kitchen/cookbooks/kibana/recipes/default.rb:48:in `block in from_file'
+I, [2014-06-29T18:44:21.697644 #19359]  INFO -- default-ubuntu-1204:   /tmp/kitchen/cookbooks/kibana/recipes/default.rb:43:in `from_file'[0m
+I, [2014-06-29T18:44:21.697671 #19359]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:44:21.697725 #19359]  INFO -- default-ubuntu-1204: [0m
+I, [2014-06-29T18:44:21.697752 #19359]  INFO -- default-ubuntu-1204: Relevant File Content:[0m
+I, [2014-06-29T18:44:21.697778 #19359]  INFO -- default-ubuntu-1204: ----------------------[0m
+I, [2014-06-29T18:44:21.697807 #19359]  INFO -- default-ubuntu-1204: /tmp/kitchen/cookbooks/kibana/recipes/default.rb:
+I, [2014-06-29T18:44:21.697833 #19359]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:44:21.697862 #19359]  INFO -- default-ubuntu-1204:  41:  end
+I, [2014-06-29T18:44:21.697888 #19359]  INFO -- default-ubuntu-1204:  42:  
+I, [2014-06-29T18:44:21.697917 #19359]  INFO -- default-ubuntu-1204:  43:  kibana_install 'kibana' do
+I, [2014-06-29T18:44:21.697943 #19359]  INFO -- default-ubuntu-1204:  44:    user kibana_user
+I, [2014-06-29T18:44:21.697973 #19359]  INFO -- default-ubuntu-1204:  45:    group kibana_user
+I, [2014-06-29T18:44:21.697999 #19359]  INFO -- default-ubuntu-1204:  46:    install_dir node['kibana']['install_dir']
+I, [2014-06-29T18:44:21.698029 #19359]  INFO -- default-ubuntu-1204:  47:    install_type node['kibana']['install_type']
+I, [2014-06-29T18:44:21.698055 #19359]  INFO -- default-ubuntu-1204:  48>>   es_server node['kibana']['es_server']
+I, [2014-06-29T18:44:21.698109 #19359]  INFO -- default-ubuntu-1204:  49:    action :create
+I, [2014-06-29T18:44:21.698136 #19359]  INFO -- default-ubuntu-1204:  50:  end
+I, [2014-06-29T18:44:21.698162 #19359]  INFO -- default-ubuntu-1204:  51:  
+I, [2014-06-29T18:44:21.698188 #19359]  INFO -- default-ubuntu-1204:  52:  template "#{node['kibana']['install_dir']}/current/config.js" do
+I, [2014-06-29T18:44:21.698230 #19359]  INFO -- default-ubuntu-1204:  53:    source node['kibana']['config_template']
+I, [2014-06-29T18:44:21.698257 #19359]  INFO -- default-ubuntu-1204:  54:    cookbook node['kibana']['config_cookbook']
+I, [2014-06-29T18:44:21.698286 #19359]  INFO -- default-ubuntu-1204:  55:    mode '0750'
+I, [2014-06-29T18:44:21.698312 #19359]  INFO -- default-ubuntu-1204:  56:    user kibana_user
+I, [2014-06-29T18:44:21.698340 #19359]  INFO -- default-ubuntu-1204:  57:  end
+I, [2014-06-29T18:44:21.698366 #19359]  INFO -- default-ubuntu-1204: [0m
+I, [2014-06-29T18:44:21.698394 #19359]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:44:21.698420 #19359]  INFO -- default-ubuntu-1204: [0m
+I, [2014-06-29T18:44:21.698448 #19359]  INFO -- default-ubuntu-1204: 
+Running handlers:[0mI, [2014-06-29T18:44:21.699524 #19359]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:44:21.699561 #19359]  INFO -- default-ubuntu-1204: [2014-06-29T23:44:30+00:00] ERROR: Running exception handlers
+I, [2014-06-29T18:44:21.700690 #19359]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:44:21.700733 #19359]  INFO -- default-ubuntu-1204: Running handlers complete
+I, [2014-06-29T18:44:21.700761 #19359]  INFO -- default-ubuntu-1204: [0m
+I, [2014-06-29T18:44:21.700791 #19359]  INFO -- default-ubuntu-1204: [2014-06-29T23:44:30+00:00] ERROR: Exception handlers complete
+[2014-06-29T23:44:30+00:00] FATAL: Stacktrace dumped to /tmp/kitchen/cache/chef-stacktrace.outI, [2014-06-29T18:44:21.701987 #19359]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:44:21.702027 #19359]  INFO -- default-ubuntu-1204: Chef Client failed. 0 resources updated in 5.795903597 seconds[0m
+I, [2014-06-29T18:44:21.702448 #19359]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:44:30+00:00] ERROR: undefined method `es_server' for Chef::Resource::KibanaInstallI, [2014-06-29T18:44:21.724744 #19359]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:44:30+00:00] FATAL: Chef::Exceptions::ChildConvergeError: Chef run process exited unsuccessfully (exit code 1)I, [2014-06-29T18:44:21.840890 #19359]  INFO -- default-ubuntu-1204: 
+E, [2014-06-29T18:44:21.966006 #19359] ERROR -- default-ubuntu-1204: Converge failed on instance <default-ubuntu-1204>.
+E, [2014-06-29T18:44:21.966156 #19359] ERROR -- default-ubuntu-1204: ------Exception-------
+E, [2014-06-29T18:44:21.966186 #19359] ERROR -- default-ubuntu-1204: Class: Kitchen::ActionFailed
+E, [2014-06-29T18:44:21.966211 #19359] ERROR -- default-ubuntu-1204: Message: SSH exited (1) for command: [sudo -E chef-solo --config /tmp/kitchen/solo.rb --json-attributes /tmp/kitchen/dna.json  --log_level info]
+E, [2014-06-29T18:44:21.966236 #19359] ERROR -- default-ubuntu-1204: ---Nested Exception---
+E, [2014-06-29T18:44:21.966261 #19359] ERROR -- default-ubuntu-1204: Class: Kitchen::SSHFailed
+E, [2014-06-29T18:44:21.966285 #19359] ERROR -- default-ubuntu-1204: Message: SSH exited (1) for command: [sudo -E chef-solo --config /tmp/kitchen/solo.rb --json-attributes /tmp/kitchen/dna.json  --log_level info]
+E, [2014-06-29T18:44:21.966310 #19359] ERROR -- default-ubuntu-1204: ------Backtrace-------
+E, [2014-06-29T18:44:21.966335 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/driver/ssh_base.rb:118:in `rescue in run_remote'
+E, [2014-06-29T18:44:21.966360 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/driver/ssh_base.rb:114:in `run_remote'
+E, [2014-06-29T18:44:21.966404 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/driver/ssh_base.rb:48:in `block in converge'
+E, [2014-06-29T18:44:21.966435 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/ssh.rb:47:in `initialize'
+E, [2014-06-29T18:44:21.966460 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/driver/ssh_base.rb:43:in `new'
+E, [2014-06-29T18:44:21.966501 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/driver/ssh_base.rb:43:in `converge'
+E, [2014-06-29T18:44:21.966527 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/kitchen-vagrant-0.15.0/lib/kitchen/driver/vagrant.rb:75:in `converge'
+E, [2014-06-29T18:44:21.966552 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:280:in `public_send'
+E, [2014-06-29T18:44:21.966577 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:280:in `block in perform_action'
+E, [2014-06-29T18:44:21.966602 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:315:in `call'
+E, [2014-06-29T18:44:21.966628 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:315:in `synchronize_or_call'
+E, [2014-06-29T18:44:21.966653 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:290:in `block in action'
+E, [2014-06-29T18:44:21.966678 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/2.1.0/benchmark.rb:279:in `measure'
+E, [2014-06-29T18:44:21.966703 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:289:in `action'
+E, [2014-06-29T18:44:21.966728 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:280:in `perform_action'
+E, [2014-06-29T18:44:21.966765 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:263:in `converge_action'
+E, [2014-06-29T18:44:21.966790 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:253:in `block in transition_to'
+E, [2014-06-29T18:44:21.966815 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:252:in `each'
+E, [2014-06-29T18:44:21.966839 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:252:in `transition_to'
+E, [2014-06-29T18:44:21.966865 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:141:in `verify'
+E, [2014-06-29T18:44:21.966889 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:170:in `block in test'
+E, [2014-06-29T18:44:21.966914 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/2.1.0/benchmark.rb:279:in `measure'
+E, [2014-06-29T18:44:21.966963 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:166:in `test'
+E, [2014-06-29T18:44:21.966989 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/command.rb:109:in `public_send'
+E, [2014-06-29T18:44:21.967013 #19359] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/command.rb:109:in `block (2 levels) in run_action'
+E, [2014-06-29T18:44:21.967038 #19359] ERROR -- default-ubuntu-1204: ----------------------
+I, [2014-06-29T18:45:32.363151 #20968]  INFO -- default-ubuntu-1204: -----> Converging <default-ubuntu-1204>...
+I, [2014-06-29T18:45:32.366533 #20968]  INFO -- default-ubuntu-1204: Preparing files for transfer
+I, [2014-06-29T18:45:32.366861 #20968]  INFO -- default-ubuntu-1204: Resolving cookbook dependencies with Berkshelf 3.1.3...
+I, [2014-06-29T18:45:33.265437 #20968]  INFO -- default-ubuntu-1204: Removing non-cookbook files before transfer
+I, [2014-06-29T18:45:33.628030 #20968]  INFO -- default-ubuntu-1204: Transferring files to <default-ubuntu-1204>
+[2014-06-29T23:46:03+00:00] INFO: Forking chef instance to converge...I, [2014-06-29T18:45:55.427505 #20968]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:46:03+00:00] WARN: I, [2014-06-29T18:45:55.447409 #20968]  INFO -- default-ubuntu-1204: 
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * I, [2014-06-29T18:45:55.448210 #20968]  INFO -- default-ubuntu-1204: 
+SSL validation of HTTPS requests is disabled. HTTPS connections are stillI, [2014-06-29T18:45:55.449023 #20968]  INFO -- default-ubuntu-1204: 
+encrypted, but chef is not able to detect forged replies or man in the middleI, [2014-06-29T18:45:55.449929 #20968]  INFO -- default-ubuntu-1204: 
+attacks.I, [2014-06-29T18:45:55.453933 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:45:55.454122 #20968]  INFO -- default-ubuntu-1204: 
+To fix this issue add an entry like this to your configuration file:I, [2014-06-29T18:45:55.454493 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:45:55.456336 #20968]  INFO -- default-ubuntu-1204: 
+```I, [2014-06-29T18:45:55.456795 #20968]  INFO -- default-ubuntu-1204: 
+  # Verify all HTTPS connections (recommended)I, [2014-06-29T18:45:55.457240 #20968]  INFO -- default-ubuntu-1204: 
+  ssl_verify_mode :verify_peerI, [2014-06-29T18:45:55.457691 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:45:55.457952 #20968]  INFO -- default-ubuntu-1204: 
+  # OR, Verify only connections to chef-serverI, [2014-06-29T18:45:55.458391 #20968]  INFO -- default-ubuntu-1204: 
+  verify_api_cert trueI, [2014-06-29T18:45:55.458840 #20968]  INFO -- default-ubuntu-1204: 
+```I, [2014-06-29T18:45:55.459265 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:45:55.459557 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:45:55.459593 #20968]  INFO -- default-ubuntu-1204: To check your SSL configuration, or troubleshoot errors, you can use the
+I, [2014-06-29T18:45:55.459623 #20968]  INFO -- default-ubuntu-1204: `knife ssl check` command like so:
+I, [2014-06-29T18:45:55.459652 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:45:55.459686 #20968]  INFO -- default-ubuntu-1204: ```
+I, [2014-06-29T18:45:55.459714 #20968]  INFO -- default-ubuntu-1204:   knife ssl check -c /tmp/kitchen/solo.rb
+I, [2014-06-29T18:45:55.459752 #20968]  INFO -- default-ubuntu-1204: ```
+I, [2014-06-29T18:45:55.459779 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:45:55.459806 #20968]  INFO -- default-ubuntu-1204: * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+I, [2014-06-29T18:45:55.459833 #20968]  INFO -- default-ubuntu-1204: 
+Starting Chef Client, version 11.12.8[0mI, [2014-06-29T18:45:55.548822 #20968]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:46:04+00:00] INFO: *** Chef 11.12.8 ***I, [2014-06-29T18:45:55.550345 #20968]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:46:04+00:00] INFO: Chef-client pid: 1391I, [2014-06-29T18:45:55.550913 #20968]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:46:09+00:00] INFO: Setting the run_list to ["recipe[kibana::default]"] from CLI optionsI, [2014-06-29T18:46:00.578613 #20968]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:46:09+00:00] INFO: Run List is [recipe[kibana::default]]I, [2014-06-29T18:46:00.591268 #20968]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:46:09+00:00] INFO: Run List expands to [kibana::default]I, [2014-06-29T18:46:00.591646 #20968]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:46:09+00:00] INFO: Starting Chef Run for default-ubuntu-1204I, [2014-06-29T18:46:00.593424 #20968]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:46:09+00:00] INFO: Running start handlersI, [2014-06-29T18:46:00.594139 #20968]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:46:09+00:00] INFO: Start handlers complete.I, [2014-06-29T18:46:00.594582 #20968]  INFO -- default-ubuntu-1204: 
+Compiling Cookbooks...[0mI, [2014-06-29T18:46:00.646127 #20968]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:46:09+00:00] INFO: WindowsPackage light-weight resource already initialized -- overriding!I, [2014-06-29T18:46:00.974474 #20968]  INFO -- default-ubuntu-1204: 
+Converging 4 resources[0mI, [2014-06-29T18:46:01.060223 #20968]  INFO -- default-ubuntu-1204: 
+Recipe: kibana::default[0mI, [2014-06-29T18:46:01.061278 #20968]  INFO -- default-ubuntu-1204: 
+  * kibana_install[kibana] action create[0m[2014-06-29T23:46:09+00:00] INFO: Processing kibana_install[kibana] action create (kibana::default line 43)I, [2014-06-29T18:46:01.062317 #20968]  INFO -- default-ubuntu-1204: 
+ (up to date)[0mI, [2014-06-29T18:46:01.072156 #20968]  INFO -- default-ubuntu-1204: 
+Recipe: <Dynamically Defined Resource>[0mI, [2014-06-29T18:46:01.072829 #20968]  INFO -- default-ubuntu-1204: 
+  * directory[/opt/kibana] action create[0m[2014-06-29T23:46:09+00:00] INFO: Processing directory[/opt/kibana] action create (/tmp/kitchen/cookbooks/kibana/providers/install.rb line 31)I, [2014-06-29T18:46:01.073688 #20968]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:46:09+00:00] INFO: directory[/opt/kibana] created directory /opt/kibanaI, [2014-06-29T18:46:01.080408 #20968]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:46:01.081384 #20968]  INFO -- default-ubuntu-1204: 
+    - create new directory /opt/kibana[0m[2014-06-29T23:46:09+00:00] INFO: directory[/opt/kibana] owner changed to 33I, [2014-06-29T18:46:01.084540 #20968]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:46:09+00:00] INFO: directory[/opt/kibana] group changed to 33I, [2014-06-29T18:46:01.085291 #20968]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:46:09+00:00] INFO: directory[/opt/kibana] mode changed to 755I, [2014-06-29T18:46:01.085986 #20968]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:46:01.086395 #20968]  INFO -- default-ubuntu-1204: 
+    - change mode from '' to '0755'[0m[32mI, [2014-06-29T18:46:01.086929 #20968]  INFO -- default-ubuntu-1204: 
+    - change owner from '' to 'www-data'[0m[32mI, [2014-06-29T18:46:01.087498 #20968]  INFO -- default-ubuntu-1204: 
+    - change group from '' to 'www-data'[0mI, [2014-06-29T18:46:01.089244 #20968]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:46:01.089731 #20968]  INFO -- default-ubuntu-1204: 
+Recipe: git::default[0mI, [2014-06-29T18:46:01.090162 #20968]  INFO -- default-ubuntu-1204: 
+  * package[git] action install[0m[2014-06-29T23:46:09+00:00] INFO: Processing package[git] action install (git::default line 24)I, [2014-06-29T18:46:01.090871 #20968]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:47:59.960700 #20968]  INFO -- default-ubuntu-1204: 
+    - install version 1:1.7.9.5-1 of package git[0mI, [2014-06-29T18:47:59.966100 #20968]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:47:59.966609 #20968]  INFO -- default-ubuntu-1204: 
+Recipe: <Dynamically Defined Resource>[0mI, [2014-06-29T18:47:59.968140 #20968]  INFO -- default-ubuntu-1204: 
+  * git[/opt/kibana/master] action sync[0m[2014-06-29T23:48:08+00:00] INFO: Processing git[/opt/kibana/master] action sync (/tmp/kitchen/cookbooks/kibana/providers/install.rb line 42)I, [2014-06-29T18:47:59.973088 #20968]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:48:09+00:00] INFO: git[/opt/kibana/master] cloning repo https://github.com/elasticsearch/kibana to /opt/kibana/masterI, [2014-06-29T18:48:00.971511 #20968]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:48:10.657001 #20968]  INFO -- default-ubuntu-1204: 
+    - clone from https://github.com/elasticsearch/kibana into /opt/kibana/master[0m[2014-06-29T23:48:19+00:00] INFO: git[/opt/kibana/master] checked out branch: master onto: deploy reference: 23cd70f8179d591508a11f3b5121e25b14f74ba2I, [2014-06-29T18:48:10.852213 #20968]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:48:10.853869 #20968]  INFO -- default-ubuntu-1204: 
+    - checkout ref 23cd70f8179d591508a11f3b5121e25b14f74ba2 branch master[0mI, [2014-06-29T18:48:10.855606 #20968]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:48:10.856141 #20968]  INFO -- default-ubuntu-1204: 
+  * link[/opt/kibana/current] action create[0m[2014-06-29T23:48:19+00:00] INFO: Processing link[/opt/kibana/current] action create (/tmp/kitchen/cookbooks/kibana/providers/install.rb line 50)I, [2014-06-29T18:48:10.858359 #20968]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:48:19+00:00] INFO: link[/opt/kibana/current] createdI, [2014-06-29T18:48:10.863013 #20968]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:48:10.864417 #20968]  INFO -- default-ubuntu-1204: 
+    - create symlink at /opt/kibana/current to /opt/kibana/master[0mI, [2014-06-29T18:48:10.865781 #20968]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:48:10.866222 #20968]  INFO -- default-ubuntu-1204: 
+Recipe: kibana::default[0mI, [2014-06-29T18:48:10.866896 #20968]  INFO -- default-ubuntu-1204: 
+  * template[/opt/kibana/current/config.js] action create[0m[2014-06-29T23:48:19+00:00] INFO: Processing template[/opt/kibana/current/config.js] action create (kibana::default line 51)I, [2014-06-29T18:48:10.868074 #20968]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:48:19+00:00] INFO: template[/opt/kibana/current/config.js] created file /opt/kibana/current/config.jsI, [2014-06-29T18:48:10.901271 #20968]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:48:10.902263 #20968]  INFO -- default-ubuntu-1204: 
+    - create new file /opt/kibana/current/config.js[0m[2014-06-29T23:48:19+00:00] INFO: template[/opt/kibana/current/config.js] updated file contents /opt/kibana/current/config.jsI, [2014-06-29T18:48:10.917110 #20968]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:48:10.918031 #20968]  INFO -- default-ubuntu-1204: 
+    - update content in file /opt/kibana/current/config.js from none to 57fb27[0m[37mI, [2014-06-29T18:48:10.918685 #20968]  INFO -- default-ubuntu-1204: 
+        --- /opt/kibana/current/config.js	2014-06-29 23:48:19.384919232 +0000[0m[37mI, [2014-06-29T18:48:10.919724 #20968]  INFO -- default-ubuntu-1204: 
+        +++ /tmp/chef-rendered-template20140629-1391-2ho46o	2014-06-29 23:48:19.396913232 +0000[0m[37mI, [2014-06-29T18:48:10.920908 #20968]  INFO -- default-ubuntu-1204: 
+        @@ -1 +1,19 @@[0m[37mI, [2014-06-29T18:48:10.921630 #20968]  INFO -- default-ubuntu-1204: 
+        +/**[0m[37mI, [2014-06-29T18:48:10.922119 #20968]  INFO -- default-ubuntu-1204: 
+        + * These is the app's configuration, If you need to configure[0m[37mI, [2014-06-29T18:48:10.922704 #20968]  INFO -- default-ubuntu-1204: 
+        + * the default dashboard, please see dashboards/default[0mI, [2014-06-29T18:48:10.923139 #20968]  INFO -- default-ubuntu-1204: [37m
+I, [2014-06-29T18:48:10.923279 #20968]  INFO -- default-ubuntu-1204:  + */[0m[37m
+I, [2014-06-29T18:48:10.923464 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:48:10.923504 #20968]  INFO -- default-ubuntu-1204:  +define(['settings'],[0m[37m
+I, [2014-06-29T18:48:10.923539 #20968]  INFO -- default-ubuntu-1204:  +function (Settings) {[0m[37m
+I, [2014-06-29T18:48:10.923753 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:48:10.923792 #20968]  INFO -- default-ubuntu-1204:  +  "use strict";[0m[37m
+I, [2014-06-29T18:48:10.923967 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:48:10.924007 #20968]  INFO -- default-ubuntu-1204:  +[0m[37m
+I, [2014-06-29T18:48:10.924041 #20968]  INFO -- default-ubuntu-1204:  +  return new Settings({[0m[37m
+I, [2014-06-29T18:48:10.924076 #20968]  INFO -- default-ubuntu-1204:  +[0m
+I, [2014-06-29T18:48:10.924328 #20968]  INFO -- default-ubuntu-1204: [37m
+I, [2014-06-29T18:48:10.924368 #20968]  INFO -- default-ubuntu-1204:  +    elasticsearch: window.location.protocol+"//"+window.location.hostname+":"+window.location.port,[0m[37m
+I, [2014-06-29T18:48:10.924402 #20968]  INFO -- default-ubuntu-1204:  +    kibana_index: "kibana-int",[0m[37m
+I, [2014-06-29T18:48:10.924625 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:48:10.924665 #20968]  INFO -- default-ubuntu-1204:  +    default_route: "/dashboard/file/logstash.json",[0m[37m
+I, [2014-06-29T18:48:10.924945 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:48:10.925003 #20968]  INFO -- default-ubuntu-1204:  +    panel_names: ["histogram", "map", "pie", "table", "filtering", "timepicker", "text", "fields", "hits", "dashcontrol", "column", "derivequeries", "trends", "bettermap", "query", "terms"][0m[37m
+I, [2014-06-29T18:48:10.925082 #20968]  INFO -- default-ubuntu-1204:  +[0m[37m
+I, [2014-06-29T18:48:10.925118 #20968]  INFO -- default-ubuntu-1204:  +  });[0m[37m
+I, [2014-06-29T18:48:10.925348 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:48:10.925387 #20968]  INFO -- default-ubuntu-1204:  +});[0m[37m
+I, [2014-06-29T18:48:10.925421 #20968]  INFO -- default-ubuntu-1204:  +[0m
+[2014-06-29T23:48:19+00:00] INFO: template[/opt/kibana/current/config.js] owner changed to 33I, [2014-06-29T18:48:10.926200 #20968]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:48:19+00:00] INFO: template[/opt/kibana/current/config.js] mode changed to 750I, [2014-06-29T18:48:10.927401 #20968]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:48:10.927923 #20968]  INFO -- default-ubuntu-1204: 
+    - change mode from '' to '0750'[0m[32mI, [2014-06-29T18:48:10.928497 #20968]  INFO -- default-ubuntu-1204: 
+    - change owner from '' to 'www-data'[0mI, [2014-06-29T18:48:10.929663 #20968]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:48:10.930151 #20968]  INFO -- default-ubuntu-1204: 
+  * link[/opt/kibana/current/app/dashboards/default.json] action create[0m[2014-06-29T23:48:19+00:00] INFO: Processing link[/opt/kibana/current/app/dashboards/default.json] action create (kibana::default line 58)I, [2014-06-29T18:48:10.931611 #20968]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:48:10.935671 #20968]  INFO -- default-ubuntu-1204: 
+================================================================================[0mI, [2014-06-29T18:48:10.936129 #20968]  INFO -- default-ubuntu-1204: 
+[31mError executing action `create` on resource 'link[/opt/kibana/current/app/dashboards/default.json]'[0mI, [2014-06-29T18:48:10.936492 #20968]  INFO -- default-ubuntu-1204: 
+================================================================================[0mI, [2014-06-29T18:48:10.936919 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:48:10.937145 #20968]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:48:10.937476 #20968]  INFO -- default-ubuntu-1204: 
+Errno::ENOENT[0mI, [2014-06-29T18:48:10.937934 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:48:10.937969 #20968]  INFO -- default-ubuntu-1204: -------------[0m
+I, [2014-06-29T18:48:10.938183 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:48:10.938217 #20968]  INFO -- default-ubuntu-1204: No such file or directory - (logstash.json, /opt/kibana/current/app/dashboards/default.json)[0m
+I, [2014-06-29T18:48:10.938245 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:48:10.938272 #20968]  INFO -- default-ubuntu-1204: [0m
+I, [2014-06-29T18:48:10.938321 #20968]  INFO -- default-ubuntu-1204: Resource Declaration:[0m
+I, [2014-06-29T18:48:10.938613 #20968]  INFO -- default-ubuntu-1204: ---------------------[0m
+I, [2014-06-29T18:48:10.938647 #20968]  INFO -- default-ubuntu-1204: # In /tmp/kitchen/cookbooks/kibana/recipes/default.rb
+I, [2014-06-29T18:48:10.938676 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:48:10.938723 #20968]  INFO -- default-ubuntu-1204:  58: link "#{node['kibana']['install_dir']}/current/app/dashboards/default.json" do
+I, [2014-06-29T18:48:10.938755 #20968]  INFO -- default-ubuntu-1204:  59:   to 'logstash.json'
+I, [2014-06-29T18:48:10.938823 #20968]  INFO -- default-ubuntu-1204:  60:   only_if { !File.symlink?("#{node['kibana']['install_dir']}/current/app/dashboards/default.json") }
+I, [2014-06-29T18:48:10.938852 #20968]  INFO -- default-ubuntu-1204:  61: end
+I, [2014-06-29T18:48:10.938879 #20968]  INFO -- default-ubuntu-1204:  62: 
+I, [2014-06-29T18:48:10.938905 #20968]  INFO -- default-ubuntu-1204: [0m
+I, [2014-06-29T18:48:10.938931 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:48:10.938972 #20968]  INFO -- default-ubuntu-1204: [0m
+I, [2014-06-29T18:48:10.938999 #20968]  INFO -- default-ubuntu-1204: Compiled Resource:[0m
+I, [2014-06-29T18:48:10.939451 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:48:10.939486 #20968]  INFO -- default-ubuntu-1204: ------------------[0m
+I, [2014-06-29T18:48:10.939538 #20968]  INFO -- default-ubuntu-1204: # Declared in /tmp/kitchen/cookbooks/kibana/recipes/default.rb:58:in `from_file'
+I, [2014-06-29T18:48:10.939840 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:48:10.939912 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:48:10.939944 #20968]  INFO -- default-ubuntu-1204: link("/opt/kibana/current/app/dashboards/default.json") do
+I, [2014-06-29T18:48:10.939972 #20968]  INFO -- default-ubuntu-1204:   provider Chef::Provider::Link
+I, [2014-06-29T18:48:10.939999 #20968]  INFO -- default-ubuntu-1204:   action :create
+I, [2014-06-29T18:48:10.940026 #20968]  INFO -- default-ubuntu-1204:   retries 0
+I, [2014-06-29T18:48:10.940053 #20968]  INFO -- default-ubuntu-1204:   retry_delay 2
+I, [2014-06-29T18:48:10.940080 #20968]  INFO -- default-ubuntu-1204:   guard_interpreter :default
+I, [2014-06-29T18:48:10.940106 #20968]  INFO -- default-ubuntu-1204:   to "logstash.json"
+I, [2014-06-29T18:48:10.940133 #20968]  INFO -- default-ubuntu-1204:   link_type :symbolic
+I, [2014-06-29T18:48:10.940160 #20968]  INFO -- default-ubuntu-1204:   target_file "/opt/kibana/current/app/dashboards/default.json"
+I, [2014-06-29T18:48:10.940187 #20968]  INFO -- default-ubuntu-1204:   cookbook_name :kibana
+I, [2014-06-29T18:48:10.940234 #20968]  INFO -- default-ubuntu-1204:   recipe_name "default"
+I, [2014-06-29T18:48:10.940262 #20968]  INFO -- default-ubuntu-1204:   only_if { #code block }
+I, [2014-06-29T18:48:10.940289 #20968]  INFO -- default-ubuntu-1204: end
+I, [2014-06-29T18:48:10.940315 #20968]  INFO -- default-ubuntu-1204: [0m
+I, [2014-06-29T18:48:10.940341 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:48:10.940368 #20968]  INFO -- default-ubuntu-1204: [0m
+I, [2014-06-29T18:48:10.940397 #20968]  INFO -- default-ubuntu-1204: [2014-06-29T23:48:19+00:00] INFO: Running queued delayed notifications before re-raising exception
+I, [2014-06-29T18:48:10.941062 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:48:10.941318 #20968]  INFO -- default-ubuntu-1204: 
+Running handlers:[0mI, [2014-06-29T18:48:10.941582 #20968]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:48:19+00:00] ERROR: Running exception handlersI, [2014-06-29T18:48:10.941923 #20968]  INFO -- default-ubuntu-1204: 
+Running handlers completeI, [2014-06-29T18:48:10.942422 #20968]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:48:10.942715 #20968]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:48:10.944210 #20968]  INFO -- default-ubuntu-1204: [2014-06-29T23:48:19+00:00] ERROR: Exception handlers complete
+[2014-06-29T23:48:19+00:00] FATAL: Stacktrace dumped to /tmp/kitchen/cache/chef-stacktrace.outI, [2014-06-29T18:48:10.944833 #20968]  INFO -- default-ubuntu-1204: 
+Chef Client failed. 5 resources updated in 135.542377963 seconds[0mI, [2014-06-29T18:48:10.945546 #20968]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:48:19+00:00] ERROR: link[/opt/kibana/current/app/dashboards/default.json] (kibana::default line 58) had an error: Errno::ENOENT: No such file or directory - (logstash.json, /opt/kibana/current/app/dashboards/default.json)I, [2014-06-29T18:48:10.986207 #20968]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:48:19+00:00] FATAL: Chef::Exceptions::ChildConvergeError: Chef run process exited unsuccessfully (exit code 1)I, [2014-06-29T18:48:11.147178 #20968]  INFO -- default-ubuntu-1204: 
+E, [2014-06-29T18:48:11.308967 #20968] ERROR -- default-ubuntu-1204: Converge failed on instance <default-ubuntu-1204>.
+E, [2014-06-29T18:48:11.309133 #20968] ERROR -- default-ubuntu-1204: ------Exception-------
+E, [2014-06-29T18:48:11.309162 #20968] ERROR -- default-ubuntu-1204: Class: Kitchen::ActionFailed
+E, [2014-06-29T18:48:11.309187 #20968] ERROR -- default-ubuntu-1204: Message: SSH exited (1) for command: [sudo -E chef-solo --config /tmp/kitchen/solo.rb --json-attributes /tmp/kitchen/dna.json  --log_level info]
+E, [2014-06-29T18:48:11.309227 #20968] ERROR -- default-ubuntu-1204: ---Nested Exception---
+E, [2014-06-29T18:48:11.309252 #20968] ERROR -- default-ubuntu-1204: Class: Kitchen::SSHFailed
+E, [2014-06-29T18:48:11.309282 #20968] ERROR -- default-ubuntu-1204: Message: SSH exited (1) for command: [sudo -E chef-solo --config /tmp/kitchen/solo.rb --json-attributes /tmp/kitchen/dna.json  --log_level info]
+E, [2014-06-29T18:48:11.309307 #20968] ERROR -- default-ubuntu-1204: ------Backtrace-------
+E, [2014-06-29T18:48:11.309331 #20968] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/driver/ssh_base.rb:118:in `rescue in run_remote'
+E, [2014-06-29T18:48:11.309365 #20968] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/driver/ssh_base.rb:114:in `run_remote'
+E, [2014-06-29T18:48:11.309391 #20968] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/driver/ssh_base.rb:48:in `block in converge'
+E, [2014-06-29T18:48:11.309430 #20968] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/ssh.rb:47:in `initialize'
+E, [2014-06-29T18:48:11.309455 #20968] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/driver/ssh_base.rb:43:in `new'
+E, [2014-06-29T18:48:11.309479 #20968] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/driver/ssh_base.rb:43:in `converge'
+E, [2014-06-29T18:48:11.309506 #20968] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/kitchen-vagrant-0.15.0/lib/kitchen/driver/vagrant.rb:75:in `converge'
+E, [2014-06-29T18:48:11.309542 #20968] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:280:in `public_send'
+E, [2014-06-29T18:48:11.309567 #20968] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:280:in `block in perform_action'
+E, [2014-06-29T18:48:11.309591 #20968] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:315:in `call'
+E, [2014-06-29T18:48:11.309617 #20968] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:315:in `synchronize_or_call'
+E, [2014-06-29T18:48:11.309653 #20968] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:290:in `block in action'
+E, [2014-06-29T18:48:11.309677 #20968] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/2.1.0/benchmark.rb:279:in `measure'
+E, [2014-06-29T18:48:11.309701 #20968] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:289:in `action'
+E, [2014-06-29T18:48:11.309728 #20968] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:280:in `perform_action'
+E, [2014-06-29T18:48:11.309752 #20968] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:263:in `converge_action'
+E, [2014-06-29T18:48:11.309776 #20968] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:253:in `block in transition_to'
+E, [2014-06-29T18:48:11.309815 #20968] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:252:in `each'
+E, [2014-06-29T18:48:11.309840 #20968] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:252:in `transition_to'
+E, [2014-06-29T18:48:11.309870 #20968] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/instance.rb:119:in `converge'
+E, [2014-06-29T18:48:11.309895 #20968] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/command.rb:109:in `public_send'
+E, [2014-06-29T18:48:11.309920 #20968] ERROR -- default-ubuntu-1204: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.2.2.dev/lib/kitchen/command.rb:109:in `block (2 levels) in run_action'
+E, [2014-06-29T18:48:11.309946 #20968] ERROR -- default-ubuntu-1204: ----------------------
+I, [2014-06-29T18:49:48.016261 #21202]  INFO -- default-ubuntu-1204: -----> Converging <default-ubuntu-1204>...
+I, [2014-06-29T18:49:48.018572 #21202]  INFO -- default-ubuntu-1204: Preparing files for transfer
+I, [2014-06-29T18:49:48.018956 #21202]  INFO -- default-ubuntu-1204: Resolving cookbook dependencies with Berkshelf 3.1.3...
+I, [2014-06-29T18:49:48.926342 #21202]  INFO -- default-ubuntu-1204: Removing non-cookbook files before transfer
+I, [2014-06-29T18:49:49.315797 #21202]  INFO -- default-ubuntu-1204: Transferring files to <default-ubuntu-1204>
+[2014-06-29T23:50:19+00:00] INFO: Forking chef instance to converge...I, [2014-06-29T18:50:11.200582 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:19+00:00] WARN: I, [2014-06-29T18:50:11.222552 #21202]  INFO -- default-ubuntu-1204: 
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * I, [2014-06-29T18:50:11.223180 #21202]  INFO -- default-ubuntu-1204: 
+SSL validation of HTTPS requests is disabled. HTTPS connections are stillI, [2014-06-29T18:50:11.224043 #21202]  INFO -- default-ubuntu-1204: 
+encrypted, but chef is not able to detect forged replies or man in the middleI, [2014-06-29T18:50:11.224766 #21202]  INFO -- default-ubuntu-1204: 
+attacks.I, [2014-06-29T18:50:11.225490 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:11.225905 #21202]  INFO -- default-ubuntu-1204: 
+To fix this issue add an entry like this to your configuration file:I, [2014-06-29T18:50:11.230751 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:11.230980 #21202]  INFO -- default-ubuntu-1204: 
+```I, [2014-06-29T18:50:11.231292 #21202]  INFO -- default-ubuntu-1204: 
+  # Verify all HTTPS connections (recommended)I, [2014-06-29T18:50:11.233785 #21202]  INFO -- default-ubuntu-1204: 
+  ssl_verify_mode :verify_peerI, [2014-06-29T18:50:11.234262 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:11.234554 #21202]  INFO -- default-ubuntu-1204: 
+  # OR, Verify only connections to chef-serverI, [2014-06-29T18:50:11.235006 #21202]  INFO -- default-ubuntu-1204: 
+  verify_api_cert trueI, [2014-06-29T18:50:11.235455 #21202]  INFO -- default-ubuntu-1204: 
+```I, [2014-06-29T18:50:11.235919 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:11.236189 #21202]  INFO -- default-ubuntu-1204: 
+To check your SSL configuration, or troubleshoot errors, you can use theI, [2014-06-29T18:50:11.238575 #21202]  INFO -- default-ubuntu-1204: 
+`knife ssl check` command like so:I, [2014-06-29T18:50:11.239039 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:11.239403 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:11.239480 #21202]  INFO -- default-ubuntu-1204: ```
+I, [2014-06-29T18:50:11.239569 #21202]  INFO -- default-ubuntu-1204:   knife ssl check -c /tmp/kitchen/solo.rb
+I, [2014-06-29T18:50:11.239695 #21202]  INFO -- default-ubuntu-1204: ```
+I, [2014-06-29T18:50:11.239768 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:11.239838 #21202]  INFO -- default-ubuntu-1204: * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+I, [2014-06-29T18:50:11.239929 #21202]  INFO -- default-ubuntu-1204: 
+Starting Chef Client, version 11.12.8[0mI, [2014-06-29T18:50:11.349965 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:19+00:00] INFO: *** Chef 11.12.8 ***I, [2014-06-29T18:50:11.350696 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:19+00:00] INFO: Chef-client pid: 4548I, [2014-06-29T18:50:11.351227 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:25+00:00] INFO: Setting the run_list to ["recipe[kibana::default]"] from CLI optionsI, [2014-06-29T18:50:16.723093 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:25+00:00] INFO: Run List is [recipe[kibana::default]]I, [2014-06-29T18:50:16.739471 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:25+00:00] INFO: Run List expands to [kibana::default]I, [2014-06-29T18:50:16.740050 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:25+00:00] INFO: Starting Chef Run for default-ubuntu-1204I, [2014-06-29T18:50:16.740822 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:25+00:00] INFO: Running start handlersI, [2014-06-29T18:50:16.741833 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:25+00:00] INFO: Start handlers complete.I, [2014-06-29T18:50:16.742391 #21202]  INFO -- default-ubuntu-1204: 
+Compiling Cookbooks...[0mI, [2014-06-29T18:50:16.787488 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:25+00:00] INFO: WindowsPackage light-weight resource already initialized -- overriding!I, [2014-06-29T18:50:17.116461 #21202]  INFO -- default-ubuntu-1204: 
+Converging 4 resources[0mI, [2014-06-29T18:50:17.194850 #21202]  INFO -- default-ubuntu-1204: 
+Recipe: kibana::default[0mI, [2014-06-29T18:50:17.195968 #21202]  INFO -- default-ubuntu-1204: 
+  * kibana_install[kibana] action create[0m[2014-06-29T23:50:25+00:00] INFO: Processing kibana_install[kibana] action create (kibana::default line 43)I, [2014-06-29T18:50:17.196970 #21202]  INFO -- default-ubuntu-1204: 
+ (up to date)[0mI, [2014-06-29T18:50:17.206996 #21202]  INFO -- default-ubuntu-1204: 
+Recipe: <Dynamically Defined Resource>[0mI, [2014-06-29T18:50:17.207267 #21202]  INFO -- default-ubuntu-1204: 
+  * directory[/opt/kibana] action create[0m[2014-06-29T23:50:25+00:00] INFO: Processing directory[/opt/kibana] action create (/tmp/kitchen/cookbooks/kibana/providers/install.rb line 31)I, [2014-06-29T18:50:17.207642 #21202]  INFO -- default-ubuntu-1204: 
+ (up to date)[0mI, [2014-06-29T18:50:17.211903 #21202]  INFO -- default-ubuntu-1204: 
+Recipe: git::default[0mI, [2014-06-29T18:50:17.212484 #21202]  INFO -- default-ubuntu-1204: 
+  * package[git] action install[0m[2014-06-29T23:50:25+00:00] INFO: Processing package[git] action install (git::default line 24)I, [2014-06-29T18:50:17.213497 #21202]  INFO -- default-ubuntu-1204: 
+ (up to date)[0mI, [2014-06-29T18:50:17.499916 #21202]  INFO -- default-ubuntu-1204: 
+Recipe: <Dynamically Defined Resource>[0mI, [2014-06-29T18:50:17.501132 #21202]  INFO -- default-ubuntu-1204: 
+  * git[/opt/kibana/master] action sync[0m[2014-06-29T23:50:26+00:00] INFO: Processing git[/opt/kibana/master] action sync (/tmp/kitchen/cookbooks/kibana/providers/install.rb line 42)I, [2014-06-29T18:50:17.502522 #21202]  INFO -- default-ubuntu-1204: 
+ (up to date)[0mI, [2014-06-29T18:50:18.749409 #21202]  INFO -- default-ubuntu-1204: 
+  * link[/opt/kibana/current] action create[0m[2014-06-29T23:50:27+00:00] INFO: Processing link[/opt/kibana/current] action create (/tmp/kitchen/cookbooks/kibana/providers/install.rb line 50)I, [2014-06-29T18:50:18.752210 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:18.757114 #21202]  INFO -- default-ubuntu-1204: 
+    - unlink existing file at /opt/kibana/current[0m[2014-06-29T23:50:27+00:00] INFO: link[/opt/kibana/current] createdI, [2014-06-29T18:50:18.758749 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:18.823268 #21202]  INFO -- default-ubuntu-1204: 
+    - create symlink at /opt/kibana/current to /opt/kibana/master/src[0mI, [2014-06-29T18:50:18.824661 #21202]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:50:18.825137 #21202]  INFO -- default-ubuntu-1204: 
+Recipe: kibana::default[0mI, [2014-06-29T18:50:18.825918 #21202]  INFO -- default-ubuntu-1204: 
+  * template[/opt/kibana/current/config.js] action create[0m[2014-06-29T23:50:27+00:00] INFO: Processing template[/opt/kibana/current/config.js] action create (kibana::default line 51)I, [2014-06-29T18:50:18.827138 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:27+00:00] INFO: template[/opt/kibana/current/config.js] backed up to /tmp/kitchen/backup/opt/kibana/current/config.js.chef-20140629235027.363204I, [2014-06-29T18:50:18.858002 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:18.858068 #21202]  INFO -- default-ubuntu-1204: [2014-06-29T23:50:27+00:00] INFO: template[/opt/kibana/current/config.js] updated file contents /opt/kibana/current/config.js
+I, [2014-06-29T18:50:18.858294 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:18.858898 #21202]  INFO -- default-ubuntu-1204: 
+    - update content in file /opt/kibana/current/config.js from 523cdb to 57fb27[0m[37mI, [2014-06-29T18:50:18.859688 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:18.859777 #21202]  INFO -- default-ubuntu-1204:  --- /opt/kibana/current/config.js	2014-06-29 23:48:19.041091217 +0000[0m[37m
+I, [2014-06-29T18:50:18.859814 #21202]  INFO -- default-ubuntu-1204:  +++ /tmp/chef-rendered-template20140629-4548-ct8jud	2014-06-29 23:50:27.352908883 +0000[0m[37m
+I, [2014-06-29T18:50:18.859881 #21202]  INFO -- default-ubuntu-1204:  @@ -1,81 +1,19 @@[0m[37m
+I, [2014-06-29T18:50:18.859938 #21202]  INFO -- default-ubuntu-1204:  -/** @scratch /configuration/config.js/1[0m[37m
+I, [2014-06-29T18:50:18.859987 #21202]  INFO -- default-ubuntu-1204:  - *[0m[37m
+I, [2014-06-29T18:50:18.860462 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:18.860519 #21202]  INFO -- default-ubuntu-1204:  - * == Configuration[0m[37m
+I, [2014-06-29T18:50:18.860567 #21202]  INFO -- default-ubuntu-1204:  - * config.js is where you will find the core Kibana configuration. This file contains parameter that[0m[37m
+I, [2014-06-29T18:50:18.860618 #21202]  INFO -- default-ubuntu-1204:  - * must be set before kibana is run for the first time.[0m[37m
+I, [2014-06-29T18:50:18.860666 #21202]  INFO -- default-ubuntu-1204:  +/**[0m[37m
+I, [2014-06-29T18:50:18.861100 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:18.861158 #21202]  INFO -- default-ubuntu-1204:  + * These is the app's configuration, If you need to configure[0m[37m
+I, [2014-06-29T18:50:18.861206 #21202]  INFO -- default-ubuntu-1204:  + * the default dashboard, please see dashboards/default[0m[37m
+I, [2014-06-29T18:50:18.861256 #21202]  INFO -- default-ubuntu-1204:    */[0m[37m
+I, [2014-06-29T18:50:18.861303 #21202]  INFO -- default-ubuntu-1204:   define(['settings'],[0m[37m
+I, [2014-06-29T18:50:18.861349 #21202]  INFO -- default-ubuntu-1204:   function (Settings) {[0m[37m
+I, [2014-06-29T18:50:18.861433 #21202]  INFO -- default-ubuntu-1204:     "use strict";[0m[37m
+I, [2014-06-29T18:50:18.861895 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:18.862152 #21202]  INFO -- default-ubuntu-1204:   [0m[37m
+I, [2014-06-29T18:50:18.862208 #21202]  INFO -- default-ubuntu-1204:  -  /** @scratch /configuration/config.js/2[0m[37m
+I, [2014-06-29T18:50:18.862256 #21202]  INFO -- default-ubuntu-1204:  -   *[0m[37m
+I, [2014-06-29T18:50:18.862306 #21202]  INFO -- default-ubuntu-1204:  -   * === Parameters[0m[37m
+I, [2014-06-29T18:50:18.862352 #21202]  INFO -- default-ubuntu-1204:  -   */[0m[37m
+I, [2014-06-29T18:50:18.862399 #21202]  INFO -- default-ubuntu-1204:     return new Settings({[0m[37m
+I, [2014-06-29T18:50:18.862444 #21202]  INFO -- default-ubuntu-1204:   [0m[37m
+I, [2014-06-29T18:50:18.862520 #21202]  INFO -- default-ubuntu-1204:  -    /** @scratch /configuration/config.js/5[0m[37m
+I, [2014-06-29T18:50:18.862569 #21202]  INFO -- default-ubuntu-1204:  -     *[0m[37m
+I, [2014-06-29T18:50:18.862618 #21202]  INFO -- default-ubuntu-1204:  -     * ==== elasticsearch[0m[37m
+I, [2014-06-29T18:50:18.862666 #21202]  INFO -- default-ubuntu-1204:  -     *[0m[37m
+I, [2014-06-29T18:50:18.862712 #21202]  INFO -- default-ubuntu-1204:  -     * The URL to your elasticsearch server. You almost certainly don't[0m[37m
+I, [2014-06-29T18:50:18.862781 #21202]  INFO -- default-ubuntu-1204:  -     * want +http://localhost:9200+ here. Even if Kibana and Elasticsearch are on[0m[37m
+I, [2014-06-29T18:50:18.862831 #21202]  INFO -- default-ubuntu-1204:  -     * the same host. By default this will attempt to reach ES at the same host you have[0m[37m
+I, [2014-06-29T18:50:18.862878 #21202]  INFO -- default-ubuntu-1204:  -     * kibana installed on. You probably want to set it to the FQDN of your[0m[37m
+I, [2014-06-29T18:50:18.862927 #21202]  INFO -- default-ubuntu-1204:  -     * elasticsearch host[0m[37m
+I, [2014-06-29T18:50:18.862972 #21202]  INFO -- default-ubuntu-1204:  -     *[0m[37m
+I, [2014-06-29T18:50:18.863022 #21202]  INFO -- default-ubuntu-1204:  -     * Note: this can also be an object if you want to pass options to the http client. For example:[0m[37m
+I, [2014-06-29T18:50:18.863103 #21202]  INFO -- default-ubuntu-1204:  -     *[0m[37m
+I, [2014-06-29T18:50:18.864168 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:18.864228 #21202]  INFO -- default-ubuntu-1204:  -     *  +elasticsearch: {server: "http://localhost:9200", withCredentials: true}+[0m[37m
+I, [2014-06-29T18:50:18.864277 #21202]  INFO -- default-ubuntu-1204:  -     *[0m
+I, [2014-06-29T18:50:18.864604 #21202]  INFO -- default-ubuntu-1204: [37m
+I, [2014-06-29T18:50:18.864662 #21202]  INFO -- default-ubuntu-1204:  -     */[0m[37m
+I, [2014-06-29T18:50:18.864710 #21202]  INFO -- default-ubuntu-1204:  -    elasticsearch: "http://"+window.location.hostname+":9200",[0m[37m
+I, [2014-06-29T18:50:18.865057 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:18.865114 #21202]  INFO -- default-ubuntu-1204:  -[0m[37m
+I, [2014-06-29T18:50:18.865162 #21202]  INFO -- default-ubuntu-1204:  -    /** @scratch /configuration/config.js/5[0m[37m
+I, [2014-06-29T18:50:18.865450 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:18.865506 #21202]  INFO -- default-ubuntu-1204:  -     *[0m[37m
+I, [2014-06-29T18:50:18.865783 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:18.865840 #21202]  INFO -- default-ubuntu-1204:  -     * ==== default_route[0m[37m
+I, [2014-06-29T18:50:18.866138 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:18.866193 #21202]  INFO -- default-ubuntu-1204:  -     *[0m[37m
+I, [2014-06-29T18:50:18.866243 #21202]  INFO -- default-ubuntu-1204:  -     * This is the default landing page when you don't specify a dashboard to load. You can specify[0m[37m
+I, [2014-06-29T18:50:18.866291 #21202]  INFO -- default-ubuntu-1204:  -     * files, scripts or saved dashboards here. For example, if you had saved a dashboard called[0m[37m
+I, [2014-06-29T18:50:18.866340 #21202]  INFO -- default-ubuntu-1204:  -     * `WebLogs' to elasticsearch you might use:[0m[37m
+I, [2014-06-29T18:50:18.866385 #21202]  INFO -- default-ubuntu-1204:  -     *[0m[37m
+I, [2014-06-29T18:50:18.866434 #21202]  INFO -- default-ubuntu-1204:  -     * default_route: '/dashboard/elasticsearch/WebLogs',[0m[37m
+I, [2014-06-29T18:50:18.866480 #21202]  INFO -- default-ubuntu-1204:  -     */[0m[37m
+I, [2014-06-29T18:50:18.867069 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:18.867128 #21202]  INFO -- default-ubuntu-1204:  -    default_route     : '/dashboard/file/default.json',[0m[37m
+I, [2014-06-29T18:50:18.867177 #21202]  INFO -- default-ubuntu-1204:  -[0m[37m
+I, [2014-06-29T18:50:18.867226 #21202]  INFO -- default-ubuntu-1204:  -    /** @scratch /configuration/config.js/5[0m[37m
+I, [2014-06-29T18:50:18.867606 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:18.867662 #21202]  INFO -- default-ubuntu-1204:  -     *[0m[37m
+I, [2014-06-29T18:50:18.867710 #21202]  INFO -- default-ubuntu-1204:  -     * ==== kibana-int[0m[37m
+        -     *[0m[37mI, [2014-06-29T18:50:18.868149 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:18.868207 #21202]  INFO -- default-ubuntu-1204:  -     * The default ES index to use for storing Kibana specific object[0m[37m
+I, [2014-06-29T18:50:18.868450 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:18.868529 #21202]  INFO -- default-ubuntu-1204:  -     * such as stored dashboards[0m[37m
+I, [2014-06-29T18:50:18.868578 #21202]  INFO -- default-ubuntu-1204:  -     */[0m[37m
+I, [2014-06-29T18:50:18.868624 #21202]  INFO -- default-ubuntu-1204:  +    elasticsearch: window.location.protocol+"//"+window.location.hostname+":"+window.location.port,[0m[37m
+I, [2014-06-29T18:50:18.868674 #21202]  INFO -- default-ubuntu-1204:       kibana_index: "kibana-int",[0m[37m
+I, [2014-06-29T18:50:18.869114 #21202]  INFO -- default-ubuntu-1204:  +    default_route: "/dashboard/file/logstash.json",[0m[37m
+I, [2014-06-29T18:50:18.869172 #21202]  INFO -- default-ubuntu-1204:  +    panel_names: ["histogram", "map", "pie", "table", "filtering", "timepicker", "text", "fields", "hits", "dashcontrol", "column", "derivequeries", "trends", "bettermap", "query", "terms"][0m[37m
+I, [2014-06-29T18:50:18.869222 #21202]  INFO -- default-ubuntu-1204:   [0m[37m
+I, [2014-06-29T18:50:18.869271 #21202]  INFO -- default-ubuntu-1204:  -    /** @scratch /configuration/config.js/5[0m[37m
+I, [2014-06-29T18:50:18.869317 #21202]  INFO -- default-ubuntu-1204:  -     *[0m[37m
+I, [2014-06-29T18:50:18.869366 #21202]  INFO -- default-ubuntu-1204:  -     * ==== panel_name[0m[37m
+I, [2014-06-29T18:50:18.869850 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:18.869908 #21202]  INFO -- default-ubuntu-1204:  -     *[0m[37m
+I, [2014-06-29T18:50:18.869958 #21202]  INFO -- default-ubuntu-1204:  -     * An array of panel modules available. Panels will only be loaded when they are defined in the[0m[37m
+I, [2014-06-29T18:50:18.870033 #21202]  INFO -- default-ubuntu-1204:  -     * dashboard, but this list is used in the "add panel" interface.[0m[37m
+I, [2014-06-29T18:50:18.870081 #21202]  INFO -- default-ubuntu-1204:  -     */[0m[37m
+I, [2014-06-29T18:50:18.870129 #21202]  INFO -- default-ubuntu-1204:  -    panel_names: [[0m[37m
+I, [2014-06-29T18:50:18.870177 #21202]  INFO -- default-ubuntu-1204:  -      'histogram',[0m[37m
+I, [2014-06-29T18:50:18.870225 #21202]  INFO -- default-ubuntu-1204:  -      'map',[0m
+[37mI, [2014-06-29T18:50:18.870929 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:18.870986 #21202]  INFO -- default-ubuntu-1204:  -      'goal',[0m[37m
+I, [2014-06-29T18:50:18.871036 #21202]  INFO -- default-ubuntu-1204:  -      'table',[0m[37m
+I, [2014-06-29T18:50:18.871081 #21202]  INFO -- default-ubuntu-1204:  -      'filtering',[0m[37m
+I, [2014-06-29T18:50:18.871475 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:18.871534 #21202]  INFO -- default-ubuntu-1204:  -      'timepicker',[0m[37m
+I, [2014-06-29T18:50:18.871582 #21202]  INFO -- default-ubuntu-1204:  -      'text',[0m[37m
+I, [2014-06-29T18:50:18.871627 #21202]  INFO -- default-ubuntu-1204:  -      'hits',[0m
+I, [2014-06-29T18:50:18.871970 #21202]  INFO -- default-ubuntu-1204: [37m
+I, [2014-06-29T18:50:18.872025 #21202]  INFO -- default-ubuntu-1204:  -      'column',[0m[37m
+I, [2014-06-29T18:50:18.872061 #21202]  INFO -- default-ubuntu-1204:  -      'trends',[0m[37m
+I, [2014-06-29T18:50:18.872095 #21202]  INFO -- default-ubuntu-1204:  -      'bettermap',[0m
+[37mI, [2014-06-29T18:50:18.872416 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:18.872573 #21202]  INFO -- default-ubuntu-1204:  -      'query',[0m[37m
+I, [2014-06-29T18:50:18.872612 #21202]  INFO -- default-ubuntu-1204:  -      'terms',[0m[37m
+I, [2014-06-29T18:50:18.872645 #21202]  INFO -- default-ubuntu-1204:  -      'stats',[0m
+I, [2014-06-29T18:50:18.872885 #21202]  INFO -- default-ubuntu-1204: [37m
+I, [2014-06-29T18:50:18.872925 #21202]  INFO -- default-ubuntu-1204:  -      'sparklines'[0m[37m
+I, [2014-06-29T18:50:18.872962 #21202]  INFO -- default-ubuntu-1204:  -    ][0m[37m
+I, [2014-06-29T18:50:18.873172 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:18.873212 #21202]  INFO -- default-ubuntu-1204:     });[0m[37m
+I, [2014-06-29T18:50:18.873276 #21202]  INFO -- default-ubuntu-1204:   });[0m[37m
+I, [2014-06-29T18:50:18.873312 #21202]  INFO -- default-ubuntu-1204:  +[0m
+[2014-06-29T23:50:27+00:00] INFO: template[/opt/kibana/current/config.js] mode changed to 750I, [2014-06-29T18:50:18.873667 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:18.873902 #21202]  INFO -- default-ubuntu-1204: 
+    - change mode from '0644' to '0750'[0mI, [2014-06-29T18:50:18.874157 #21202]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:50:18.874428 #21202]  INFO -- default-ubuntu-1204: 
+  * link[/opt/kibana/current/app/dashboards/default.json] action create[0m[2014-06-29T23:50:27+00:00] INFO: Processing link[/opt/kibana/current/app/dashboards/default.json] action create (kibana::default line 58)I, [2014-06-29T18:50:18.874861 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:18.875097 #21202]  INFO -- default-ubuntu-1204: 
+    - unlink existing file at /opt/kibana/current/app/dashboards/default.json[0m[2014-06-29T23:50:27+00:00] INFO: link[/opt/kibana/current/app/dashboards/default.json] createdI, [2014-06-29T18:50:18.875456 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:18.875694 #21202]  INFO -- default-ubuntu-1204: 
+    - create symlink at /opt/kibana/current/app/dashboards/default.json to logstash.json[0mI, [2014-06-29T18:50:18.875915 #21202]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:50:18.876148 #21202]  INFO -- default-ubuntu-1204: 
+  * kibana_web[kibana] action create[0m[2014-06-29T23:50:27+00:00] INFO: Processing kibana_web[kibana] action create (kibana::default line 64)I, [2014-06-29T18:50:18.876464 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:27+00:00] INFO: ohai plugins will be at: /etc/chef/ohai_pluginsI, [2014-06-29T18:50:18.910494 #21202]  INFO -- default-ubuntu-1204: 
+Recipe: ohai::default[0mI, [2014-06-29T18:50:18.911426 #21202]  INFO -- default-ubuntu-1204: 
+  * remote_directory[/etc/chef/ohai_plugins for cookbook ohai] action create[0m[2014-06-29T23:50:27+00:00] INFO: Processing remote_directory[/etc/chef/ohai_plugins for cookbook ohai] action create (ohai::default line 33)I, [2014-06-29T18:50:18.912090 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:27+00:00] INFO: remote_directory[/etc/chef/ohai_plugins for cookbook ohai] created directory /etc/chef/ohai_pluginsI, [2014-06-29T18:50:18.915938 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:18.916450 #21202]  INFO -- default-ubuntu-1204: 
+    - create new directory /etc/chef/ohai_plugins[0m[2014-06-29T23:50:27+00:00] INFO: remote_directory[/etc/chef/ohai_plugins for cookbook ohai] mode changed to 755I, [2014-06-29T18:50:18.917406 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:18.917993 #21202]  INFO -- default-ubuntu-1204: 
+    - change mode from '' to '0755'[0mRecipe: <Dynamically Defined Resource>[0mI, [2014-06-29T18:50:18.920922 #21202]  INFO -- default-ubuntu-1204: 
+  * cookbook_file[/etc/chef/ohai_plugins/README] action create[0m[2014-06-29T23:50:27+00:00] INFO: Processing cookbook_file[/etc/chef/ohai_plugins/README] action create (dynamically defined)I, [2014-06-29T18:50:18.921555 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:27+00:00] INFO: cookbook_file[/etc/chef/ohai_plugins/README] created file /etc/chef/ohai_plugins/READMEI, [2014-06-29T18:50:18.923133 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:18.923782 #21202]  INFO -- default-ubuntu-1204: 
+    - create new file /etc/chef/ohai_plugins/README[0m[2014-06-29T23:50:27+00:00] INFO: cookbook_file[/etc/chef/ohai_plugins/README] updated file contents /etc/chef/ohai_plugins/READMEI, [2014-06-29T18:50:18.926722 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:18.927434 #21202]  INFO -- default-ubuntu-1204: 
+    - update content in file /etc/chef/ohai_plugins/README from none to 775fa7[0m[37mI, [2014-06-29T18:50:18.928086 #21202]  INFO -- default-ubuntu-1204: 
+        --- /etc/chef/ohai_plugins/README	2014-06-29 23:50:27.428870886 +0000[0m[37mI, [2014-06-29T18:50:18.929062 #21202]  INFO -- default-ubuntu-1204: 
+        +++ /tmp/.README20140629-4548-o8l6sv	2014-06-29 23:50:27.428870886 +0000[0m[37mI, [2014-06-29T18:50:18.930001 #21202]  INFO -- default-ubuntu-1204: 
+        @@ -1 +1,2 @@[0m[37mI, [2014-06-29T18:50:18.930575 #21202]  INFO -- default-ubuntu-1204: 
+        +This directory contains custom plugins for Ohai.[0m[2014-06-29T23:50:27+00:00] INFO: cookbook_file[/etc/chef/ohai_plugins/README] mode changed to 644I, [2014-06-29T18:50:18.931180 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:18.931601 #21202]  INFO -- default-ubuntu-1204: 
+    - change mode from '' to '0644'[0mI, [2014-06-29T18:50:18.932265 #21202]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:50:18.932860 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:18.933129 #21202]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:50:18.933475 #21202]  INFO -- default-ubuntu-1204: 
+Recipe: ohai::default[0mI, [2014-06-29T18:50:18.933885 #21202]  INFO -- default-ubuntu-1204: 
+  * ohai[custom_plugins] action reload[0m[2014-06-29T23:50:27+00:00] INFO: Processing ohai[custom_plugins] action reload (ohai::default line 47)I, [2014-06-29T18:50:18.934552 #21202]  INFO -- default-ubuntu-1204: 
+/opt/chef/embedded/lib/ruby/gems/1.9.1/gems/ohai-7.0.4/lib/ohai/plugins/linux/network.rb:49: warning: already initialized constant IPROUTE_INT_REGEXI, [2014-06-29T18:50:20.911063 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:36+00:00] INFO: ohai[custom_plugins] reloadedI, [2014-06-29T18:50:27.562519 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:27.565895 #21202]  INFO -- default-ubuntu-1204: 
+    - re-run ohai and merge results into node attributes[0mI, [2014-06-29T18:50:27.567138 #21202]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:50:27.567573 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:36+00:00] WARN: Cloning resource attributes for service[nginx] from prior resource (CHEF-3694)I, [2014-06-29T18:50:27.673975 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:36+00:00] WARN: Previous service[nginx]: /tmp/kitchen/cookbooks/nginx/recipes/package.rb:46:in `from_file'I, [2014-06-29T18:50:27.674309 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:36+00:00] WARN: Current  service[nginx]: /tmp/kitchen/cookbooks/nginx/recipes/default.rb:24:in `from_file'I, [2014-06-29T18:50:27.674853 #21202]  INFO -- default-ubuntu-1204: 
+ (up to date)[0mI, [2014-06-29T18:50:27.676251 #21202]  INFO -- default-ubuntu-1204: 
+Recipe: nginx::ohai_plugin[0mI, [2014-06-29T18:50:27.676832 #21202]  INFO -- default-ubuntu-1204: 
+  * ohai[reload_nginx] action nothing[0m[2014-06-29T23:50:36+00:00] INFO: Processing ohai[reload_nginx] action nothing (nginx::ohai_plugin line 22)I, [2014-06-29T18:50:27.677673 #21202]  INFO -- default-ubuntu-1204: 
+ (skipped due to action :nothing)[0mI, [2014-06-29T18:50:27.678036 #21202]  INFO -- default-ubuntu-1204: 
+  * template[/etc/chef/ohai_plugins/nginx.rb] action create[0m[2014-06-29T23:50:36+00:00] INFO: Processing template[/etc/chef/ohai_plugins/nginx.rb] action create (nginx::ohai_plugin line 27)I, [2014-06-29T18:50:27.679394 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:36+00:00] INFO: template[/etc/chef/ohai_plugins/nginx.rb] created file /etc/chef/ohai_plugins/nginx.rbI, [2014-06-29T18:50:27.688147 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:27.688622 #21202]  INFO -- default-ubuntu-1204: 
+    - create new file /etc/chef/ohai_plugins/nginx.rb[0m[2014-06-29T23:50:36+00:00] INFO: template[/etc/chef/ohai_plugins/nginx.rb] updated file contents /etc/chef/ohai_plugins/nginx.rbI, [2014-06-29T18:50:27.693263 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:27.693965 #21202]  INFO -- default-ubuntu-1204: 
+    - update content in file /etc/chef/ohai_plugins/nginx.rb from none to 9f7e82[0m[37mI, [2014-06-29T18:50:27.695024 #21202]  INFO -- default-ubuntu-1204: 
+        --- /etc/chef/ohai_plugins/nginx.rb	2014-06-29 23:50:36.192487272 +0000[0m[37mI, [2014-06-29T18:50:27.696333 #21202]  INFO -- default-ubuntu-1204: 
+        +++ /tmp/chef-rendered-template20140629-4548-11gjgbj	2014-06-29 23:50:36.196485273 +0000[0m[37mI, [2014-06-29T18:50:27.697239 #21202]  INFO -- default-ubuntu-1204: 
+        @@ -1 +1,67 @@[0m[37mI, [2014-06-29T18:50:27.697750 #21202]  INFO -- default-ubuntu-1204: 
+        +#[0m[37mI, [2014-06-29T18:50:27.698075 #21202]  INFO -- default-ubuntu-1204: 
+        +# Author:: Jamie Winsor (<jamie@vialstudios.com>)[0m[37mI, [2014-06-29T18:50:27.698413 #21202]  INFO -- default-ubuntu-1204: 
+        +#[0m[37mI, [2014-06-29T18:50:27.698751 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:27.698795 #21202]  INFO -- default-ubuntu-1204:  +# Copyright 2012, Riot Games[0m[37m
+I, [2014-06-29T18:50:27.698829 #21202]  INFO -- default-ubuntu-1204:  +#[0m[37m
+I, [2014-06-29T18:50:27.699029 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:27.699080 #21202]  INFO -- default-ubuntu-1204:  +# Licensed under the Apache License, Version 2.0 (the "License");[0m[37m
+I, [2014-06-29T18:50:27.699115 #21202]  INFO -- default-ubuntu-1204:  +# you may not use this file except in compliance with the License.[0m[37m
+I, [2014-06-29T18:50:27.699150 #21202]  INFO -- default-ubuntu-1204:  +# You may obtain a copy of the License at[0m[37m
+I, [2014-06-29T18:50:27.699184 #21202]  INFO -- default-ubuntu-1204:  +#[0m[37m
+I, [2014-06-29T18:50:27.699216 #21202]  INFO -- default-ubuntu-1204:  +#     http://www.apache.org/licenses/LICENSE-2.0[0m[37m
+I, [2014-06-29T18:50:27.699266 #21202]  INFO -- default-ubuntu-1204:  +#[0m[37m
+I, [2014-06-29T18:50:27.699300 #21202]  INFO -- default-ubuntu-1204:  +# Unless required by applicable law or agreed to in writing, software[0m[37m
+I, [2014-06-29T18:50:27.699335 #21202]  INFO -- default-ubuntu-1204:  +# distributed under the License is distributed on an "AS IS" BASIS,[0m[37m
+I, [2014-06-29T18:50:27.699368 #21202]  INFO -- default-ubuntu-1204:  +# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.[0m[37m
+I, [2014-06-29T18:50:27.699817 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:27.699888 #21202]  INFO -- default-ubuntu-1204:  +# See the License for the specific language governing permissions and[0m[37m
+I, [2014-06-29T18:50:27.699922 #21202]  INFO -- default-ubuntu-1204:  +# limitations under the License.[0m[37m
+I, [2014-06-29T18:50:27.699955 #21202]  INFO -- default-ubuntu-1204:  +#[0m[37m
+I, [2014-06-29T18:50:27.699987 #21202]  INFO -- default-ubuntu-1204:  +[0m[37m
+I, [2014-06-29T18:50:27.700020 #21202]  INFO -- default-ubuntu-1204:  +provides "nginx"[0m[37m
+I, [2014-06-29T18:50:27.700053 #21202]  INFO -- default-ubuntu-1204:  +provides "nginx/version"[0m[37m
+I, [2014-06-29T18:50:27.700085 #21202]  INFO -- default-ubuntu-1204:  +provides "nginx/configure_arguments"[0m[37m
+I, [2014-06-29T18:50:27.700117 #21202]  INFO -- default-ubuntu-1204:  +provides "nginx/prefix"[0m[37m
+I, [2014-06-29T18:50:27.700173 #21202]  INFO -- default-ubuntu-1204:  +provides "nginx/conf_path"[0m[37m
+I, [2014-06-29T18:50:27.700211 #21202]  INFO -- default-ubuntu-1204:  +[0m[37m
+I, [2014-06-29T18:50:27.700683 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:27.700724 #21202]  INFO -- default-ubuntu-1204:  +def parse_flags(flags)[0m[37m
+I, [2014-06-29T18:50:27.700758 #21202]  INFO -- default-ubuntu-1204:  +  prefix = nil[0m[37m
+I, [2014-06-29T18:50:27.700790 #21202]  INFO -- default-ubuntu-1204:  +  conf_path = nil[0m[37m
+I, [2014-06-29T18:50:27.700822 #21202]  INFO -- default-ubuntu-1204:  +[0m[37m
+I, [2014-06-29T18:50:27.700853 #21202]  INFO -- default-ubuntu-1204:  +  flags.each do |flag|[0m[37m
+I, [2014-06-29T18:50:27.700885 #21202]  INFO -- default-ubuntu-1204:  +    case flag[0m[37m
+I, [2014-06-29T18:50:27.700935 #21202]  INFO -- default-ubuntu-1204:  +    when /^--prefix=(.+)$/[0m[37m
+I, [2014-06-29T18:50:27.700967 #21202]  INFO -- default-ubuntu-1204:  +      prefix = $1[0m[37m
+I, [2014-06-29T18:50:27.701371 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:27.701410 #21202]  INFO -- default-ubuntu-1204:  +    when /^--conf-path=(.+)$/[0m[37m
+I, [2014-06-29T18:50:27.701443 #21202]  INFO -- default-ubuntu-1204:  +      conf_path = $1[0m[37m
+I, [2014-06-29T18:50:27.701476 #21202]  INFO -- default-ubuntu-1204:  +    end[0m[37m
+I, [2014-06-29T18:50:27.701507 #21202]  INFO -- default-ubuntu-1204:  +  end[0m[37m
+I, [2014-06-29T18:50:27.701559 #21202]  INFO -- default-ubuntu-1204:  +[0m[37m
+I, [2014-06-29T18:50:27.701591 #21202]  INFO -- default-ubuntu-1204:  +  [ prefix, conf_path ][0m[37m
+I, [2014-06-29T18:50:27.701623 #21202]  INFO -- default-ubuntu-1204:  +end[0m[37m
+I, [2014-06-29T18:50:27.701654 #21202]  INFO -- default-ubuntu-1204:  +[0m[37m
+I, [2014-06-29T18:50:27.701686 #21202]  INFO -- default-ubuntu-1204:  +nginx Mash.new unless nginx[0m[37m
+I, [2014-06-29T18:50:27.702105 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:27.702144 #21202]  INFO -- default-ubuntu-1204:  +nginx[:version]             = nil unless nginx[:version][0m[37m
+I, [2014-06-29T18:50:27.702178 #21202]  INFO -- default-ubuntu-1204:  +nginx[:configure_arguments] = Array.new unless nginx[:configure_arguments][0m[37m
+I, [2014-06-29T18:50:27.702213 #21202]  INFO -- default-ubuntu-1204:  +nginx[:prefix]              = nil unless nginx[:prefix][0m[37m
+I, [2014-06-29T18:50:27.702246 #21202]  INFO -- default-ubuntu-1204:  +nginx[:conf_path]           = nil unless nginx[:conf_path][0m[37m
+I, [2014-06-29T18:50:27.702299 #21202]  INFO -- default-ubuntu-1204:  +[0m[37m
+I, [2014-06-29T18:50:27.702331 #21202]  INFO -- default-ubuntu-1204:  +status, stdout, stderr = run_command(:no_status_check => true, :command => "/usr/sbin/nginx -V")[0m[37m
+I, [2014-06-29T18:50:27.702363 #21202]  INFO -- default-ubuntu-1204:  +[0m[37m
+I, [2014-06-29T18:50:27.703020 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:27.703067 #21202]  INFO -- default-ubuntu-1204:  +if status == 0[0m[37m
+I, [2014-06-29T18:50:27.703104 #21202]  INFO -- default-ubuntu-1204:  +  stderr.split("\n").each do |line|[0m[37m
+I, [2014-06-29T18:50:27.703140 #21202]  INFO -- default-ubuntu-1204:  +    case line[0m[37m
+I, [2014-06-29T18:50:27.703197 #21202]  INFO -- default-ubuntu-1204:  +    when /^configure arguments:(.+)/[0m[37m
+I, [2014-06-29T18:50:27.703237 #21202]  INFO -- default-ubuntu-1204:  +      # This could be better: I'm splitting on configure arguments which removes them and also[0m[37m
+I, [2014-06-29T18:50:27.703274 #21202]  INFO -- default-ubuntu-1204:  +      # adds a blank string at index 0 of the array. This is why we drop index 0 and map to[0m[37m
+I, [2014-06-29T18:50:27.703311 #21202]  INFO -- default-ubuntu-1204:  +      # add the '--' prefix back to the configure argument.[0m[37m
+I, [2014-06-29T18:50:27.703349 #21202]  INFO -- default-ubuntu-1204:  +      nginx[:configure_arguments] = $1.split(/\s--/).drop(1).map { |ca| "--#{ca}" }[0m[37m
+I, [2014-06-29T18:50:27.703383 #21202]  INFO -- default-ubuntu-1204:  +[0m[37m
+I, [2014-06-29T18:50:27.703418 #21202]  INFO -- default-ubuntu-1204:  +      prefix, conf_path = parse_flags(nginx[:configure_arguments])[0m[37m
+I, [2014-06-29T18:50:27.703454 #21202]  INFO -- default-ubuntu-1204:  +[0m[37m
+I, [2014-06-29T18:50:27.703518 #21202]  INFO -- default-ubuntu-1204:  +      nginx[:prefix] = prefix[0m[37m
+I, [2014-06-29T18:50:27.703556 #21202]  INFO -- default-ubuntu-1204:  +      nginx[:conf_path] = conf_path[0m[37m
+I, [2014-06-29T18:50:27.703592 #21202]  INFO -- default-ubuntu-1204:  +    when /^nginx version: nginx\/(\d+\.\d+\.\d+)/[0m[37m
+I, [2014-06-29T18:50:27.703627 #21202]  INFO -- default-ubuntu-1204:  +      nginx[:version] = $1[0m
+I, [2014-06-29T18:50:27.704550 #21202]  INFO -- default-ubuntu-1204: [37m
+I, [2014-06-29T18:50:27.704613 #21202]  INFO -- default-ubuntu-1204:  +    end[0m[37m
+I, [2014-06-29T18:50:27.704666 #21202]  INFO -- default-ubuntu-1204:  +  end[0m[37m
+I, [2014-06-29T18:50:27.704752 #21202]  INFO -- default-ubuntu-1204:  +end[0m
+[2014-06-29T23:50:36+00:00] INFO: template[/etc/chef/ohai_plugins/nginx.rb] owner changed to 0I, [2014-06-29T18:50:27.705313 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:36+00:00] INFO: template[/etc/chef/ohai_plugins/nginx.rb] group changed to 0I, [2014-06-29T18:50:27.705722 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:36+00:00] INFO: template[/etc/chef/ohai_plugins/nginx.rb] mode changed to 755I, [2014-06-29T18:50:27.706949 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:27.707622 #21202]  INFO -- default-ubuntu-1204: 
+    - change mode from '' to '0755'[0m[32mI, [2014-06-29T18:50:27.708261 #21202]  INFO -- default-ubuntu-1204: 
+    - change owner from '' to 'root'[0m[32mI, [2014-06-29T18:50:27.708657 #21202]  INFO -- default-ubuntu-1204: 
+    - change group from '' to 'root'[0mI, [2014-06-29T18:50:27.708934 #21202]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:50:27.709154 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:36+00:00] INFO: template[/etc/chef/ohai_plugins/nginx.rb] sending reload action to ohai[reload_nginx] (immediate)I, [2014-06-29T18:50:27.709411 #21202]  INFO -- default-ubuntu-1204: 
+  * ohai[reload_nginx] action reload[0m[2014-06-29T23:50:36+00:00] INFO: Processing ohai[reload_nginx] action reload (nginx::ohai_plugin line 22)I, [2014-06-29T18:50:27.709731 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:36+00:00] WARN: [DEPRECATION] Plugin at /etc/chef/ohai_plugins/nginx.rb is a version 6 plugin. Version 6 plugins will not be supported in future releases of Ohai. Please upgrade your plugin to version 7 plugin syntax. For more information visit here: docs.opscode.com/ohai_custom.htmlI, [2014-06-29T18:50:27.711939 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:36+00:00] INFO: ohai[reload_nginx] reloadedI, [2014-06-29T18:50:27.836094 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:27.837157 #21202]  INFO -- default-ubuntu-1204: 
+    - re-run ohai and merge results into node attributes[0mI, [2014-06-29T18:50:27.837815 #21202]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:50:27.838218 #21202]  INFO -- default-ubuntu-1204: 
+Recipe: ohai::default[0mI, [2014-06-29T18:50:27.839286 #21202]  INFO -- default-ubuntu-1204: 
+  * remote_directory[/etc/chef/ohai_plugins for cookbook ohai] action nothing[0m[2014-06-29T23:50:36+00:00] INFO: Processing remote_directory[/etc/chef/ohai_plugins for cookbook ohai] action nothing (ohai::default line 33)I, [2014-06-29T18:50:27.840370 #21202]  INFO -- default-ubuntu-1204: 
+ (skipped due to action :nothing)[0mI, [2014-06-29T18:50:27.840867 #21202]  INFO -- default-ubuntu-1204: 
+  * ohai[custom_plugins] action nothing[0m[2014-06-29T23:50:36+00:00] INFO: Processing ohai[custom_plugins] action nothing (ohai::default line 47)I, [2014-06-29T18:50:27.841708 #21202]  INFO -- default-ubuntu-1204: 
+ (skipped due to action :nothing)[0mI, [2014-06-29T18:50:27.842077 #21202]  INFO -- default-ubuntu-1204: 
+Recipe: nginx::package[0mI, [2014-06-29T18:50:27.842539 #21202]  INFO -- default-ubuntu-1204: 
+  * package[nginx] action install[0m[2014-06-29T23:50:36+00:00] INFO: Processing package[nginx] action install (nginx::package line 40)I, [2014-06-29T18:50:27.844397 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:45.028432 #21202]  INFO -- default-ubuntu-1204: 
+    - install version 1.1.19-1ubuntu0.6 of package nginx[0mI, [2014-06-29T18:50:45.029893 #21202]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:50:45.030528 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:53+00:00] INFO: package[nginx] sending reload action to ohai[reload_nginx] (immediate)I, [2014-06-29T18:50:45.031997 #21202]  INFO -- default-ubuntu-1204: 
+Recipe: nginx::ohai_plugin[0mI, [2014-06-29T18:50:45.032743 #21202]  INFO -- default-ubuntu-1204: 
+  * ohai[reload_nginx] action reload[0m[2014-06-29T23:50:53+00:00] INFO: Processing ohai[reload_nginx] action reload (nginx::ohai_plugin line 22)I, [2014-06-29T18:50:45.034274 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:53+00:00] WARN: [DEPRECATION] Plugin at /etc/chef/ohai_plugins/nginx.rb is a version 6 plugin. Version 6 plugins will not be supported in future releases of Ohai. Please upgrade your plugin to version 7 plugin syntax. For more information visit here: docs.opscode.com/ohai_custom.htmlI, [2014-06-29T18:50:45.045195 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:53+00:00] INFO: ohai[reload_nginx] reloadedI, [2014-06-29T18:50:45.219394 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:45.221271 #21202]  INFO -- default-ubuntu-1204: 
+    - re-run ohai and merge results into node attributes[0mI, [2014-06-29T18:50:45.221968 #21202]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:50:45.222527 #21202]  INFO -- default-ubuntu-1204: 
+Recipe: nginx::package[0mI, [2014-06-29T18:50:45.223426 #21202]  INFO -- default-ubuntu-1204: 
+  * service[nginx] action enable[0m[2014-06-29T23:50:53+00:00] INFO: Processing service[nginx] action enable (nginx::package line 46)I, [2014-06-29T18:50:45.224757 #21202]  INFO -- default-ubuntu-1204: 
+ (up to date)[0mI, [2014-06-29T18:50:45.502239 #21202]  INFO -- default-ubuntu-1204: 
+Recipe: nginx::commons_dir[0mI, [2014-06-29T18:50:45.502894 #21202]  INFO -- default-ubuntu-1204: 
+  * directory[/etc/nginx] action create[0m[2014-06-29T23:50:54+00:00] INFO: Processing directory[/etc/nginx] action create (nginx::commons_dir line 22)I, [2014-06-29T18:50:45.504402 #21202]  INFO -- default-ubuntu-1204: 
+ (up to date)[0mI, [2014-06-29T18:50:45.509009 #21202]  INFO -- default-ubuntu-1204: 
+  * directory[/var/log/nginx] action create[0m[2014-06-29T23:50:54+00:00] INFO: Processing directory[/var/log/nginx] action create (nginx::commons_dir line 29)I, [2014-06-29T18:50:45.509994 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:54+00:00] INFO: directory[/var/log/nginx] owner changed to 33I, [2014-06-29T18:50:45.513444 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:45.514212 #21202]  INFO -- default-ubuntu-1204: 
+    - change owner from 'root' to 'www-data'[0mI, [2014-06-29T18:50:45.515844 #21202]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:50:45.517621 #21202]  INFO -- default-ubuntu-1204: 
+  * directory[/var/run] action create[0m[2014-06-29T23:50:54+00:00] INFO: Processing directory[/var/run] action create (nginx::commons_dir line 36)I, [2014-06-29T18:50:45.519838 #21202]  INFO -- default-ubuntu-1204: 
+ (up to date)[0mI, [2014-06-29T18:50:45.520389 #21202]  INFO -- default-ubuntu-1204: 
+  * directory[/etc/nginx/sites-available] action create[0m[2014-06-29T23:50:54+00:00] INFO: Processing directory[/etc/nginx/sites-available] action create (nginx::commons_dir line 44)I, [2014-06-29T18:50:45.521010 #21202]  INFO -- default-ubuntu-1204: 
+ (up to date)[0mI, [2014-06-29T18:50:45.521835 #21202]  INFO -- default-ubuntu-1204: 
+  * directory[/etc/nginx/sites-enabled] action create[0m[2014-06-29T23:50:54+00:00] INFO: Processing directory[/etc/nginx/sites-enabled] action create (nginx::commons_dir line 44)I, [2014-06-29T18:50:45.522738 #21202]  INFO -- default-ubuntu-1204: 
+ (up to date)[0mI, [2014-06-29T18:50:45.524808 #21202]  INFO -- default-ubuntu-1204: 
+  * directory[/etc/nginx/conf.d] action create[0m[2014-06-29T23:50:54+00:00] INFO: Processing directory[/etc/nginx/conf.d] action create (nginx::commons_dir line 44)I, [2014-06-29T18:50:45.525748 #21202]  INFO -- default-ubuntu-1204: 
+ (up to date)[0mI, [2014-06-29T18:50:45.527714 #21202]  INFO -- default-ubuntu-1204: 
+Recipe: nginx::commons_script[0mI, [2014-06-29T18:50:45.528628 #21202]  INFO -- default-ubuntu-1204: 
+  * template[/usr/sbin/nxensite] action create[0m[2014-06-29T23:50:54+00:00] INFO: Processing template[/usr/sbin/nxensite] action create (nginx::commons_script line 23)I, [2014-06-29T18:50:45.529296 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:54+00:00] INFO: template[/usr/sbin/nxensite] created file /usr/sbin/nxensiteI, [2014-06-29T18:50:45.532352 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:45.536156 #21202]  INFO -- default-ubuntu-1204: 
+    - create new file /usr/sbin/nxensite[0m[2014-06-29T23:50:54+00:00] INFO: template[/usr/sbin/nxensite] updated file contents /usr/sbin/nxensiteI, [2014-06-29T18:50:45.544776 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:45.545412 #21202]  INFO -- default-ubuntu-1204: 
+    - update content in file /usr/sbin/nxensite from none to fa46fb[0m[37mI, [2014-06-29T18:50:45.546078 #21202]  INFO -- default-ubuntu-1204: 
+        --- /usr/sbin/nxensite	2014-06-29 23:50:54.039560061 +0000[0m[37mI, [2014-06-29T18:50:45.547245 #21202]  INFO -- default-ubuntu-1204: 
+        +++ /tmp/chef-rendered-template20140629-4548-1h8k7um	2014-06-29 23:50:54.043558061 +0000[0m[37mI, [2014-06-29T18:50:45.548178 #21202]  INFO -- default-ubuntu-1204: 
+        @@ -1 +1,39 @@[0m[37mI, [2014-06-29T18:50:45.548769 #21202]  INFO -- default-ubuntu-1204: 
+        +#!/bin/sh -e[0m[37mI, [2014-06-29T18:50:45.549359 #21202]  INFO -- default-ubuntu-1204: 
+        +[0m[37mI, [2014-06-29T18:50:45.549948 #21202]  INFO -- default-ubuntu-1204: 
+        +SYSCONFDIR='/etc/nginx'[0m[37mI, [2014-06-29T18:50:45.550521 #21202]  INFO -- default-ubuntu-1204: 
+        +[0m[37mI, [2014-06-29T18:50:45.551030 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.551092 #21202]  INFO -- default-ubuntu-1204:  +if [ -z $1 ]; then[0m[37m
+I, [2014-06-29T18:50:45.551144 #21202]  INFO -- default-ubuntu-1204:  +        echo "Which site would you like to enable?"[0m[37m
+I, [2014-06-29T18:50:45.551214 #21202]  INFO -- default-ubuntu-1204:  +        echo -n "Your choices are: "[0m[37m
+I, [2014-06-29T18:50:45.551263 #21202]  INFO -- default-ubuntu-1204:  +        ls $SYSCONFDIR/sites-available/* | \[0m[37m
+I, [2014-06-29T18:50:45.551707 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.551765 #21202]  INFO -- default-ubuntu-1204:  +        sed -e "s,$SYSCONFDIR/sites-available/,,g" | xargs echo[0m[37m
+I, [2014-06-29T18:50:45.551818 #21202]  INFO -- default-ubuntu-1204:  +        echo -n "Site name? "[0m[37m
+I, [2014-06-29T18:50:45.551893 #21202]  INFO -- default-ubuntu-1204:  +        read SITENAME[0m[37m
+I, [2014-06-29T18:50:45.551964 #21202]  INFO -- default-ubuntu-1204:  +else[0m[37m
+I, [2014-06-29T18:50:45.552014 #21202]  INFO -- default-ubuntu-1204:  +        SITENAME=$1[0m[37m
+I, [2014-06-29T18:50:45.552062 #21202]  INFO -- default-ubuntu-1204:  +fi[0m[37m
+I, [2014-06-29T18:50:45.552111 #21202]  INFO -- default-ubuntu-1204:  +[0m[37m
+I, [2014-06-29T18:50:45.552701 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.552958 #21202]  INFO -- default-ubuntu-1204:  +if [ $SITENAME = "default" ]; then[0m[37m
+I, [2014-06-29T18:50:45.553040 #21202]  INFO -- default-ubuntu-1204:  +        PRIORITY="000"[0m[37m
+I, [2014-06-29T18:50:45.553091 #21202]  INFO -- default-ubuntu-1204:  +fi[0m[37m
+I, [2014-06-29T18:50:45.553140 #21202]  INFO -- default-ubuntu-1204:  +[0m[37m
+I, [2014-06-29T18:50:45.553189 #21202]  INFO -- default-ubuntu-1204:  +if [ -e $SYSCONFDIR/sites-enabled/$SITENAME -o \[0m[37m
+I, [2014-06-29T18:50:45.553238 #21202]  INFO -- default-ubuntu-1204:  +     -e $SYSCONFDIR/sites-enabled/"$PRIORITY"-"$SITENAME" ]; then[0m[37m
+I, [2014-06-29T18:50:45.553726 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.553785 #21202]  INFO -- default-ubuntu-1204:  +        echo "This site is already enabled!"[0m[37m
+I, [2014-06-29T18:50:45.553832 #21202]  INFO -- default-ubuntu-1204:  +        exit 0[0m[37m
+I, [2014-06-29T18:50:45.553894 #21202]  INFO -- default-ubuntu-1204:  +fi[0m[37m
+I, [2014-06-29T18:50:45.553943 #21202]  INFO -- default-ubuntu-1204:  +[0m[37m
+I, [2014-06-29T18:50:45.553993 #21202]  INFO -- default-ubuntu-1204:  +if ! [ -e $SYSCONFDIR/sites-available/$SITENAME ]; then[0m[37m
+I, [2014-06-29T18:50:45.554480 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.554557 #21202]  INFO -- default-ubuntu-1204:  +        echo "This site does not exist!"[0m[37m
+I, [2014-06-29T18:50:45.554609 #21202]  INFO -- default-ubuntu-1204:  +        exit 1[0m[37m
+I, [2014-06-29T18:50:45.554658 #21202]  INFO -- default-ubuntu-1204:  +fi[0m[37m
+I, [2014-06-29T18:50:45.554706 #21202]  INFO -- default-ubuntu-1204:  +[0m[37m
+I, [2014-06-29T18:50:45.555147 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.555232 #21202]  INFO -- default-ubuntu-1204:  +if [ $SITENAME = "default" ]; then[0m[37m
+I, [2014-06-29T18:50:45.555280 #21202]  INFO -- default-ubuntu-1204:  +        ln -sf $SYSCONFDIR/sites-available/$SITENAME \[0m[37m
+I, [2014-06-29T18:50:45.555331 #21202]  INFO -- default-ubuntu-1204:  +               $SYSCONFDIR/sites-enabled/"$PRIORITY"-"$SITENAME"[0m[37m
+I, [2014-06-29T18:50:45.555377 #21202]  INFO -- default-ubuntu-1204:  +else[0m[37m
+I, [2014-06-29T18:50:45.555426 #21202]  INFO -- default-ubuntu-1204:  +        ln -sf $SYSCONFDIR/sites-available/$SITENAME $SYSCONFDIR/sites-enabled/$SITENAME[0m[37m
+I, [2014-06-29T18:50:45.555472 #21202]  INFO -- default-ubuntu-1204:  +fi[0m[37m
+I, [2014-06-29T18:50:45.556010 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.556076 #21202]  INFO -- default-ubuntu-1204:  +[0m[37m
+I, [2014-06-29T18:50:45.556127 #21202]  INFO -- default-ubuntu-1204:  +echo "Site $SITENAME installed; reload nginx to enable."[0m
+[2014-06-29T23:50:54+00:00] INFO: template[/usr/sbin/nxensite] owner changed to 0I, [2014-06-29T18:50:45.556596 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:54+00:00] INFO: template[/usr/sbin/nxensite] group changed to 0I, [2014-06-29T18:50:45.557008 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:54+00:00] INFO: template[/usr/sbin/nxensite] mode changed to 755I, [2014-06-29T18:50:45.557361 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:45.557716 #21202]  INFO -- default-ubuntu-1204: 
+    - change mode from '' to '0755'[0m[32mI, [2014-06-29T18:50:45.558219 #21202]  INFO -- default-ubuntu-1204: 
+    - change owner from '' to 'root'[0mI, [2014-06-29T18:50:45.558547 #21202]  INFO -- default-ubuntu-1204: [32m
+I, [2014-06-29T18:50:45.558596 #21202]  INFO -- default-ubuntu-1204:     - change group from '' to 'root'[0m
+[0mI, [2014-06-29T18:50:45.558956 #21202]  INFO -- default-ubuntu-1204: 
+  * template[/usr/sbin/nxdissite] action create[0m[2014-06-29T23:50:54+00:00] INFO: Processing template[/usr/sbin/nxdissite] action create (nginx::commons_script line 23)I, [2014-06-29T18:50:45.559499 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:54+00:00] INFO: template[/usr/sbin/nxdissite] created file /usr/sbin/nxdissiteI, [2014-06-29T18:50:45.559926 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:45.560176 #21202]  INFO -- default-ubuntu-1204: 
+    - create new file /usr/sbin/nxdissite[0m[2014-06-29T23:50:54+00:00] INFO: template[/usr/sbin/nxdissite] updated file contents /usr/sbin/nxdissiteI, [2014-06-29T18:50:45.562862 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:45.563580 #21202]  INFO -- default-ubuntu-1204: 
+    - update content in file /usr/sbin/nxdissite from none to cc16ec[0m[37mI, [2014-06-29T18:50:45.564420 #21202]  INFO -- default-ubuntu-1204: 
+        --- /usr/sbin/nxdissite	2014-06-29 23:50:54.067546062 +0000[0m[37mI, [2014-06-29T18:50:45.565657 #21202]  INFO -- default-ubuntu-1204: 
+        +++ /tmp/chef-rendered-template20140629-4548-rjagz4	2014-06-29 23:50:54.067546062 +0000[0m[37mI, [2014-06-29T18:50:45.566550 #21202]  INFO -- default-ubuntu-1204: 
+        @@ -1 +1,30 @@[0m[37mI, [2014-06-29T18:50:45.566967 #21202]  INFO -- default-ubuntu-1204: 
+        +#!/bin/sh -e[0m[37mI, [2014-06-29T18:50:45.567357 #21202]  INFO -- default-ubuntu-1204: 
+        +[0m[37mI, [2014-06-29T18:50:45.567699 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.567965 #21202]  INFO -- default-ubuntu-1204:  +SYSCONFDIR='/etc/nginx'[0m[37m
+I, [2014-06-29T18:50:45.568006 #21202]  INFO -- default-ubuntu-1204:  +[0m[37m
+I, [2014-06-29T18:50:45.568055 #21202]  INFO -- default-ubuntu-1204:  +if [ -z $1 ]; then[0m[37m
+I, [2014-06-29T18:50:45.568090 #21202]  INFO -- default-ubuntu-1204:  +        echo "Which site would you like to disable?"[0m[37m
+I, [2014-06-29T18:50:45.568124 #21202]  INFO -- default-ubuntu-1204:  +        echo -n "Your choices are: "[0m[37m
+I, [2014-06-29T18:50:45.568159 #21202]  INFO -- default-ubuntu-1204:  +        ls $SYSCONFDIR/sites-enabled/* | \[0m[37m
+I, [2014-06-29T18:50:45.568194 #21202]  INFO -- default-ubuntu-1204:  +        sed -e "s,$SYSCONFDIR/sites-enabled/,,g" | xargs echo[0m[37m
+I, [2014-06-29T18:50:45.569629 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.569670 #21202]  INFO -- default-ubuntu-1204:  +        echo -n "Site name? "[0m[37m
+I, [2014-06-29T18:50:45.569704 #21202]  INFO -- default-ubuntu-1204:  +        read SITENAME[0m[37m
+I, [2014-06-29T18:50:45.569738 #21202]  INFO -- default-ubuntu-1204:  +else[0m[37m
+I, [2014-06-29T18:50:45.569773 #21202]  INFO -- default-ubuntu-1204:  +        SITENAME=$1[0m[37m
+I, [2014-06-29T18:50:45.569807 #21202]  INFO -- default-ubuntu-1204:  +fi[0m[37m
+I, [2014-06-29T18:50:45.569851 #21202]  INFO -- default-ubuntu-1204:  +[0m[37m
+I, [2014-06-29T18:50:45.569886 #21202]  INFO -- default-ubuntu-1204:  +if [ $SITENAME = "default" ]; then[0m[37m
+I, [2014-06-29T18:50:45.569920 #21202]  INFO -- default-ubuntu-1204:  +        PRIORITY="000"[0m[37m
+I, [2014-06-29T18:50:45.569954 #21202]  INFO -- default-ubuntu-1204:  +fi[0m[37m
+I, [2014-06-29T18:50:45.569988 #21202]  INFO -- default-ubuntu-1204:  +[0m[37m
+I, [2014-06-29T18:50:45.570034 #21202]  INFO -- default-ubuntu-1204:  +if ! [ -e $SYSCONFDIR/sites-enabled/$SITENAME -o \[0m[37m
+I, [2014-06-29T18:50:45.570069 #21202]  INFO -- default-ubuntu-1204:  +       -e $SYSCONFDIR/sites-enabled/"$PRIORITY"-"$SITENAME" ]; then[0m[37m
+I, [2014-06-29T18:50:45.570104 #21202]  INFO -- default-ubuntu-1204:  +        echo "This site is already disabled, or does not exist!"[0m[37m
+I, [2014-06-29T18:50:45.570139 #21202]  INFO -- default-ubuntu-1204:  +        exit 1[0m[37m
+I, [2014-06-29T18:50:45.570181 #21202]  INFO -- default-ubuntu-1204:  +fi[0m[37m
+I, [2014-06-29T18:50:45.570216 #21202]  INFO -- default-ubuntu-1204:  +[0m[37m
+I, [2014-06-29T18:50:45.570251 #21202]  INFO -- default-ubuntu-1204:  +if ! rm $SYSCONFDIR/sites-enabled/$SITENAME 2>/dev/null; then[0m[37m
+I, [2014-06-29T18:50:45.570296 #21202]  INFO -- default-ubuntu-1204:  +        rm -f $SYSCONFDIR/sites-enabled/"$PRIORITY"-"$SITENAME"[0m[37m
+I, [2014-06-29T18:50:45.570331 #21202]  INFO -- default-ubuntu-1204:  +fi[0m[37m
+I, [2014-06-29T18:50:45.570367 #21202]  INFO -- default-ubuntu-1204:  +echo "Site $SITENAME disabled; reload nginx to disable."[0m[2014-06-29T23:50:54+00:00] INFO: template[/usr/sbin/nxdissite] owner changed to 0
+I, [2014-06-29T18:50:45.571214 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.571250 #21202]  INFO -- default-ubuntu-1204: [2014-06-29T23:50:54+00:00] INFO: template[/usr/sbin/nxdissite] group changed to 0
+I, [2014-06-29T18:50:45.571278 #21202]  INFO -- default-ubuntu-1204: [2014-06-29T23:50:54+00:00] INFO: template[/usr/sbin/nxdissite] mode changed to 755
+I, [2014-06-29T18:50:45.571486 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:45.571727 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.571766 #21202]  INFO -- default-ubuntu-1204:     - change mode from '' to '0755'[0m[32m
+I, [2014-06-29T18:50:45.572034 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.572085 #21202]  INFO -- default-ubuntu-1204:     - change owner from '' to 'root'[0m[32m
+I, [2014-06-29T18:50:45.572125 #21202]  INFO -- default-ubuntu-1204:     - change group from '' to 'root'[0m
+[0mI, [2014-06-29T18:50:45.572592 #21202]  INFO -- default-ubuntu-1204: 
+Recipe: nginx::commons_conf[0mI, [2014-06-29T18:50:45.572962 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.573016 #21202]  INFO -- default-ubuntu-1204:   * template[nginx.conf] action create[0m
+[2014-06-29T23:50:54+00:00] INFO: Processing template[nginx.conf] action create (nginx::commons_conf line 22)I, [2014-06-29T18:50:45.573844 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:54+00:00] INFO: template[nginx.conf] backed up to /tmp/kitchen/backup/etc/nginx/nginx.conf.chef-20140629235054.131581I, [2014-06-29T18:50:45.621414 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:54+00:00] INFO: template[nginx.conf] updated file contents /etc/nginx/nginx.confI, [2014-06-29T18:50:45.622605 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:45.623137 #21202]  INFO -- default-ubuntu-1204: 
+    - update content in file /etc/nginx/nginx.conf from 38154b to 838415[0m[37mI, [2014-06-29T18:50:45.623707 #21202]  INFO -- default-ubuntu-1204: 
+        --- /etc/nginx/nginx.conf	2012-03-29 02:50:24.000000000 +0000[0m[37mI, [2014-06-29T18:50:45.624677 #21202]  INFO -- default-ubuntu-1204: 
+        +++ /tmp/chef-rendered-template20140629-4548-1wmki91	2014-06-29 23:50:54.123518065 +0000[0m[37mI, [2014-06-29T18:50:45.625867 #21202]  INFO -- default-ubuntu-1204: 
+        @@ -1,96 +1,40 @@[0m[37mI, [2014-06-29T18:50:45.626626 #21202]  INFO -- default-ubuntu-1204: 
+         user www-data;[0m[37mI, [2014-06-29T18:50:45.627376 #21202]  INFO -- default-ubuntu-1204: 
+        -worker_processes 4;[0m[37mI, [2014-06-29T18:50:45.628177 #21202]  INFO -- default-ubuntu-1204: 
+        -pid /var/run/nginx.pid;[0m[37mI, [2014-06-29T18:50:45.628693 #21202]  INFO -- default-ubuntu-1204: 
+        +worker_processes  1;[0m[37mI, [2014-06-29T18:50:45.629157 #21202]  INFO -- default-ubuntu-1204: 
+         [0m[37mI, [2014-06-29T18:50:45.629699 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.629760 #21202]  INFO -- default-ubuntu-1204:  +error_log  /var/log/nginx/error.log;[0m[37m
+I, [2014-06-29T18:50:45.629811 #21202]  INFO -- default-ubuntu-1204:  +pid        /var/run/nginx.pid;[0m[37m
+I, [2014-06-29T18:50:45.629861 #21202]  INFO -- default-ubuntu-1204:  +[0m[37m
+I, [2014-06-29T18:50:45.629906 #21202]  INFO -- default-ubuntu-1204:   events {[0m[37m
+I, [2014-06-29T18:50:45.629954 #21202]  INFO -- default-ubuntu-1204:  -	worker_connections 768;[0m[37m
+I, [2014-06-29T18:50:45.631889 #21202]  INFO -- default-ubuntu-1204:  -	# multi_accept on;[0m[37m
+I, [2014-06-29T18:50:45.631959 #21202]  INFO -- default-ubuntu-1204:  +  worker_connections  1024;[0m[37m
+I, [2014-06-29T18:50:45.631992 #21202]  INFO -- default-ubuntu-1204:   }[0m[37m
+I, [2014-06-29T18:50:45.632025 #21202]  INFO -- default-ubuntu-1204:   [0m[37m
+I, [2014-06-29T18:50:45.632059 #21202]  INFO -- default-ubuntu-1204:   http {[0m[37m
+I, [2014-06-29T18:50:45.632091 #21202]  INFO -- default-ubuntu-1204:   [0m[37m
+I, [2014-06-29T18:50:45.632125 #21202]  INFO -- default-ubuntu-1204:  -	##[0m[37m
+I, [2014-06-29T18:50:45.632161 #21202]  INFO -- default-ubuntu-1204:  -	# Basic Settings[0m[37m
+I, [2014-06-29T18:50:45.632194 #21202]  INFO -- default-ubuntu-1204:  -	##[0m[37m
+I, [2014-06-29T18:50:45.632229 #21202]  INFO -- default-ubuntu-1204:  +  include       /etc/nginx/mime.types;[0m[37m
+I, [2014-06-29T18:50:45.632264 #21202]  INFO -- default-ubuntu-1204:  +  default_type  application/octet-stream;[0m[37m
+I, [2014-06-29T18:50:45.632297 #21202]  INFO -- default-ubuntu-1204:   [0m[37m
+I, [2014-06-29T18:50:45.632350 #21202]  INFO -- default-ubuntu-1204:  -	sendfile on;[0m[37m
+I, [2014-06-29T18:50:45.633191 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.633232 #21202]  INFO -- default-ubuntu-1204:  -	tcp_nopush on;[0m[37m
+I, [2014-06-29T18:50:45.633269 #21202]  INFO -- default-ubuntu-1204:  -	tcp_nodelay on;[0m[37m
+I, [2014-06-29T18:50:45.633324 #21202]  INFO -- default-ubuntu-1204:  -	keepalive_timeout 65;[0m[37m
+I, [2014-06-29T18:50:45.633358 #21202]  INFO -- default-ubuntu-1204:  -	types_hash_max_size 2048;[0m[37m
+I, [2014-06-29T18:50:45.633392 #21202]  INFO -- default-ubuntu-1204:  -	# server_tokens off;[0m[37m
+I, [2014-06-29T18:50:45.633442 #21202]  INFO -- default-ubuntu-1204:  +  access_log	/var/log/nginx/access.log;[0m[37m
+I, [2014-06-29T18:50:45.633476 #21202]  INFO -- default-ubuntu-1204:   [0m[37m
+I, [2014-06-29T18:50:45.633510 #21202]  INFO -- default-ubuntu-1204:  -	# server_names_hash_bucket_size 64;[0m[37m
+I, [2014-06-29T18:50:45.633544 #21202]  INFO -- default-ubuntu-1204:  -	# server_name_in_redirect off;[0m[37m
+I, [2014-06-29T18:50:45.633578 #21202]  INFO -- default-ubuntu-1204:  +  sendfile on;[0m[37m
+I, [2014-06-29T18:50:45.633612 #21202]  INFO -- default-ubuntu-1204:  +  tcp_nopush on;[0m[37m
+I, [2014-06-29T18:50:45.633647 #21202]  INFO -- default-ubuntu-1204:  +  tcp_nodelay on;[0m[37m
+I, [2014-06-29T18:50:45.633681 #21202]  INFO -- default-ubuntu-1204:   [0m[37m
+        -	include /etc/nginx/mime.types;[0m[37mI, [2014-06-29T18:50:45.634421 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.634462 #21202]  INFO -- default-ubuntu-1204:  -	default_type application/octet-stream;[0m[37m
+I, [2014-06-29T18:50:45.634657 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.634697 #21202]  INFO -- default-ubuntu-1204:  +  keepalive_timeout  65;[0m[37m
+I, [2014-06-29T18:50:45.634733 #21202]  INFO -- default-ubuntu-1204:   [0m[37m
+I, [2014-06-29T18:50:45.634767 #21202]  INFO -- default-ubuntu-1204:  -	##[0m[37m
+I, [2014-06-29T18:50:45.634809 #21202]  INFO -- default-ubuntu-1204:  -	# Logging Settings[0m[37m
+I, [2014-06-29T18:50:45.634844 #21202]  INFO -- default-ubuntu-1204:  -	##[0m[37m
+I, [2014-06-29T18:50:45.634879 #21202]  INFO -- default-ubuntu-1204:  +  gzip  on;[0m[37m
+I, [2014-06-29T18:50:45.634912 #21202]  INFO -- default-ubuntu-1204:  +  gzip_http_version 1.0;[0m[37m
+I, [2014-06-29T18:50:45.634958 #21202]  INFO -- default-ubuntu-1204:  +  gzip_comp_level 2;[0m[37m
+I, [2014-06-29T18:50:45.634992 #21202]  INFO -- default-ubuntu-1204:  +  gzip_proxied any;[0m[37m
+I, [2014-06-29T18:50:45.635026 #21202]  INFO -- default-ubuntu-1204:  +  gzip_vary off;[0m[37m
+I, [2014-06-29T18:50:45.635062 #21202]  INFO -- default-ubuntu-1204:  +  gzip_types text/plain text/css application/x-javascript text/xml application/xml application/rss+xml application/atom+xml text/javascript application/javascript application/json text/mathml;[0m[37m
+I, [2014-06-29T18:50:45.635096 #21202]  INFO -- default-ubuntu-1204:  +  gzip_min_length  1000;[0m[37m
+I, [2014-06-29T18:50:45.635145 #21202]  INFO -- default-ubuntu-1204:  +  gzip_disable     "MSIE [1-6]\.";[0m[37m
+I, [2014-06-29T18:50:45.635180 #21202]  INFO -- default-ubuntu-1204:   [0m[37m
+I, [2014-06-29T18:50:45.635811 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.635860 #21202]  INFO -- default-ubuntu-1204:  -	access_log /var/log/nginx/access.log;[0m[37m
+I, [2014-06-29T18:50:45.636084 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.636124 #21202]  INFO -- default-ubuntu-1204:  -	error_log /var/log/nginx/error.log;[0m[37m
+I, [2014-06-29T18:50:45.636161 #21202]  INFO -- default-ubuntu-1204:  +  server_names_hash_bucket_size 64;[0m[37m
+I, [2014-06-29T18:50:45.636195 #21202]  INFO -- default-ubuntu-1204:  +  types_hash_max_size 2048;[0m[37m
+I, [2014-06-29T18:50:45.636482 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.636523 #21202]  INFO -- default-ubuntu-1204:  +  types_hash_bucket_size 64;[0m[37m
+I, [2014-06-29T18:50:45.636705 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.636760 #21202]  INFO -- default-ubuntu-1204:   [0m[37m
+I, [2014-06-29T18:50:45.636928 #21202]  INFO -- default-ubuntu-1204:  -	##[0m[37m
+I, [2014-06-29T18:50:45.636967 #21202]  INFO -- default-ubuntu-1204:  -	# Gzip Settings[0m[37m
+I, [2014-06-29T18:50:45.637023 #21202]  INFO -- default-ubuntu-1204:  -	##[0m[37m
+I, [2014-06-29T18:50:45.637058 #21202]  INFO -- default-ubuntu-1204:  -[0m[37m
+I, [2014-06-29T18:50:45.637089 #21202]  INFO -- default-ubuntu-1204:  -	gzip on;[0m[37m
+I, [2014-06-29T18:50:45.637135 #21202]  INFO -- default-ubuntu-1204:  -	gzip_disable "msie6";[0m[37m
+I, [2014-06-29T18:50:45.637167 #21202]  INFO -- default-ubuntu-1204:  -[0m[37m
+I, [2014-06-29T18:50:45.637201 #21202]  INFO -- default-ubuntu-1204:  -	# gzip_vary on;[0m[37m
+I, [2014-06-29T18:50:45.637644 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.637685 #21202]  INFO -- default-ubuntu-1204:  -	# gzip_proxied any;[0m[37m
+I, [2014-06-29T18:50:45.637721 #21202]  INFO -- default-ubuntu-1204:  -	# gzip_comp_level 6;[0m[37m
+I, [2014-06-29T18:50:45.637755 #21202]  INFO -- default-ubuntu-1204:  -	# gzip_buffers 16 8k;[0m[37m
+I, [2014-06-29T18:50:45.637789 #21202]  INFO -- default-ubuntu-1204:  -	# gzip_http_version 1.1;[0m[37m
+I, [2014-06-29T18:50:45.637824 #21202]  INFO -- default-ubuntu-1204:  -	# gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;[0m[37m
+I, [2014-06-29T18:50:45.638196 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.638235 #21202]  INFO -- default-ubuntu-1204:  -[0m[37m
+I, [2014-06-29T18:50:45.638271 #21202]  INFO -- default-ubuntu-1204:  -	##[0m[37m
+I, [2014-06-29T18:50:45.638306 #21202]  INFO -- default-ubuntu-1204:  -	# nginx-naxsi config[0m[37m
+I, [2014-06-29T18:50:45.638340 #21202]  INFO -- default-ubuntu-1204:  -	##[0m[37m
+I, [2014-06-29T18:50:45.638375 #21202]  INFO -- default-ubuntu-1204:  -	# Uncomment it if you installed nginx-naxsi[0m[37m
+I, [2014-06-29T18:50:45.638409 #21202]  INFO -- default-ubuntu-1204:  -	##[0m[37m
+I, [2014-06-29T18:50:45.638443 #21202]  INFO -- default-ubuntu-1204:  -[0m[37m
+I, [2014-06-29T18:50:45.638824 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.638864 #21202]  INFO -- default-ubuntu-1204:  -	#include /etc/nginx/naxsi_core.rules;[0m[37m
+I, [2014-06-29T18:50:45.638900 #21202]  INFO -- default-ubuntu-1204:  -[0m[37m
+I, [2014-06-29T18:50:45.638933 #21202]  INFO -- default-ubuntu-1204:  -	##[0m[37m
+I, [2014-06-29T18:50:45.638967 #21202]  INFO -- default-ubuntu-1204:  -	# nginx-passenger config[0m[37m
+I, [2014-06-29T18:50:45.639018 #21202]  INFO -- default-ubuntu-1204:  -	##[0m[37m
+I, [2014-06-29T18:50:45.639342 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.639383 #21202]  INFO -- default-ubuntu-1204:  -	# Uncomment it if you installed nginx-passenger[0m[37m
+I, [2014-06-29T18:50:45.639419 #21202]  INFO -- default-ubuntu-1204:  -	##[0m[37m
+I, [2014-06-29T18:50:45.639469 #21202]  INFO -- default-ubuntu-1204:  -	[0m[37m
+I, [2014-06-29T18:50:45.639503 #21202]  INFO -- default-ubuntu-1204:  -	#passenger_root /usr;[0m[37m
+I, [2014-06-29T18:50:45.639537 #21202]  INFO -- default-ubuntu-1204:  -	#passenger_ruby /usr/bin/ruby;[0m[37m
+I, [2014-06-29T18:50:45.639571 #21202]  INFO -- default-ubuntu-1204:  -[0m[37m
+I, [2014-06-29T18:50:45.639604 #21202]  INFO -- default-ubuntu-1204:  -	##[0m[37m
+I, [2014-06-29T18:50:45.639637 #21202]  INFO -- default-ubuntu-1204:  -	# Virtual Host Configs[0m[37m
+I, [2014-06-29T18:50:45.639672 #21202]  INFO -- default-ubuntu-1204:  -	##[0m[37m
+I, [2014-06-29T18:50:45.639703 #21202]  INFO -- default-ubuntu-1204:  -[0m[37m
+I, [2014-06-29T18:50:45.639750 #21202]  INFO -- default-ubuntu-1204:  -	include /etc/nginx/conf.d/*.conf;[0m[37m
+I, [2014-06-29T18:50:45.639785 #21202]  INFO -- default-ubuntu-1204:  -	include /etc/nginx/sites-enabled/*;[0m[37m
+I, [2014-06-29T18:50:45.639820 #21202]  INFO -- default-ubuntu-1204:  +  include /etc/nginx/conf.d/*.conf;[0m[37m
+I, [2014-06-29T18:50:45.639861 #21202]  INFO -- default-ubuntu-1204:  +  include /etc/nginx/sites-enabled/*;[0m[37m
+I, [2014-06-29T18:50:45.639896 #21202]  INFO -- default-ubuntu-1204:   }[0m[37m
+I, [2014-06-29T18:50:45.639931 #21202]  INFO -- default-ubuntu-1204:  -[0m[37m
+I, [2014-06-29T18:50:45.639987 #21202]  INFO -- default-ubuntu-1204:  -[0m[37m
+I, [2014-06-29T18:50:45.640022 #21202]  INFO -- default-ubuntu-1204:  -#mail {[0m[37m
+I, [2014-06-29T18:50:45.640057 #21202]  INFO -- default-ubuntu-1204:  -#	# See sample authentication script at:[0m[37m
+I, [2014-06-29T18:50:45.640096 #21202]  INFO -- default-ubuntu-1204:  -#	# http://wiki.nginx.org/ImapAuthenticateWithApachePhpScript[0m[37m
+I, [2014-06-29T18:50:45.640130 #21202]  INFO -- default-ubuntu-1204:  -# [0m[37m
+I, [2014-06-29T18:50:45.640164 #21202]  INFO -- default-ubuntu-1204:  -#	# auth_http localhost/auth.php;[0m[37m
+I, [2014-06-29T18:50:45.640198 #21202]  INFO -- default-ubuntu-1204:  -#	# pop3_capabilities "TOP" "USER";[0m[37m
+I, [2014-06-29T18:50:45.640233 #21202]  INFO -- default-ubuntu-1204:  -#	# imap_capabilities "IMAP4rev1" "UIDPLUS";[0m[37m
+I, [2014-06-29T18:50:45.640267 #21202]  INFO -- default-ubuntu-1204:  -# [0m[37m
+I, [2014-06-29T18:50:45.640301 #21202]  INFO -- default-ubuntu-1204:  -#	server {[0m[37m
+I, [2014-06-29T18:50:45.640336 #21202]  INFO -- default-ubuntu-1204:  -#		listen     localhost:110;[0m[37m
+I, [2014-06-29T18:50:45.640370 #21202]  INFO -- default-ubuntu-1204:  -#		protocol   pop3;[0m[37m
+I, [2014-06-29T18:50:45.640404 #21202]  INFO -- default-ubuntu-1204:  -#		proxy      on;[0m[37m
+I, [2014-06-29T18:50:45.640458 #21202]  INFO -- default-ubuntu-1204:  -#	}[0m[37m
+I, [2014-06-29T18:50:45.640492 #21202]  INFO -- default-ubuntu-1204:  -# [0m[37m
+I, [2014-06-29T18:50:45.640527 #21202]  INFO -- default-ubuntu-1204:  -#	server {[0m[37m
+I, [2014-06-29T18:50:45.640561 #21202]  INFO -- default-ubuntu-1204:  -#		listen     localhost:143;[0m[37m
+I, [2014-06-29T18:50:45.640595 #21202]  INFO -- default-ubuntu-1204:  -#		protocol   imap;[0m[37m
+I, [2014-06-29T18:50:45.640629 #21202]  INFO -- default-ubuntu-1204:  -#		proxy      on;[0m[37m
+I, [2014-06-29T18:50:45.640662 #21202]  INFO -- default-ubuntu-1204:  -#	}[0m[37m
+I, [2014-06-29T18:50:45.640697 #21202]  INFO -- default-ubuntu-1204:  -#}[0m
+[0mI, [2014-06-29T18:50:45.642184 #21202]  INFO -- default-ubuntu-1204: 
+  * template[/etc/nginx/sites-available/default] action create[0m[2014-06-29T23:50:54+00:00] INFO: Processing template[/etc/nginx/sites-available/default] action create (nginx::commons_conf line 31)I, [2014-06-29T18:50:45.642509 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:54+00:00] INFO: template[/etc/nginx/sites-available/default] backed up to /tmp/kitchen/backup/etc/nginx/sites-available/default.chef-20140629235054.196929I, [2014-06-29T18:50:45.685449 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:54+00:00] INFO: template[/etc/nginx/sites-available/default] updated file contents /etc/nginx/sites-available/defaultI, [2014-06-29T18:50:45.686486 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:45.686960 #21202]  INFO -- default-ubuntu-1204: 
+    - update content in file /etc/nginx/sites-available/default from 7fe53b to 19c9ec[0m[37mI, [2014-06-29T18:50:45.687671 #21202]  INFO -- default-ubuntu-1204: 
+        --- /etc/nginx/sites-available/default	2012-03-29 02:50:24.000000000 +0000[0m[37mI, [2014-06-29T18:50:45.688964 #21202]  INFO -- default-ubuntu-1204: 
+        +++ /tmp/chef-rendered-template20140629-4548-hq44od	2014-06-29 23:50:54.191484068 +0000[0m[37mI, [2014-06-29T18:50:45.689946 #21202]  INFO -- default-ubuntu-1204: 
+        @@ -1,121 +1,12 @@[0m[37mI, [2014-06-29T18:50:45.690609 #21202]  INFO -- default-ubuntu-1204: 
+        -# You may add here your[0m[37mI, [2014-06-29T18:50:45.691217 #21202]  INFO -- default-ubuntu-1204: 
+        -# server {[0m[37mI, [2014-06-29T18:50:45.691808 #21202]  INFO -- default-ubuntu-1204: 
+        -#	...[0m[37mI, [2014-06-29T18:50:45.692420 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.692461 #21202]  INFO -- default-ubuntu-1204:  -# }[0m[37m
+I, [2014-06-29T18:50:45.692655 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.692696 #21202]  INFO -- default-ubuntu-1204:  -# statements for each of your virtual hosts to this file[0m[37m
+I, [2014-06-29T18:50:45.692731 #21202]  INFO -- default-ubuntu-1204:  -[0m[37m
+I, [2014-06-29T18:50:45.692762 #21202]  INFO -- default-ubuntu-1204:  -##[0m[37m
+I, [2014-06-29T18:50:45.692809 #21202]  INFO -- default-ubuntu-1204:  -# You should look at the following URL's in order to grasp a solid understanding[0m[37m
+I, [2014-06-29T18:50:45.692844 #21202]  INFO -- default-ubuntu-1204:  -# of Nginx configuration files in order to fully unleash the power of Nginx.[0m[37m
+I, [2014-06-29T18:50:45.692877 #21202]  INFO -- default-ubuntu-1204:  -# http://wiki.nginx.org/Pitfalls[0m[37m
+I, [2014-06-29T18:50:45.692942 #21202]  INFO -- default-ubuntu-1204:  -# http://wiki.nginx.org/QuickStart[0m[37m
+I, [2014-06-29T18:50:45.693318 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.693358 #21202]  INFO -- default-ubuntu-1204:  -# http://wiki.nginx.org/Configuration[0m[37m
+I, [2014-06-29T18:50:45.693545 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.693583 #21202]  INFO -- default-ubuntu-1204:  -#[0m[37m
+I, [2014-06-29T18:50:45.693617 #21202]  INFO -- default-ubuntu-1204:  -# Generally, you will want to move this file somewhere, and start with a clean[0m[37m
+I, [2014-06-29T18:50:45.693843 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.693883 #21202]  INFO -- default-ubuntu-1204:  -# file but keep this around for reference. Or just disable in sites-enabled.[0m[37m
+I, [2014-06-29T18:50:45.693918 #21202]  INFO -- default-ubuntu-1204:  -#[0m[37m
+I, [2014-06-29T18:50:45.693954 #21202]  INFO -- default-ubuntu-1204:  -# Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.[0m[37m
+I, [2014-06-29T18:50:45.693987 #21202]  INFO -- default-ubuntu-1204:  -##[0m[37m
+I, [2014-06-29T18:50:45.694022 #21202]  INFO -- default-ubuntu-1204:  -[0m[37m
+I, [2014-06-29T18:50:45.694056 #21202]  INFO -- default-ubuntu-1204:   server {[0m[37m
+I, [2014-06-29T18:50:45.694092 #21202]  INFO -- default-ubuntu-1204:  -	#listen   80; ## listen for ipv4; this line is default and implied[0m[37m
+I, [2014-06-29T18:50:45.694474 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.694514 #21202]  INFO -- default-ubuntu-1204:  -	#listen   [::]:80 default ipv6only=on; ## listen for ipv6[0m[37m
+I, [2014-06-29T18:50:45.694550 #21202]  INFO -- default-ubuntu-1204:  +  listen   80;[0m[37m
+I, [2014-06-29T18:50:45.694584 #21202]  INFO -- default-ubuntu-1204:  +  server_name  default-ubuntu-1204;[0m[37m
+I, [2014-06-29T18:50:45.694617 #21202]  INFO -- default-ubuntu-1204:   [0m[37m
+I, [2014-06-29T18:50:45.694676 #21202]  INFO -- default-ubuntu-1204:  -	root /usr/share/nginx/www;[0m[37m
+I, [2014-06-29T18:50:45.694710 #21202]  INFO -- default-ubuntu-1204:  -	index index.html index.htm;[0m[37m
+I, [2014-06-29T18:50:45.694744 #21202]  INFO -- default-ubuntu-1204:  +  access_log  /var/log/nginx/localhost.access.log;[0m[37m
+I, [2014-06-29T18:50:45.694778 #21202]  INFO -- default-ubuntu-1204:   [0m[37m
+I, [2014-06-29T18:50:45.694810 #21202]  INFO -- default-ubuntu-1204:  -	# Make site accessible from http://localhost/[0m[37m
+I, [2014-06-29T18:50:45.740098 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:45.740154 #21202]  INFO -- default-ubuntu-1204:  -	server_name localhost;[0m[37m
+I, [2014-06-29T18:50:45.740189 #21202]  INFO -- default-ubuntu-1204:  -[0m[37m
+I, [2014-06-29T18:50:45.740221 #21202]  INFO -- default-ubuntu-1204:  -	location / {[0m[37m
+I, [2014-06-29T18:50:45.740254 #21202]  INFO -- default-ubuntu-1204:  -		# First attempt to serve request as file, then[0m[37m
+I, [2014-06-29T18:50:45.740292 #21202]  INFO -- default-ubuntu-1204:  -		# as directory, then fall back to index.html[0m[37m
+I, [2014-06-29T18:50:45.740324 #21202]  INFO -- default-ubuntu-1204:  -		try_files $uri $uri/ /index.html;[0m[37m
+I, [2014-06-29T18:50:45.740359 #21202]  INFO -- default-ubuntu-1204:  -		# Uncomment to enable naxsi on this location[0m[37m
+I, [2014-06-29T18:50:45.740391 #21202]  INFO -- default-ubuntu-1204:  -		# include /etc/nginx/naxsi.rules[0m[37m
+I, [2014-06-29T18:50:45.740425 #21202]  INFO -- default-ubuntu-1204:  -	}[0m[37m
+I, [2014-06-29T18:50:45.740468 #21202]  INFO -- default-ubuntu-1204:  -[0m[37m
+I, [2014-06-29T18:50:45.740537 #21202]  INFO -- default-ubuntu-1204:  -	location /doc/ {[0m[37m
+I, [2014-06-29T18:50:45.740568 #21202]  INFO -- default-ubuntu-1204:  -		alias /usr/share/doc/;[0m[37m
+I, [2014-06-29T18:50:45.740604 #21202]  INFO -- default-ubuntu-1204:  -		autoindex on;[0m[37m
+I, [2014-06-29T18:50:45.740636 #21202]  INFO -- default-ubuntu-1204:  -		allow 127.0.0.1;[0m[37m
+I, [2014-06-29T18:50:45.740668 #21202]  INFO -- default-ubuntu-1204:  -		deny all;[0m[37m
+I, [2014-06-29T18:50:45.740699 #21202]  INFO -- default-ubuntu-1204:  -	}[0m[37m
+I, [2014-06-29T18:50:45.740733 #21202]  INFO -- default-ubuntu-1204:  -[0m[37m
+I, [2014-06-29T18:50:45.740765 #21202]  INFO -- default-ubuntu-1204:  -	# Only for nginx-naxsi : process denied requests[0m[37m
+I, [2014-06-29T18:50:45.740799 #21202]  INFO -- default-ubuntu-1204:  -	#location /RequestDenied {[0m[37m
+I, [2014-06-29T18:50:45.740832 #21202]  INFO -- default-ubuntu-1204:  -		# For example, return an error code[0m[37m
+I, [2014-06-29T18:50:45.740871 #21202]  INFO -- default-ubuntu-1204:  -		#return 418;[0m[37m
+I, [2014-06-29T18:50:45.740903 #21202]  INFO -- default-ubuntu-1204:  -	#}[0m[37m
+I, [2014-06-29T18:50:45.740955 #21202]  INFO -- default-ubuntu-1204:  -[0m[37m
+I, [2014-06-29T18:50:45.740990 #21202]  INFO -- default-ubuntu-1204:  -	#error_page 404 /404.html;[0m[37m
+I, [2014-06-29T18:50:45.741021 #21202]  INFO -- default-ubuntu-1204:  -[0m[37m
+I, [2014-06-29T18:50:45.741054 #21202]  INFO -- default-ubuntu-1204:  -	# redirect server error pages to the static page /50x.html[0m[37m
+I, [2014-06-29T18:50:45.741086 #21202]  INFO -- default-ubuntu-1204:  -	#[0m[37m
+I, [2014-06-29T18:50:45.741119 #21202]  INFO -- default-ubuntu-1204:  -	#error_page 500 502 503 504 /50x.html;[0m[37m
+I, [2014-06-29T18:50:45.741152 #21202]  INFO -- default-ubuntu-1204:  -	#location = /50x.html {[0m[37m
+I, [2014-06-29T18:50:45.741186 #21202]  INFO -- default-ubuntu-1204:  -	#	root /usr/share/nginx/www;[0m[37m
+I, [2014-06-29T18:50:45.741217 #21202]  INFO -- default-ubuntu-1204:  -	#}[0m[37m
+I, [2014-06-29T18:50:45.741250 #21202]  INFO -- default-ubuntu-1204:  -[0m[37m
+I, [2014-06-29T18:50:45.741303 #21202]  INFO -- default-ubuntu-1204:  -	# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000[0m[37m
+I, [2014-06-29T18:50:45.741336 #21202]  INFO -- default-ubuntu-1204:  -	#[0m[37m
+I, [2014-06-29T18:50:45.741368 #21202]  INFO -- default-ubuntu-1204:  -	#location ~ \.php$ {[0m[37m
+I, [2014-06-29T18:50:45.741401 #21202]  INFO -- default-ubuntu-1204:  -	#	fastcgi_split_path_info ^(.+\.php)(/.+)$;[0m[37m
+I, [2014-06-29T18:50:45.741433 #21202]  INFO -- default-ubuntu-1204:  -	#	# NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini[0m[37m
+I, [2014-06-29T18:50:45.741466 #21202]  INFO -- default-ubuntu-1204:  -	#[0m[37m
+I, [2014-06-29T18:50:45.741497 #21202]  INFO -- default-ubuntu-1204:  -	#	# With php5-cgi alone:[0m[37m
+I, [2014-06-29T18:50:45.741530 #21202]  INFO -- default-ubuntu-1204:  -	#	fastcgi_pass 127.0.0.1:9000;[0m[37m
+I, [2014-06-29T18:50:45.741562 #21202]  INFO -- default-ubuntu-1204:  -	#	# With php5-fpm:[0m[37m
+I, [2014-06-29T18:50:45.741623 #21202]  INFO -- default-ubuntu-1204:  -	#	fastcgi_pass unix:/var/run/php5-fpm.sock;[0m[37m
+I, [2014-06-29T18:50:45.741655 #21202]  INFO -- default-ubuntu-1204:  -	#	fastcgi_index index.php;[0m[37m
+I, [2014-06-29T18:50:45.741688 #21202]  INFO -- default-ubuntu-1204:  -	#	include fastcgi_params;[0m[37m
+I, [2014-06-29T18:50:45.741719 #21202]  INFO -- default-ubuntu-1204:  -	#}[0m[37m
+I, [2014-06-29T18:50:45.741754 #21202]  INFO -- default-ubuntu-1204:  -[0m[37m
+I, [2014-06-29T18:50:45.741786 #21202]  INFO -- default-ubuntu-1204:  -	# deny access to .htaccess files, if Apache's document root[0m[37m
+I, [2014-06-29T18:50:45.741819 #21202]  INFO -- default-ubuntu-1204:  -	# concurs with nginx's one[0m[37m
+I, [2014-06-29T18:50:45.741850 #21202]  INFO -- default-ubuntu-1204:  -	#[0m[37m
+I, [2014-06-29T18:50:45.741890 #21202]  INFO -- default-ubuntu-1204:  -	#location ~ /\.ht {[0m[37m
+I, [2014-06-29T18:50:45.741922 #21202]  INFO -- default-ubuntu-1204:  -	#	deny all;[0m[37m
+I, [2014-06-29T18:50:45.741955 #21202]  INFO -- default-ubuntu-1204:  -	#}[0m[37m
+I, [2014-06-29T18:50:45.742008 #21202]  INFO -- default-ubuntu-1204:  +  location / {[0m[37m
+I, [2014-06-29T18:50:45.742040 #21202]  INFO -- default-ubuntu-1204:  +    root   /var/www/nginx-default;[0m[37m
+I, [2014-06-29T18:50:45.742073 #21202]  INFO -- default-ubuntu-1204:  +    index  index.html index.htm;[0m[37m
+I, [2014-06-29T18:50:45.742104 #21202]  INFO -- default-ubuntu-1204:  +  }[0m[37m
+I, [2014-06-29T18:50:45.742137 #21202]  INFO -- default-ubuntu-1204:   }[0m[37m
+I, [2014-06-29T18:50:45.742168 #21202]  INFO -- default-ubuntu-1204:  -[0m[37m
+I, [2014-06-29T18:50:45.742201 #21202]  INFO -- default-ubuntu-1204:  -[0m[37m
+I, [2014-06-29T18:50:45.742234 #21202]  INFO -- default-ubuntu-1204:  -# another virtual host using mix of IP-, name-, and port-based configuration[0m[37m
+I, [2014-06-29T18:50:45.742293 #21202]  INFO -- default-ubuntu-1204:  -#[0m[37m
+I, [2014-06-29T18:50:45.742326 #21202]  INFO -- default-ubuntu-1204:  -#server {[0m[37m
+I, [2014-06-29T18:50:45.742357 #21202]  INFO -- default-ubuntu-1204:  -#	listen 8000;[0m[37m
+I, [2014-06-29T18:50:45.742389 #21202]  INFO -- default-ubuntu-1204:  -#	listen somename:8080;[0m[37m
+I, [2014-06-29T18:50:45.742421 #21202]  INFO -- default-ubuntu-1204:  -#	server_name somename alias another.alias;[0m[37m
+I, [2014-06-29T18:50:45.742453 #21202]  INFO -- default-ubuntu-1204:  -#	root html;[0m[37m
+I, [2014-06-29T18:50:45.742485 #21202]  INFO -- default-ubuntu-1204:  -#	index index.html index.htm;[0m[37m
+I, [2014-06-29T18:50:45.742518 #21202]  INFO -- default-ubuntu-1204:  -#[0m[37m
+I, [2014-06-29T18:50:45.742550 #21202]  INFO -- default-ubuntu-1204:  -#	location / {[0m[37m
+I, [2014-06-29T18:50:45.742583 #21202]  INFO -- default-ubuntu-1204:  -#		try_files $uri $uri/ /index.html;[0m[37m
+I, [2014-06-29T18:50:45.742614 #21202]  INFO -- default-ubuntu-1204:  -#	}[0m[37m
+I, [2014-06-29T18:50:45.742648 #21202]  INFO -- default-ubuntu-1204:  -#}[0m[37m
+I, [2014-06-29T18:50:45.742706 #21202]  INFO -- default-ubuntu-1204:  -[0m[37m
+I, [2014-06-29T18:50:45.742737 #21202]  INFO -- default-ubuntu-1204:  -[0m[37m
+I, [2014-06-29T18:50:45.742771 #21202]  INFO -- default-ubuntu-1204:  -# HTTPS server[0m[37m
+I, [2014-06-29T18:50:45.742802 #21202]  INFO -- default-ubuntu-1204:  -#[0m[37m
+I, [2014-06-29T18:50:45.742835 #21202]  INFO -- default-ubuntu-1204:  -#server {[0m[37m
+I, [2014-06-29T18:50:45.742866 #21202]  INFO -- default-ubuntu-1204:  -#	listen 443;[0m[37m
+I, [2014-06-29T18:50:45.742901 #21202]  INFO -- default-ubuntu-1204:  -#	server_name localhost;[0m[37m
+I, [2014-06-29T18:50:45.742932 #21202]  INFO -- default-ubuntu-1204:  -#[0m[37m
+I, [2014-06-29T18:50:45.742965 #21202]  INFO -- default-ubuntu-1204:  -#	root html;[0m[37m
+I, [2014-06-29T18:50:45.742997 #21202]  INFO -- default-ubuntu-1204:  -#	index index.html index.htm;[0m[37m
+I, [2014-06-29T18:50:45.743029 #21202]  INFO -- default-ubuntu-1204:  -#[0m[37m
+I, [2014-06-29T18:50:45.743061 #21202]  INFO -- default-ubuntu-1204:  -#	ssl on;[0m[37m
+I, [2014-06-29T18:50:45.743114 #21202]  INFO -- default-ubuntu-1204:  -#	ssl_certificate cert.pem;[0m[37m
+I, [2014-06-29T18:50:45.743145 #21202]  INFO -- default-ubuntu-1204:  -#	ssl_certificate_key cert.key;[0m[37m
+I, [2014-06-29T18:50:45.743178 #21202]  INFO -- default-ubuntu-1204:  -#[0m[37m
+I, [2014-06-29T18:50:45.743209 #21202]  INFO -- default-ubuntu-1204:  -#	ssl_session_timeout 5m;[0m[37m
+I, [2014-06-29T18:50:45.743243 #21202]  INFO -- default-ubuntu-1204:  -#[0m[37m
+I, [2014-06-29T18:50:45.743274 #21202]  INFO -- default-ubuntu-1204:  -#	ssl_protocols SSLv3 TLSv1;[0m[37m
+I, [2014-06-29T18:50:45.743308 #21202]  INFO -- default-ubuntu-1204:  -#	ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv3:+EXP;[0m[37m
+I, [2014-06-29T18:50:45.743348 #21202]  INFO -- default-ubuntu-1204:  -#	ssl_prefer_server_ciphers on;[0m[37m
+I, [2014-06-29T18:50:45.743379 #21202]  INFO -- default-ubuntu-1204:  -#[0m[37m
+I, [2014-06-29T18:50:45.743427 #21202]  INFO -- default-ubuntu-1204:  -#	location / {[0m[37m
+I, [2014-06-29T18:50:45.743459 #21202]  INFO -- default-ubuntu-1204:  -#		try_files $uri $uri/ /index.html;[0m[37m
+I, [2014-06-29T18:50:45.743492 #21202]  INFO -- default-ubuntu-1204:  -#	}[0m[37m
+I, [2014-06-29T18:50:45.743523 #21202]  INFO -- default-ubuntu-1204:  -#}[0m
+I, [2014-06-29T18:50:45.743551 #21202]  INFO -- default-ubuntu-1204: [0m
+I, [2014-06-29T18:50:45.743592 #21202]  INFO -- default-ubuntu-1204: [2014-06-29T23:50:54+00:00] INFO: template[/etc/nginx/sites-available/default] not queuing delayed action reload on service[nginx] (delayed), as it's already been queued
+I, [2014-06-29T18:50:45.743620 #21202]  INFO -- default-ubuntu-1204:   * execute[nxdissite default] action run[0m[2014-06-29T23:50:54+00:00] INFO: Processing execute[nxdiss
+I, [2014-06-29T18:50:45.748906 #21202]  INFO -- default-ubuntu-1204: ite default] action run (nginx::commons_conf line 33)
+[2014-06-29T23:50:54+00:00] INFO: execute[nxdissite default] ran successfullyI, [2014-06-29T18:50:45.797264 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:45.798515 #21202]  INFO -- default-ubuntu-1204: 
+    - execute /usr/sbin/nxdissite default[0mI, [2014-06-29T18:50:45.799438 #21202]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:50:45.799952 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:54+00:00] INFO: execute[nxdissite default] not queuing delayed action reload on service[nginx] (delayed), as it's already been queuedI, [2014-06-29T18:50:45.800837 #21202]  INFO -- default-ubuntu-1204: 
+Recipe: nginx::default[0mI, [2014-06-29T18:50:45.802027 #21202]  INFO -- default-ubuntu-1204: 
+  * service[nginx] action start[0m[2014-06-29T23:50:54+00:00] INFO: Processing service[nginx] action start (nginx::default line 24)I, [2014-06-29T18:50:45.804282 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:54+00:00] INFO: service[nginx] startedI, [2014-06-29T18:50:46.100102 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:46.100750 #21202]  INFO -- default-ubuntu-1204: 
+    - start service service[nginx][0mI, [2014-06-29T18:50:46.103822 #21202]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:50:46.106687 #21202]  INFO -- default-ubuntu-1204: 
+Recipe: <Dynamically Defined Resource>[0mI, [2014-06-29T18:50:46.107650 #21202]  INFO -- default-ubuntu-1204: 
+  * template[/etc/nginx/sites-available/kibana] action create[0m[2014-06-29T23:50:54+00:00] INFO: Processing template[/etc/nginx/sites-available/kibana] action create (/tmp/kitchen/cookbooks/kibana/providers/web.rb line 57)I, [2014-06-29T18:50:46.116286 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:54+00:00] INFO: template[/etc/nginx/sites-available/kibana] created file /etc/nginx/sites-available/kibanaI, [2014-06-29T18:50:46.125442 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:46.126354 #21202]  INFO -- default-ubuntu-1204: 
+    - create new file /etc/nginx/sites-available/kibana[0m[2014-06-29T23:50:54+00:00] INFO: template[/etc/nginx/sites-available/kibana] updated file contents /etc/nginx/sites-available/kibanaI, [2014-06-29T18:50:46.135568 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:46.136299 #21202]  INFO -- default-ubuntu-1204: 
+    - update content in file /etc/nginx/sites-available/kibana from none to 44f6c7[0m[37mI, [2014-06-29T18:50:46.136948 #21202]  INFO -- default-ubuntu-1204: 
+        --- /etc/nginx/sites-available/kibana	2014-06-29 23:50:54.627266087 +0000[0m[37mI, [2014-06-29T18:50:46.138123 #21202]  INFO -- default-ubuntu-1204: 
+        +++ /tmp/chef-rendered-template20140629-4548-lsw2g3	2014-06-29 23:50:54.643258087 +0000[0m[37mI, [2014-06-29T18:50:46.139328 #21202]  INFO -- default-ubuntu-1204: 
+        @@ -1 +1,47 @@[0m[37mI, [2014-06-29T18:50:46.140059 #21202]  INFO -- default-ubuntu-1204: 
+        +server {[0m[37mI, [2014-06-29T18:50:46.140657 #21202]  INFO -- default-ubuntu-1204: 
+        +  listen                0.0.0.0:80;[0m[37mI, [2014-06-29T18:50:46.141231 #21202]  INFO -- default-ubuntu-1204: 
+        +[0mI, [2014-06-29T18:50:46.141660 #21202]  INFO -- default-ubuntu-1204: [37m
+I, [2014-06-29T18:50:46.141747 #21202]  INFO -- default-ubuntu-1204:  +  server_name           kibana.localhost kibana;[0m[37m
+I, [2014-06-29T18:50:46.141827 #21202]  INFO -- default-ubuntu-1204:  +  access_log            /var/log/nginx/kibana.localhost.access.log;[0m[37m
+I, [2014-06-29T18:50:46.142160 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:46.142243 #21202]  INFO -- default-ubuntu-1204:  +[0m[37m
+I, [2014-06-29T18:50:46.142355 #21202]  INFO -- default-ubuntu-1204:  +  location / {[0m[37m
+I, [2014-06-29T18:50:46.142434 #21202]  INFO -- default-ubuntu-1204:  +    root  /opt/kibana/current;[0m[37m
+I, [2014-06-29T18:50:46.142515 #21202]  INFO -- default-ubuntu-1204:  +    index  index.html  index.htm;[0m[37m
+I, [2014-06-29T18:50:46.142591 #21202]  INFO -- default-ubuntu-1204:  +  }[0m[37m
+I, [2014-06-29T18:50:46.142666 #21202]  INFO -- default-ubuntu-1204:  +[0m[37m
+I, [2014-06-29T18:50:46.143101 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:46.143188 #21202]  INFO -- default-ubuntu-1204:  +location ~ ^/_aliases$ {[0m[37m
+I, [2014-06-29T18:50:46.143266 #21202]  INFO -- default-ubuntu-1204:  +    proxy_pass http://127.0.0.1:9200;[0m[37m
+I, [2014-06-29T18:50:46.143344 #21202]  INFO -- default-ubuntu-1204:  +    proxy_read_timeout 90;[0m[37m
+I, [2014-06-29T18:50:46.143422 #21202]  INFO -- default-ubuntu-1204:  +  }[0m[37m
+I, [2014-06-29T18:50:46.143535 #21202]  INFO -- default-ubuntu-1204:  +  location ~ ^/.*/_aliases$ {[0m[37m
+I, [2014-06-29T18:50:46.143615 #21202]  INFO -- default-ubuntu-1204:  +    proxy_pass http://127.0.0.1:9200;[0m[37m
+I, [2014-06-29T18:50:46.144056 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:46.144177 #21202]  INFO -- default-ubuntu-1204:  +    proxy_read_timeout 90;[0m[37m
+I, [2014-06-29T18:50:46.144521 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:46.144606 #21202]  INFO -- default-ubuntu-1204:  +  }[0m[37m
+I, [2014-06-29T18:50:46.144722 #21202]  INFO -- default-ubuntu-1204:  +  location ~ ^/_nodes$ {[0m[37m
+I, [2014-06-29T18:50:46.144801 #21202]  INFO -- default-ubuntu-1204:  +    proxy_pass http://127.0.0.1:9200;[0m[37m
+I, [2014-06-29T18:50:46.144914 #21202]  INFO -- default-ubuntu-1204:  +    proxy_read_timeout 90;[0m[37m
+I, [2014-06-29T18:50:46.144991 #21202]  INFO -- default-ubuntu-1204:  +  }[0m[37m
+I, [2014-06-29T18:50:46.145067 #21202]  INFO -- default-ubuntu-1204:  +  location ~ ^/.*/_search$ {[0m[37m
+I, [2014-06-29T18:50:46.145145 #21202]  INFO -- default-ubuntu-1204:  +    proxy_pass http://127.0.0.1:9200;[0m[37m
+I, [2014-06-29T18:50:46.145259 #21202]  INFO -- default-ubuntu-1204:  +    proxy_read_timeout 90;[0m[37m
+I, [2014-06-29T18:50:46.145771 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:46.145856 #21202]  INFO -- default-ubuntu-1204:  +  }[0m[37m
+I, [2014-06-29T18:50:46.145958 #21202]  INFO -- default-ubuntu-1204:  +  location ~ ^/.*/_mapping$ {[0m[37m
+I, [2014-06-29T18:50:46.146070 #21202]  INFO -- default-ubuntu-1204:  +    proxy_pass http://127.0.0.1:9200;[0m[37m
+I, [2014-06-29T18:50:46.146149 #21202]  INFO -- default-ubuntu-1204:  +    proxy_read_timeout 90;[0m[37m
+I, [2014-06-29T18:50:46.146258 #21202]  INFO -- default-ubuntu-1204:  +  }[0m[37m
+I, [2014-06-29T18:50:46.146335 #21202]  INFO -- default-ubuntu-1204:  +  location ~ ^/_cluster/health$ {[0m[37m
+I, [2014-06-29T18:50:46.146779 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:46.146864 #21202]  INFO -- default-ubuntu-1204:  +    proxy_pass http://127.0.0.1:9200;[0m[37m
+I, [2014-06-29T18:50:46.146941 #21202]  INFO -- default-ubuntu-1204:  +    proxy_read_timeout 90;[0m[37m
+I, [2014-06-29T18:50:46.147043 #21202]  INFO -- default-ubuntu-1204:  +  }[0m[37m
+I, [2014-06-29T18:50:46.147120 #21202]  INFO -- default-ubuntu-1204:  +[0m[37m
+I, [2014-06-29T18:50:46.147196 #21202]  INFO -- default-ubuntu-1204:  +  # password protected end points[0m[37m
+I, [2014-06-29T18:50:46.147285 #21202]  INFO -- default-ubuntu-1204:  +  location ~ ^/kibana-int/dashboard/.*$ {[0m[37m
+I, [2014-06-29T18:50:46.147363 #21202]  INFO -- default-ubuntu-1204:  +    proxy_pass http://127.0.0.1:9200;[0m[37m
+I, [2014-06-29T18:50:46.147438 #21202]  INFO -- default-ubuntu-1204:  +    proxy_read_timeout 90;[0m[37m
+I, [2014-06-29T18:50:46.147540 #21202]  INFO -- default-ubuntu-1204:  +  }[0m[37m
+I, [2014-06-29T18:50:46.148098 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:46.148187 #21202]  INFO -- default-ubuntu-1204:  +  location ~ ^/kibana-int/temp.*$ {[0m[37m
+I, [2014-06-29T18:50:46.148266 #21202]  INFO -- default-ubuntu-1204:  +    proxy_pass http://127.0.0.1:9200;[0m[37m
+I, [2014-06-29T18:50:46.148342 #21202]  INFO -- default-ubuntu-1204:  +    proxy_read_timeout 90;[0m[37m
+I, [2014-06-29T18:50:46.148418 #21202]  INFO -- default-ubuntu-1204:  +  }[0m[37m
+I, [2014-06-29T18:50:46.148496 #21202]  INFO -- default-ubuntu-1204:  +}[0m
+I, [2014-06-29T18:50:46.148876 #21202]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:50:46.149193 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:54+00:00] INFO: template[/etc/nginx/sites-available/kibana] not queuing delayed action reload on service[nginx] (delayed), as it's already been queuedI, [2014-06-29T18:50:46.149537 #21202]  INFO -- default-ubuntu-1204: 
+  * execute[nxensite kibana] action run[0m[2014-06-29T23:50:54+00:00] INFO: Processing execute[nxensite kibana] action run (/tmp/kitchen/cookbooks/nginx/definitions/nginx_site.rb line 24)I, [2014-06-29T18:50:46.150008 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:54+00:00] INFO: execute[nxensite kibana] ran successfullyI, [2014-06-29T18:50:46.236103 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:46.237499 #21202]  INFO -- default-ubuntu-1204: 
+    - execute /usr/sbin/nxensite kibana[0mI, [2014-06-29T18:50:46.238451 #21202]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:50:46.239052 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:54+00:00] INFO: execute[nxensite kibana] not queuing delayed action reload on service[nginx] (delayed), as it's already been queuedI, [2014-06-29T18:50:46.239904 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:54+00:00] INFO: template[nginx.conf] sending reload action to service[nginx] (delayed)I, [2014-06-29T18:50:46.240996 #21202]  INFO -- default-ubuntu-1204: 
+Recipe: nginx::default[0mI, [2014-06-29T18:50:46.242034 #21202]  INFO -- default-ubuntu-1204: 
+  * service[nginx] action reload[0m[2014-06-29T23:50:54+00:00] INFO: Processing service[nginx] action reload (nginx::default line 24)I, [2014-06-29T18:50:46.243452 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:55+00:00] INFO: service[nginx] reloadedI, [2014-06-29T18:50:46.501263 #21202]  INFO -- default-ubuntu-1204: 
+[32mI, [2014-06-29T18:50:46.503329 #21202]  INFO -- default-ubuntu-1204: 
+    - reload service service[nginx][0mI, [2014-06-29T18:50:46.504700 #21202]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:50:46.505220 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:55+00:00] INFO: Chef Run complete in 29.769697274 secondsI, [2014-06-29T18:50:46.507112 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:46.508075 #21202]  INFO -- default-ubuntu-1204: 
+Running handlers:[0mI, [2014-06-29T18:50:46.508505 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:55+00:00] INFO: Running report handlersI, [2014-06-29T18:50:46.508952 #21202]  INFO -- default-ubuntu-1204: 
+Running handlers completeI, [2014-06-29T18:50:46.509431 #21202]  INFO -- default-ubuntu-1204: 
+[0mI, [2014-06-29T18:50:46.509919 #21202]  INFO -- default-ubuntu-1204: 
+[2014-06-29T23:50:55+00:00] INFO: Report handlers completeI, [2014-06-29T18:50:46.510348 #21202]  INFO -- default-ubuntu-1204: 
+Chef Client finished, 20/31 resources updated in 35.315756923 seconds[0mI, [2014-06-29T18:50:46.510924 #21202]  INFO -- default-ubuntu-1204: 
+I, [2014-06-29T18:50:46.914434 #21202]  INFO -- default-ubuntu-1204: Finished converging <default-ubuntu-1204> (0m58.90s).
