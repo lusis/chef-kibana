@@ -32,6 +32,7 @@ if node['kibana']['user'].empty?
     kibana_user = 'nobody'
   end
 else
+  kibana_user = node['kibana']['user']
   kibana_user kibana_user do
     name kibana_user
     group kibana_user
@@ -60,10 +61,9 @@ link "#{node['kibana']['install_dir']}/current/app/dashboards/default.json" do
   only_if { !File.symlink?("#{node['kibana']['install_dir']}/current/app/dashboards/default.json") }
 end
 
-unless node['kibana']['webserver'].empty?
-  kibana_web 'kibana' do
-    type node['kibana']['webserver']
-    docroot "#{node['kibana']['install_dir']}/current"
-    es_server = node['kibana']['es_server']
-  end
+kibana_web 'kibana' do
+  type node['kibana']['webserver']
+  docroot "#{node['kibana']['install_dir']}/current"
+  es_server = node['kibana']['es_server']
+  not_if { node['kibana']['webserver'].empty? }
 end

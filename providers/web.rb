@@ -51,10 +51,10 @@ action :create do
 
   when 'nginx'
     node.set['nginx']['default_site_enabled'] = resources[:default_site_enabled]
-
+    node.set['nginx']['install_method'] = node['kibana']['nginx']['install_method']
     @run_context.include_recipe 'nginx'
 
-    ngtp = template "/etc/nginx/sites-available/#{resources[:name]}" do
+    ngtp = template "#{node['nginx']['dir']}/sites-available/#{resources[:name]}" do
       source resources[:template]
       cookbook resources[:template_cookbook]
       notifies :reload, 'service[nginx]'

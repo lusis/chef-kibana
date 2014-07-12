@@ -45,6 +45,7 @@ As with most cookbooks I write, this one is hopefully flexible enough to be wrap
 - `node['kibana']['nginx']['template']` - The template file to use for the nginx site configuration
 - `node['kibana']['nginx']['template_cookbook']` - The cookbook containing said template
 - `node['kibana']['nginx']['enable_default_site']` - Should we disable the nginx default site (default: true)
+- `node['kibana']['nginx']['install_method']` - nginx install method: `source` or `package` (default: package)
 
 #### kibana::apache
 

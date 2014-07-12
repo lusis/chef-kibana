@@ -12,7 +12,7 @@ require 'chef/mixin/language'
 include Chef::Mixin::ShellOut
 
 def load_current_resource
-  @user = new_resource.user
+  @name = new_resource.user
   @group = new_resource.group || @user
   @home = new_resource.home || "/home/#{@user}"
 end

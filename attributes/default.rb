@@ -1,4 +1,4 @@
-default['kibana']['install_type'] = 'git' # git | file
+default['kibana']['install_type'] = 'file' # git | file
 default['kibana']['git']['url'] = 'https://github.com/elasticsearch/kibana'
 default['kibana']['git']['branch'] = 'master'
 default['kibana']['git']['type'] = 'sync' # checkout | sync

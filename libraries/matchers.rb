@@ -12,11 +12,11 @@ if defined?(ChefSpec)
   end
 
   def create_kibana_web(name)
-    ChefSpec::Matchers::ResourceMatcher.new(:kibana_web, :remove, name)
+    ChefSpec::Matchers::ResourceMatcher.new(:kibana_web, :create, name)
   end
 
   def remove_kibana_web(name)
-    ChefSpec::Matchers::ResourceMatcher.new(:kibana_web, :delete, name)
+    ChefSpec::Matchers::ResourceMatcher.new(:kibana_web, :remove, name)
   end
 
   def create_kibana_user(name)

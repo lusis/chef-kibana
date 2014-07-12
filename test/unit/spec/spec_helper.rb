@@ -14,7 +14,16 @@ require 'chef/application'
   log_level: ::LOG_LEVEL
 }
 
-def stub_resources
+shared_context 'stubs-common' do
+  before do
+    Chef::Application.stub(:fatal!).and_return('fatal')
+  end
+end
+
+shared_examples 'example' do
+  #  it 'does not include example recipe by default' do
+  #    expect(chef_run).not_to include_recipe('example::default')
+  #  end
 end
 
 at_exit { ChefSpec::Coverage.report! }
