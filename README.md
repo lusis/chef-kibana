@@ -57,7 +57,7 @@ If you would like to modify the `nginx` or `apache` parameters, you should:
 
 #### kibana::examples
 
-The examples cookbook lists further examples using the LWRPs to install and configure kibana and is definately _not_ intended to be run.
+examples of using the LWRPs.  Don't use this directly.
 
 Testing
 -------
