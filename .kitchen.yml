@@ -14,3 +14,5 @@ suites:
       - recipe[apt::default]
       - recipe[kibana::install]
     attributes:
+      kibana:
+        legacy_mode: false

@@ -56,7 +56,7 @@ action :create do
   when 'file'
     @run_context.include_recipe 'libarchive::default'
     case kb_args[:file_type]
-    when 'tgz'
+    when 'tgz', 'zip'
       rf = remote_file "#{Chef::Config[:file_cache_path]}/kibana_#{kb_args[:name]}.tar.gz" do
         checksum kb_args[:file_checksum]
         source kb_args[:file_url]

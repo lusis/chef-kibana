@@ -1,6 +1,13 @@
 kibana Cookbook
 ===============
-A stand-alone cookbook for Kibana3
+
+A stand-alone cookbook for Kibana3.
+
+This is a library cookbook,  you can use you included `kibana::install` recipe to install kibana, or you can call the LWRPs directly.
+
+If you are upgrading from the previous (< 1.3) cookbook you can set `node['kibana']['legacy_mode'] = true` which should continue working.   This will be removed at some point and you'll be expected to use it as a library cookbook.
+
+This cookbook is tested and works well with the `logstash` and the `elasticsearch` cookbooks found on the chef community site.
 
 Requirements
 ------------
@@ -15,58 +22,22 @@ Attributes
 ----------
 As with most cookbooks I write, this one is hopefully flexible enough to be wrapped by allowing you to override as much as possible
 
-#### kibana::default
-
-- `node['kibana']['install_type']` - The type of install we are going to use either `git` or `zipfile`
-- `node['kibana']['git']['url']` - The url for the git repo to use for Kibana3
-- `node['kibana']['git']['branch']` - The sha or branch name to use
-- `node['kibana']['file']['type']` - the type of archive file.  `zip` only at this stage
-- `node['kibana']['file']['url']` - The zipfile URL for the latest kibana build
-- `node['kibana']['file']['checksum']` - The sha256 of the kibana zipfile
-- `node['kibana']['install_path']` - The root directory where kibana will be installed
-- `node['kibana']['install_dir']` - The directory to checkout into. A `current` symlink will be created in this directory as well.
-- `node['kibana']['es_server']` - The ipaddress or hostname of your elasticsearch server
-- `node['kibana']['es_port']` - The port of your elasticsearch server's http interface
-- `node['kibana']['es_role']` - **unused** eventually for wiring up discovery of your elasticsearch server
-- `node['kibana']['es_scheme']` - Scheme helper if elasticsearch is outside of this cookbook `http://` or `https://`
-- `node['kibana']['user']` - The user who will own the files from the git checkout. (default: the web server user)
-- `node['kibana']['config_template']` - The template to use for kibana's `config.js`
-- `node['kibana']['config_cookbook']` - The cookbook that contains said config template
-- `node['kibana']['webserver']` - Which webserver to use: apache, nginx or '' 
-- `node['kibana']['webserver_hostname']` - The primary vhost the web server will use for kibana
-- `node['kibana']['webserver_aliases']` - Array of any secondary hostnames that are valid vhosts
-- `node['kibana']['webserver_listen']` - The ip address the web server will listen on
-- `node['kibana']['webserver_port']` - The port the webserver will listen on
-- `node['kibana']['webserver_scheme']` - Scheme helper if webserver is outside of this cookbook `http://` or `https://`
-- `node['kibana']['config']['elasticsearch']` - The URL or a javascript expression with for the elasticsearch server to connect to
-
-#### kibana::nginx
-
-- `node['kibana']['nginx']['template']` - The template file to use for the nginx site configuration
-- `node['kibana']['nginx']['template_cookbook']` - The cookbook containing said template
-- `node['kibana']['nginx']['enable_default_site']` - Should we disable the nginx default site (default: true)
-- `node['kibana']['nginx']['install_method']` - nginx install method: `source` or `package` (default: package)
-
-#### kibana::apache
-
-- `node['kibana']['apache']['template']` - The template file to use for the apache site configuration
-- `node['kibana']['apache']['template_cookbook']` - The cookbook containing said template
-- `node['kibana']['apache']['enable_default_site']` - Should we disable the apache default site (default: true)
+See `attributes/*.rb` for attributes ( documented inline )
 
 Usage
 -----
 #### kibana::default
 
-The default recipe does nothing except for allow access to the LWRPs.   
+The default recipe does nothing except for allow access to the LWRPs unless `legacy_mode` is turned on in which case it attempts to install kibana
+in the old fashioned way.
 
 #### kibana::install
 
-The install recipe will:
+This is designed to be an example recipe to show you how you might write a wrapper cookbook.   However it should be usable for a 
+simple install of kibana.
 
 - install kibana3 from `master` into `/opt/kibana/master` and create a symlink called `current` in the same directory to `master`
 - install `nginx` and serve the kibana application
-
-If you want to use the zipfile distribution of Kibana update `node['kibana']['install_type']` attribute to `zipfile`.  Set `node['kibana']['zipfile_checksum']` to appropriate sha256 value of latest zipfile.
 
 If you wish to swap `apache` for `nginx`, simply set `node['kibana']['webserver']` to `apache` in a role/environment/node somewhere.
 
@@ -86,49 +57,20 @@ If you would like to modify the `nginx` or `apache` parameters, you should:
 
 #### kibana::examples
 
-The examples cookbook lists further examples using the LWRPs to install and configure kibana.
+The examples cookbook lists further examples using the LWRPs to install and configure kibana and is definately _not_ intended to be run.
 
 Testing
 -------
-#### Vagrant
+#### kitchen
 
-Requires Vagrant >= 1.2 with the following plugins :
-
-* vagrant-berkshef
-* vagrant-omnibus
-
-```
-$ vagrant up ubuntu1204
-```
-
-If you get the following error then run `vagrant provision ubuntu1204`.  For some reason on my box it's occasionally failing to launch the shell provisioner.
-
-```
-[ubuntu1204] Running: inline script
-stdin: is not a tty
-The following SSH command responded with a non-zero exit status.
-Vagrant assumes that this means the command failed!
-
-chmod +x /tmp/vagrant-shell && /tmp/vagrant-shell
-```
-
-#### Vagabond
-
-This should be a quicker test suite than Vagrant.   However I'm currently hitting 
-this bug : https://github.com/chrisroberts/vagabond/issues/40.   In theory the following should work
-
-```
-vagabond up ubuntu1204
-```
-
-
-#### Strainer
 
 ```
 $ bundle install
 $ bundle exec berks install
-$ bundle exec strainer test
+$ bundle exec rake style spec # spec and style checks
+$ bundle exec rake kitchen # integration testing
 ```
+
 
 Contributing
 ------------
@@ -142,9 +84,10 @@ Contributing
 
 License and Authors
 -------------------
-Primary author:
+Primary authors:
 
 - John E. Vincent <lusis.org+github.com@gmail.com>
+- Paul Czarkowski <username.taken@gmail.com>
 
 Contributors:
 
@@ -154,7 +97,6 @@ Contributors:
 - Chris Ferry (@chrisferry)
 - Ian Neubert (@ianneub)
 - kellam (@klamontagne)
-- Paul Czarkowski (@paulczar)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
