@@ -64,6 +64,6 @@ end
 kibana_web 'kibana' do
   type node['kibana']['webserver']
   docroot "#{node['kibana']['install_dir']}/current"
-  es_server = node['kibana']['es_server']
+  es_server node['kibana']['es_server']
   not_if { node['kibana']['webserver'].empty? }
 end
