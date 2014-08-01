@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: kibana
-# Recipe:: default
+# Recipe:: install
 #
 # Copyright 2013, John E. Vincent
 #
