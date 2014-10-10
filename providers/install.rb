@@ -73,11 +73,12 @@ action :create do
       new_resource.updated_by_last_action(la.updated_by_last_action?)
 
       ln = link "#{kb_args[:install_dir]}/current" do
-        to "#{kb_args[:install_dir]}/kibana-#{kb_args[:file_version]}"
+        to "#{kb_args[:install_dir]}/kibana-#{kb_args[:version]}"
       end
       new_resource.updated_by_last_action(ln.updated_by_last_action?)
 
       node.set['kibana'][kb_args[:name]]['web_dir'] = "#{kb_args[:install_dir]}/current"
+      node.save unless Chef::Config[:solo]
     end
   end
 
@@ -97,7 +98,7 @@ def kibana_resources
     git_type: new_resource.git_type,
     file_type: new_resource.file_type,
     file_url: new_resource.file_url,
-    file_version: new_resource.file_version,
+    version: new_resource.version,
     file_checksum: new_resource.file_checksum
   }
   kb

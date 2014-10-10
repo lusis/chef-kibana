@@ -42,13 +42,11 @@ end
 
 kibana_web 'kibana_file' do
   type 'apache'
-  docroot '/opt/kibana/current'
   listen_port '8080'
 end
 
 kibana_web 'kibana_git' do
   type 'nginx'
-  docroot '/opt/kibana-git/current'
   es_port '2900'
   listen_port '8081'
 end

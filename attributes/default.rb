@@ -1,17 +1,26 @@
 # The method used to install kibana.  `git` will clone the git repo,
 # `file` will download from elasticsearch.org
 default['kibana']['install_type'] = 'file' # git | file
+default['kibana']['version'] = '4.0.0-BETA1' # must match version number of kibana being installed
 
 # Values to use for git method of installation
 default['kibana']['git']['url'] = 'https://github.com/elasticsearch/kibana'
 default['kibana']['git']['branch'] = 'master'
 default['kibana']['git']['type'] = 'sync' # checkout | sync
+default['kibana']['git']['config'] = 'kibana/config.js' # relative path of config file
+default['kibana']['git']['config_template'] = 'config.js.erb' # template to use for config
+default['kibana']['git']['config_template_cookbook'] = 'kibana' # cookbook containing config template
 
 # Values to use for file method of installation
 default['kibana']['file']['type'] = 'tgz' # zip | tgz
-default['kibana']['file']['url'] = 'https://download.elasticsearch.org/kibana/kibana/kibana-3.1.0.tar.gz'
-default['kibana']['file']['version'] = '3.1.0' # must match version number of above
-default['kibana']['file']['checksum'] = '059a4b6b507b9ff771901d12035e499b0e8d1cae7d9e5284633e19da6c294e07' # sha256 ( shasum -a 256 FILENAME )
+default['kibana']['file']['url'] = 'https://download.elasticsearch.org/kibana/kibana/kibana-4.0.0-BETA1.tar.gz'
+default['kibana']['file']['checksum'] = '144eda4af8064a1e50d452bcdb6828303bd8c8c34fed0de784a216812df8a835' # sha256 ( shasum -a 256 FILENAME )
+default['kibana']['file']['config'] = 'config/kibana.yml' # relative path of config file
+default['kibana']['file']['config_template'] = 'config.yml.erb' # template to use for config
+default['kibana']['file']['config_template_cookbook'] = 'kibana' # cookbook containing config template
+
+# Kibana Java Web Server
+default['kibana']['java_webserver_port'] = 5601
 
 # Which webserver to use, and webserver options.
 default['kibana']['webserver'] = 'nginx' # nginx or apache
@@ -34,11 +43,9 @@ default['kibana']['es_role'] = 'elasticsearch_server'
 default['kibana']['es_scheme'] = 'http://'
 
 # user to install kibana files as.  if left blank will use the default webserver user.
-default['kibana']['user'] = ''
+default['kibana']['user'] = 'kibana'
 
 # config template location and variables.
-default['kibana']['config_template'] = 'config.js.erb'
-default['kibana']['config_cookbook'] = 'kibana'
 default['kibana']['config']['kibana_index']  = 'kibana-int'
 default['kibana']['config']['panel_names']   =  %w(histogram map pie table filtering timepicker text fields hits dashcontrol column derivequeries trends bettermap query terms)
 default['kibana']['config']['default_route'] = '/dashboard/file/logstash.json'
