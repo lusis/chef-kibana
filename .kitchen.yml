@@ -1,11 +1,15 @@
 ---
 driver:
   name: vagrant
-  network:
-  - ["forwarded_port", {guest: 80, host: 8080}]
+driver_config:
+  require_chef_omnibus: true
+  use_vagrant_berkshelf_plugin: true
+  customize:
+    memory: 1024
+    cpus: 1  
 
 provisioner:
-  name: chef_solo
+  name: chef_zero
 
 platforms:
   - name: ubuntu-12.04
@@ -18,3 +22,36 @@ suites:
     attributes:
       kibana:
         legacy_mode: false
+
+  - name: elk
+    driver:
+      network:
+        - ["forwarded_port", {guest: 5601, host: 5601}]
+        - ["forwarded_port", {guest: 80, host: 8080}]
+        - ["forwarded_port", {guest: 5959, host: 5959}]
+    run_list: 
+      - recipe[apt::default]
+      - recipe[java::default]
+      - recipe[elasticsearch::default]
+      - recipe[logstash::server]
+      - recipe[kibana::install]
+    attributes:
+      kibana:
+        legacy_mode: false
+      elasticsearch:
+        version: 1.4.0.Beta1
+      java:
+        install_flavor: oracle
+        jdk_version: 7
+        oracle:
+          accept_oracle_download_terms: true
+      logstash:
+        instance:
+          server:
+            xms: '256M'
+            xmx: '256M'
+            config_templates:
+              input_syslog: 'config/input_syslog.conf.erb'
+              output_elasticsearch_http: 'config/output_elasticsearch_http.conf.erb'
+            enable_embedded_es: false
+

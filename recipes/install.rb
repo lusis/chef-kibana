@@ -57,14 +57,16 @@ es_server = "#{node['kibana']['es_scheme']}#{node['kibana']['es_server']}:#{node
 
 template kibana_config do
   source node['kibana'][install_type]['config_template']
-  cookbook node['kibana'][install_type]['config_cookbook']
+  cookbook node['kibana'][install_type]['config_template_cookbook']
   mode '0644'
   user kibana_user
   group kibana_user
   variables(
               index: node['kibana']['config']['kibana_index'],
               port: node['kibana']['java_webserver_port'],
-              elasticsearch: es_server
+              elasticsearch: es_server,
+              default_route: node['kibana']['config']['default_route'],
+              panel_names:  node['kibana']['config']['panel_names']
             )
 end
 

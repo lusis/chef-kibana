@@ -98,7 +98,7 @@ def kibana_resources
     es_scheme: new_resource.es_scheme,
     default_site_enabled: new_resource.default_site_enabled,
     version: new_resource.version,
-    kibana_port: new_resource.kibana_port,
+    kibana_port: new_resource.kibana_port
   }
   kb
 end
