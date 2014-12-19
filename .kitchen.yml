@@ -1,6 +1,8 @@
 ---
 driver:
   name: vagrant
+  network:
+  - ["forwarded_port", {guest: 80, host: 8080}]
 
 provisioner:
   name: chef_solo
@@ -10,9 +12,14 @@ platforms:
 
 suites:
   - name: default
-    run_list: 
+    run_list:
       - recipe[apt::default]
       - recipe[kibana::install]
     attributes:
+      java:
+        install_flavor: "oracle"
+        jdk_version: "7"
+        oracle:
+          accept_oracle_download_terms: true
       kibana:
         legacy_mode: false

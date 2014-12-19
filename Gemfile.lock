@@ -3,6 +3,8 @@ GEM
   specs:
     addressable (2.3.6)
     ast (2.0.0)
+    astrolabe (1.3.0)
+      parser (>= 2.2.0.pre.3, < 3.0)
     berkshelf (3.2.2)
       addressable (~> 2.3.4)
       berkshelf-api-client (~> 1.2)
@@ -157,7 +159,7 @@ GEM
       mixlib-shellout (~> 1.2)
       systemu (~> 2.6.4)
       wmi-lite (~> 1.0)
-    parser (2.1.9)
+    parser (2.2.0.pre.7)
       ast (>= 1.1, < 3.0)
       slop (~> 3.4, >= 3.4.5)
     plist (3.1.0)
@@ -208,9 +210,9 @@ GEM
     rspec-mocks (3.1.3)
       rspec-support (~> 3.1.0)
     rspec-support (3.1.2)
-    rubocop (0.23.0)
-      json (>= 1.7.7, < 2)
-      parser (~> 2.1.9)
+    rubocop (0.27.1)
+      astrolabe (~> 1.3)
+      parser (>= 2.2.0.pre.7, < 3.0)
       powerpack (~> 0.0.6)
       rainbow (>= 1.99.1, < 3.0)
       ruby-progressbar (~> 1.4)
@@ -253,7 +255,7 @@ GEM
       buff-extensions (~> 1.0)
       hashie (>= 2.0.2, < 3.0.0)
     wmi-lite (1.0.0)
-    yajl-ruby (1.1.0)
+    yajl-ruby (1.2.1)
 
 PLATFORMS
   ruby
@@ -269,8 +271,8 @@ DEPENDENCIES
   kitchen-vagrant
   nokogiri (= 1.6.4.1)
   rake (>= 10.2)
-  rubocop (= 0.23)
-  serverspec (>= 1.6)
+  rubocop (>= 0.23)
+  serverspec (>= 2.0)
   stove
   test-kitchen
   vagrant-wrapper

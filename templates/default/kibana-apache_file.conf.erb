@@ -1,0 +1,9 @@
+<VirtualHost <%= @params[:listen_address] %>:<%= @params[:listen_port] %>>
+  ServerName <%= @params[:server_name] %>
+
+  ServerAlias <%= @params[:server_aliases].join(" ") %>
+
+  ProxyPass / http://0.0.0.0:8080/
+  ProxyPassReverse / http://0.0.0.0:8080/
+
+</VirtualHost>

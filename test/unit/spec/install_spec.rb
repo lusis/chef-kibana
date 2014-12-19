@@ -19,6 +19,7 @@ describe 'kibana::install' do
       runner.node.set['kibana']['nginx']['template_cookbook'] = 'kibana'
       runner.node.set['kibana']['nginx']['enable_default_site'] = false
       runner.node.set['kibana']['nginx']['install_method'] = 'package'
+      runner.node.automatic['memory']['total'] = '1024kB'
       runner.converge(described_recipe)
     end
     include_context 'stubs-common'
@@ -41,26 +42,24 @@ describe 'kibana::install' do
     end
 
     it 'creates kibana config from template' do
-      expect(chef_run).to create_template('/opt/kibanana/current/config.js').with(
-        source: 'config.js.erb',
+      expect(chef_run).to create_template('/opt/kibanana/current/config/kibana.yml').with(
+        source: 'kibana.yml.erb',
         cookbook: 'kibana',
-        mode: '0750',
+        mode: '0644',
         user: 'kibanana'
-      )
-    end
-
-    it 'links default logstash dashboard' do
-      expect(chef_run).to create_link('/opt/kibanana/current/app/dashboards/default.json').with(
-        to: 'logstash.json'
       )
     end
 
     it 'installs and configures a webserver' do
       expect(chef_run).to create_kibana_web('kibana').with(
         type: 'nginx',
-        docroot: '/opt/kibanana/current',
+        docroot: '/opt/kibanana/current/kibana',
         es_server: '127.0.0.1'
       )
+    end
+
+    it 'creates a runit service for kibana' do
+      expect(chef_run).to enable_runit_service('kibana')
     end
 
   end

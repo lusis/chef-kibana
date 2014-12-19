@@ -1,22 +1,13 @@
 kibana Cookbook
 ===============
 
-A stand-alone cookbook for Kibana3.
+A library cookbook for installing kibana 4.
 
-This is a library cookbook,  you can use you included `kibana::install` recipe to install kibana, or you can call the LWRPs directly.
+If you wish to install Kibana3 try using the '1.3.x' releases of the cookbook.
 
-If you are upgrading from the previous (< 1.3) cookbook you can set `node['kibana']['legacy_mode'] = true` which should continue working.   This will be removed at some point and you'll be expected to use it as a library cookbook.
+This is a library cookbook,  you can use you included `kibana::install` recipe to install kibana, but it is more likely to be really useful for you to call the LWRPs directly from your own cookbook.  You can use the `kibana::install` recipe as a guide and customize to your needs. 
 
 This cookbook is tested and works well with the `logstash` and the `elasticsearch` cookbooks found on the chef community site.
-
-Requirements
-------------
-- apt
-- yum
-- apache2
-- nginx
-- git
-
 
 Attributes
 ----------
@@ -28,15 +19,14 @@ Usage
 -----
 #### kibana::default
 
-The default recipe does nothing except for allow access to the LWRPs unless `legacy_mode` is turned on in which case it attempts to install kibana
-in the old fashioned way.
+The default recipe does nothing except for allow access to the LWRPs.
 
 #### kibana::install
 
 This is designed to be an example recipe to show you how you might write a wrapper cookbook.   However it should be usable for a 
 simple install of kibana.
 
-- install kibana3 from `master` into `/opt/kibana/master` and create a symlink called `current` in the same directory to `master`
+- install kibana4 `/opt/kibana/XXXX` and create a symlink called `current` in the same directory.
 - install `nginx` and serve the kibana application
 
 If you wish to swap `apache` for `nginx`, simply set `node['kibana']['webserver']` to `apache` in a role/environment/node somewhere.

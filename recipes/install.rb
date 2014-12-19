@@ -17,6 +17,8 @@
 # limitations under the License.
 #
 
+install_type = node['kibana']['install_type']
+
 unless Chef::Config[:solo]
   es_server_results = search(:node, "roles:#{node['kibana']['es_role']} AND chef_environment:#{node.chef_environment}")
   unless es_server_results.empty?
@@ -45,25 +47,50 @@ kibana_install 'kibana' do
   user kibana_user
   group kibana_user
   install_dir node['kibana']['install_dir']
-  install_type node['kibana']['install_type']
+  install_type install_type
   action :create
 end
 
-template "#{node['kibana']['install_dir']}/current/config.js" do
-  source node['kibana']['config_template']
-  cookbook node['kibana']['config_cookbook']
-  mode '0750'
+docroot = "#{node['kibana']['install_dir']}/current/kibana"
+kibana_config = "#{node['kibana']['install_dir']}/current/#{node['kibana'][install_type]['config']}"
+es_server = "#{node['kibana']['es_scheme']}#{node['kibana']['es_server']}:#{node['kibana']['es_port']}"
+
+template kibana_config do
+  source node['kibana'][install_type]['config_template']
+  cookbook node['kibana'][install_type]['config_template_cookbook']
+  mode '0644'
   user kibana_user
+  group kibana_user
+  variables(
+              index: node['kibana']['config']['kibana_index'],
+              port: node['kibana']['java_webserver_port'],
+              elasticsearch: es_server,
+              default_route: node['kibana']['config']['default_route'],
+              panel_names:  node['kibana']['config']['panel_names']
+            )
 end
 
-link "#{node['kibana']['install_dir']}/current/app/dashboards/default.json" do
-  to 'logstash.json'
-  only_if { !File.symlink?("#{node['kibana']['install_dir']}/current/app/dashboards/default.json") }
+if install_type == 'file'
+
+  include_recipe 'java::default' if node['kibana']['install_java']
+  include_recipe 'runit::default'
+
+  runit_service 'kibana' do
+    options(
+      user: kibana_user,
+      home: "#{node['kibana']['install_dir']}/current"
+    )
+    cookbook 'kibana'
+    subscribes :restart, "template[#{kibana_config}]", :delayed
+  end
+
 end
 
 kibana_web 'kibana' do
   type lazy { node['kibana']['webserver'] }
-  docroot "#{node['kibana']['install_dir']}/current"
+  docroot docroot
   es_server node['kibana']['es_server']
+  kibana_port node['kibana']['java_webserver_port']
+  template 'kibana-nginx_file.conf.erb'
   not_if { node['kibana']['webserver'] == '' }
 end

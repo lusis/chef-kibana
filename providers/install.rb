@@ -56,7 +56,7 @@ action :create do
     case kb_args[:file_type]
     when 'tgz', 'zip'
       remote_file "#{Chef::Config[:file_cache_path]}/kibana_#{kb_args[:name]}.tar.gz" do
-        checksum kb_args[:file_checksum]
+        checksum lazy { kb_args[:file_checksum] }
         source kb_args[:file_url]
         action [:create_if_missing]
       end
@@ -69,10 +69,11 @@ action :create do
       end
 
       link "#{kb_args[:install_dir]}/current" do
-        to "#{kb_args[:install_dir]}/kibana-#{kb_args[:file_version]}"
+        to "#{kb_args[:install_dir]}/kibana-#{kb_args[:version]}"
       end
 
       node.set['kibana'][kb_args[:name]]['web_dir'] = "#{kb_args[:install_dir]}/current"
+      node.save unless Chef::Config[:solo]
     end
   end
 
@@ -92,7 +93,7 @@ def kibana_resources
     git_type: new_resource.git_type,
     file_type: new_resource.file_type,
     file_url: new_resource.file_url,
-    file_version: new_resource.file_version,
+    version: new_resource.version,
     file_checksum: new_resource.file_checksum
   }
   kb

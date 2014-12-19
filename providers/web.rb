@@ -67,7 +67,8 @@ action :create do
         kibana_dir: resources[:docroot],
         listen_address: resources[:listen_address],
         listen_port: resources[:listen_port],
-        es_scheme: resources[:es_scheme]
+        es_scheme: resources[:es_scheme],
+        kibana_port: resources[:kibana_port]
       )
     end
     nginx_site resources[:name]
@@ -95,7 +96,9 @@ def kibana_resources
     es_server: new_resource.es_server,
     es_port: new_resource.es_port,
     es_scheme: new_resource.es_scheme,
-    default_site_enabled: new_resource.default_site_enabled
+    default_site_enabled: new_resource.default_site_enabled,
+    version: new_resource.version,
+    kibana_port: new_resource.kibana_port
   }
   kb
 end

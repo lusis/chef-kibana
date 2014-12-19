@@ -39,3 +39,6 @@ MethodLength:
 
 SingleSpaceBeforeFirstArg:
   Enabled: false
+
+Metrics/AbcSize:
+  Max: 35
