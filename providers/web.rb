@@ -11,6 +11,8 @@ require 'chef/mixin/shell_out'
 require 'chef/mixin/language'
 include Chef::Mixin::ShellOut
 
+use_inline_resources
+
 def load_current_resource
   lolno = new_resource.clone
 end
@@ -47,7 +49,6 @@ action :create do
       listen_port resources[:listen_port]
       es_scheme resources[:es_scheme]
     end
-    # new_resource.updated_by_last_action(wa.updated_by_last_action?)
 
   when 'nginx'
     node.set['nginx']['default_site_enabled'] = resources[:default_site_enabled]
@@ -71,7 +72,6 @@ action :create do
     end
     new_resource.updated_by_last_action(ngtp.updated_by_last_action?)
     ngsi = nginx_site resources[:name]
-    # new_resource.updated_by_last_action(ngsi.updated_by_last_action?)
 
   else
     Chef::Application.fatal!("Unknown type: #{resources[:type]}")

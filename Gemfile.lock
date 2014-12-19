@@ -52,6 +52,9 @@ GEM
       plist (~> 3.1.0)
       pry (~> 0.9)
       rest-client (>= 1.0.4, <= 1.6.7)
+    chef-api (0.5.0)
+      logify (~> 0.1)
+      mime-types
     chef-zero (2.2.1)
       ffi-yajl (~> 1.1)
       hashie (~> 2.0)
@@ -114,6 +117,7 @@ GEM
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
+    logify (0.2.0)
     lumberjack (1.0.9)
     method_source (0.8.2)
     mime-types (1.25.1)
@@ -229,6 +233,9 @@ GEM
     specinfra (2.10.3)
       net-scp
       net-ssh
+    stove (3.2.4)
+      chef-api (~> 0.5)
+      logify (~> 0.2)
     systemu (2.6.4)
     test-kitchen (1.2.1)
       mixlib-shellout (~> 1.2)
@@ -264,5 +271,6 @@ DEPENDENCIES
   rake (>= 10.2)
   rubocop (= 0.23)
   serverspec (>= 1.6)
+  stove
   test-kitchen
   vagrant-wrapper

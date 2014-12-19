@@ -28,3 +28,4 @@ gem 'guard-foodcritic', '>= 1.0.2'
 gem 'vagrant-wrapper'
 
 gem 'nokogiri', '= 1.6.4.1'
+gem 'stove'
