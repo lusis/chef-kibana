@@ -4,7 +4,7 @@ require_relative 'spec_helper'
 
 describe 'kibana::install' do
   describe 'ubuntu' do
-    let(:runner) { ChefSpec::Runner.new(::UBUNTU_OPTS) }
+    let(:runner) { ChefSpec::ServerRunner.new(::UBUNTU_OPTS) }
     let(:node) { runner.node }
     let(:chef_run) do
       # runner.node.set['logstash'] ...

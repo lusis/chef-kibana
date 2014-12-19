@@ -4,20 +4,20 @@ default['kibana']['install_type'] = 'file' # git | file
 
 # Values to use for git method of installation
 default['kibana']['git']['url'] = 'https://github.com/elasticsearch/kibana'
-default['kibana']['git']['branch'] = 'master'
+default['kibana']['git']['branch'] = 'v3.1.2'
 default['kibana']['git']['type'] = 'sync' # checkout | sync
 
 # Values to use for file method of installation
 default['kibana']['file']['type'] = 'tgz' # zip | tgz
-default['kibana']['file']['url'] = 'https://download.elasticsearch.org/kibana/kibana/kibana-3.1.0.tar.gz'
-default['kibana']['file']['version'] = '3.1.0' # must match version number of above
-default['kibana']['file']['checksum'] = '059a4b6b507b9ff771901d12035e499b0e8d1cae7d9e5284633e19da6c294e07' # sha256 ( shasum -a 256 FILENAME )
+default['kibana']['file']['url'] = 'https://download.elasticsearch.org/kibana/kibana/kibana-3.1.2.tar.gz'
+default['kibana']['file']['version'] = '3.1.2' # must match version number of above
+default['kibana']['file']['checksum'] = '480562733c2c941525bfa26326b6fae5faf83109b452a6c4e283a5c37e3086ee' # sha256 ( shasum -a 256 FILENAME )
 
 # Which webserver to use, and webserver options.
 default['kibana']['webserver'] = 'nginx' # nginx or apache
 default['kibana']['webserver_hostname'] = node.name
-default['kibana']['webserver_aliases'] = [node.ipaddress]
-default['kibana']['webserver_listen'] = node.ipaddress
+default['kibana']['webserver_aliases'] = [node['ipaddress']]
+default['kibana']['webserver_listen'] = node['ipaddress']
 default['kibana']['webserver_port'] = 80
 default['kibana']['webserver_scheme'] = 'http://'
 
