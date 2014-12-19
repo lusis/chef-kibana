@@ -11,7 +11,7 @@ actions :create, :remove
 default_action :create if defined?(default_action)
 
 attribute :name, kind_of: String, name_attribute: true
-attribute :type, kind_of: String, equal_to: %w(apache nginx)
+attribute :type, kind_of: String, default: 'nginx'
 attribute :template_cookbook, kind_of: String, default: 'kibana'
 attribute :docroot, kind_of: String, default: '/opt/kibana/current'
 attribute :template, kind_of: String

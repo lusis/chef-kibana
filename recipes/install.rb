@@ -62,8 +62,8 @@ link "#{node['kibana']['install_dir']}/current/app/dashboards/default.json" do
 end
 
 kibana_web 'kibana' do
-  type node['kibana']['webserver']
+  type lazy { node['kibana']['webserver'] }
   docroot "#{node['kibana']['install_dir']}/current"
   es_server node['kibana']['es_server']
-  not_if { node['kibana']['webserver'].empty? }
+  not_if { node['kibana']['webserver'] == '' }
 end

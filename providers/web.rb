@@ -55,7 +55,7 @@ action :create do
     node.set['nginx']['install_method'] = node['kibana']['nginx']['install_method']
     @run_context.include_recipe 'nginx'
 
-    ngtp = template "#{node['nginx']['dir']}/sites-available/#{resources[:name]}" do
+    template "#{node['nginx']['dir']}/sites-available/#{resources[:name]}" do
       source resources[:template]
       cookbook resources[:template_cookbook]
       notifies :reload, 'service[nginx]'
@@ -70,9 +70,9 @@ action :create do
         es_scheme: resources[:es_scheme]
       )
     end
-    new_resource.updated_by_last_action(ngtp.updated_by_last_action?)
-    ngsi = nginx_site resources[:name]
-
+    nginx_site resources[:name]
+  when ''
+    # do nothing
   else
     Chef::Application.fatal!("Unknown type: #{resources[:type]}")
   end
