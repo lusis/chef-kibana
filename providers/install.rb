@@ -53,16 +53,18 @@ action :create do
 
   when 'file'
     @run_context.include_recipe 'libarchive::default'
+    temp_file = "kibana_#{kb_args[:name]}_#{kb_args[:version]}_#{kb_args[:name]}.tar.gz"
+    temp_path = Chef::Config[:file_cache_path]
     case kb_args[:file_type]
     when 'tgz', 'zip'
-      remote_file "#{Chef::Config[:file_cache_path]}/kibana_#{kb_args[:name]}.tar.gz" do
+      remote_file "#{temp_path}/#{temp_file}" do
         checksum lazy { kb_args[:file_checksum] }
         source kb_args[:file_url]
         action [:create_if_missing]
       end
 
-      libarchive_file "kibana_#{kb_args[:name]}.tar.gz" do
-        path "#{Chef::Config[:file_cache_path]}/kibana_#{kb_args[:name]}.tar.gz"
+      libarchive_file temp_file do
+        path "#{temp_path}/#{temp_file}"
         extract_to kb_args[:install_dir]
         owner kb_args[:user]
         action [:extract]
