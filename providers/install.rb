@@ -60,7 +60,7 @@ action :create do
       remote_file "#{temp_path}/#{temp_file}" do
         checksum lazy { kb_args[:file_checksum] }
         source kb_args[:file_url]
-        action [:create_if_missing]
+        action [:create]
       end
 
       libarchive_file temp_file do

@@ -57,3 +57,15 @@ default['kibana']['config']['default_route'] = '/dashboard/file/logstash.json'
 # include quote inside this next variable if not using window.location style variables...
 # e.g.  = "'http://elasticsearch.example.com:9200'"
 default['kibana']['config']['elasticsearch'] = "window.location.protocol+\"//\"+window.location.hostname+\":\"+window.location.port"
+
+# nginx variables
+default['kibana']['nginx']['install_method'] = 'package'
+default['kibana']['nginx']['template'] = 'kibana-nginx.conf.erb'
+default['kibana']['nginx']['template_cookbook'] = 'kibana'
+default['kibana']['nginx']['enable_default_site'] = false
+default['kibana']['nginx']['install_method'] = 'package'
+
+# Apache variables.
+default['kibana']['apache']['template'] = 'kibana-apache.conf.erb'
+default['kibana']['apache']['template_cookbook'] = 'kibana'
+default['kibana']['apache']['enable_default_site'] = false
