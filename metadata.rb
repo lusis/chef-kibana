@@ -7,7 +7,7 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 
 version '1.4.1'
 
-%w(git nginx apache2 ark libarchive java runit logstash).each do |cb|
+%w(git nginx apache2 ark libarchive java runit logstash poise).each do |cb|
   depends cb
 end
 
