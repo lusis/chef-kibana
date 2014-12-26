@@ -9,7 +9,7 @@ default['kibana']['git']['branch'] = 'v3.1.2'
 default['kibana']['git']['type'] = 'sync' # checkout | sync
 default['kibana']['git']['config'] = 'kibana/config.js' # relative path of config file
 default['kibana']['git']['config_template'] = 'config.js.erb' # template to use for config
-default['kibana']['git']['config_template_cookbook'] = 'kibana' # cookbook containing config template
+default['kibana']['git']['config_template_cookbook'] = 'kibana_lwrp' # cookbook containing config template
 
 # Values to use for file method of installation
 default['kibana']['file']['type'] = 'tgz' # zip | tgz
@@ -18,7 +18,7 @@ default['kibana']['file']['url'] = 'https://download.elasticsearch.org/kibana/ki
 default['kibana']['file']['checksum'] = nil # sha256 ( shasum -a 256 FILENAME )
 default['kibana']['file']['config'] = 'config/kibana.yml' # relative path of config file
 default['kibana']['file']['config_template'] = 'kibana.yml.erb' # template to use for config
-default['kibana']['file']['config_template_cookbook'] = 'kibana' # cookbook containing config template
+default['kibana']['file']['config_template_cookbook'] = 'kibana_lwrp' # cookbook containing config template
 
 # Kibana Java Web Server
 default['kibana']['java_webserver_port'] = 5601
@@ -61,11 +61,11 @@ default['kibana']['config']['elasticsearch'] = "window.location.protocol+\"//\"+
 # nginx variables
 default['kibana']['nginx']['install_method'] = 'package'
 default['kibana']['nginx']['template'] = 'kibana-nginx.conf.erb'
-default['kibana']['nginx']['template_cookbook'] = 'kibana'
+default['kibana']['nginx']['template_cookbook'] = 'kibana_lwrp'
 default['kibana']['nginx']['enable_default_site'] = false
 default['kibana']['nginx']['install_method'] = 'package'
 
 # Apache variables.
 default['kibana']['apache']['template'] = 'kibana-apache.conf.erb'
-default['kibana']['apache']['template_cookbook'] = 'kibana'
+default['kibana']['apache']['template_cookbook'] = 'kibana_lwrp'
 default['kibana']['apache']['enable_default_site'] = false

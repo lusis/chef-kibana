@@ -1,11 +1,11 @@
-kibana Cookbook
+Kibana Library Cookbook
 ===============
 
 A library cookbook for installing kibana 4.
 
 If you wish to install Kibana3 try using the '1.3.x' releases of the cookbook.
 
-This is a library cookbook,  you can use you included `kibana::install` recipe to install kibana, but it is more likely to be really useful for you to call the LWRPs directly from your own cookbook.  You can use the `kibana::install` recipe as a guide and customize to your needs. 
+This is a library cookbook,  you can use you included `kibana_lwrp::install` recipe to install kibana, but it is more likely to be really useful for you to call the LWRPs directly from your own cookbook.  You can use the `kibana_lwrp::install` recipe as a guide and customize to your needs. 
 
 This cookbook is tested and works well with the `logstash` and the `elasticsearch` cookbooks found on the chef community site.
 
@@ -17,11 +17,11 @@ See `attributes/*.rb` for attributes ( documented inline )
 
 Usage
 -----
-#### kibana::default
+#### kibana_lwrp::default
 
 The default recipe does nothing except for allow access to the LWRPs.
 
-#### kibana::install
+#### kibana_lwrp::install
 
 This is designed to be an example recipe to show you how you might write a wrapper cookbook.   However it should be usable for a 
 simple install of kibana.

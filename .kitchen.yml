@@ -14,7 +14,7 @@ suites:
   - name: default
     run_list:
       - recipe[apt::default]
-      - recipe[kibana::install]
+      - recipe[kibana_lwrp::install]
     attributes:
       java:
         install_flavor: "oracle"

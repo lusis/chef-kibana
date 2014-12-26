@@ -80,7 +80,7 @@ if install_type == 'file'
       user: kibana_user,
       home: "#{node['kibana']['install_dir']}/current"
     )
-    cookbook 'kibana'
+    cookbook 'kibana_lwrp'
     subscribes :restart, "template[#{kibana_config}]", :delayed
   end
 
