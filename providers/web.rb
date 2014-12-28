@@ -11,10 +11,8 @@ require 'chef/mixin/shell_out'
 require 'chef/mixin/language'
 include Chef::Mixin::ShellOut
 
-use_inline_resources
-
 def load_current_resource
-  lolno = new_resource.clone
+  @kibana_resource = new_resource.clone
 end
 
 action :remove do
@@ -36,7 +34,7 @@ action :create do
       @run_context.include_recipe recipe
     end
 
-    wa = web_app resources[:name] do
+    res = web_app resources[:name] do
       cookbook resources[:template_cookbook]
       docroot resources[:docroot]
       template resources[:template]
@@ -49,13 +47,14 @@ action :create do
       listen_port resources[:listen_port]
       es_scheme resources[:es_scheme]
     end
+    new_resource.updated_by_last_action(res.updated_by_last_action?)
 
   when 'nginx'
     node.set['nginx']['default_site_enabled'] = resources[:default_site_enabled]
     node.set['nginx']['install_method'] = node['kibana']['nginx']['install_method']
     @run_context.include_recipe 'nginx'
 
-    template "#{node['nginx']['dir']}/sites-available/#{resources[:name]}" do
+    res = template "#{node['nginx']['dir']}/sites-available/#{resources[:name]}" do
       source resources[:template]
       cookbook resources[:template_cookbook]
       notifies :reload, 'service[nginx]'
@@ -70,6 +69,7 @@ action :create do
         es_scheme: resources[:es_scheme]
       )
     end
+    new_resource.updated_by_last_action(res.updated_by_last_action?)
     nginx_site resources[:name]
   when ''
     # do nothing

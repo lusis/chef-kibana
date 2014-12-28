@@ -11,8 +11,6 @@ require 'chef/mixin/shell_out'
 require 'chef/mixin/language'
 include Chef::Mixin::ShellOut
 
-use_inline_resources
-
 def load_current_resource
   @user = new_resource.user
   @group = new_resource.group || @user
@@ -20,30 +18,34 @@ def load_current_resource
 end
 
 action :remove do
-
-  user @user do
+  res = user @user do
     home @home
     action :remove
   end
+  new_resource.updated_by_last_action(res.updated_by_last_action?)
 
-  group @group do
+  res = group @group do
     members @user
     action :remove
   end
+  new_resource.updated_by_last_action(res.updated_by_last_action?)
 end
 
 action :create do
 
-  user @user do
+  res = user @user do
     home @home
     system true
     action :create
     manage_home true
   end
+  new_resource.updated_by_last_action(res.updated_by_last_action?)
 
-  group @group do
+  res = group @group do
     members @user
     append true
     system true
   end
+  new_resource.updated_by_last_action(res.updated_by_last_action?)
+
 end
