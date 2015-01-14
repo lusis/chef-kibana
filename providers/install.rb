@@ -57,15 +57,15 @@ action :create do
     @run_context.include_recipe 'libarchive::default'
     case kb_args[:file_type]
     when 'tgz', 'zip'
-      res = remote_file "#{Chef::Config[:file_cache_path]}/kibana_#{kb_args[:name]}.tar.gz" do
+      res = remote_file "#{Chef::Config[:file_cache_path]}/kibana_#{kb_args[:file_version]}_#{kb_args[:name]}.tar.gz" do
         checksum kb_args[:file_checksum]
         source kb_args[:file_url]
         action [:create_if_missing]
       end
       new_resource.updated_by_last_action(res.updated_by_last_action?)
 
-      res = libarchive_file "kibana_#{kb_args[:name]}.tar.gz" do
-        path "#{Chef::Config[:file_cache_path]}/kibana_#{kb_args[:name]}.tar.gz"
+      res = libarchive_file "kibana_#{kb_args[:file_version]}_#{kb_args[:name]}.tar.gz" do
+        path "#{Chef::Config[:file_cache_path]}/kibana_#{kb_args[:file_version]}_#{kb_args[:name]}.tar.gz"
         extract_to kb_args[:install_dir]
         owner kb_args[:user]
         action [:extract]
