@@ -15,7 +15,7 @@ class Chef
 
     attribute(:name, kind_of: String, name_attribute: true)
     attribute(:type, kind_of: String, default: 'nginx')
-    attribute(:template_cookbook, kind_of: String, default: 'kibana')
+    attribute(:template_cookbook, kind_of: String, default: 'kibana_lwrp')
     attribute(:template, kind_of: String)
     attribute(:server_name, kind_of: String, default: 'kibana.localhost')
     attribute(:server_aliases, kind_of: Array, default: ['kibana'])
