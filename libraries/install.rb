@@ -90,6 +90,7 @@ class Chef
                 extract_to kb_args[:install_dir]
                 owner kb_args[:user]
                 action [:extract]
+                not_if do ::File.exists?("#{kb_args[:install_dir]}/kibana-#{kb_args[:version]}") end
               end
 
               link "#{kb_args[:install_dir]}/current" do
