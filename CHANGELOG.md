@@ -2,9 +2,12 @@
 
 This file is used to list changes made in each version of kibana.
 
-## 2.0.2
+## 2.0.4
 * fix tests
 * support kibana 4 official
+
+## 2.0.2
+* revert use inline resources
 
 ## 2.0.0
 * change cookbook name to kibana_lwrp
