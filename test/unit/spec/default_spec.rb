@@ -2,7 +2,7 @@
 
 require_relative 'spec_helper'
 
-describe 'kibana::default' do
+describe 'kibana_lwrp::default' do
   describe 'ubuntu' do
     let(:runner) { ChefSpec::ServerRunner.new(::UBUNTU_OPTS) }
     let(:node) { runner.node }
@@ -16,6 +16,5 @@ describe 'kibana::default' do
 
     it 'literally does nothing because its a lazy no good recipe.' do
     end
-
   end
 end

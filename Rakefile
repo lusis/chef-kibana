@@ -1,4 +1,7 @@
 # Encoding: utf-8
+
+ENV['RAKE'] = '1'
+
 require 'bundler/setup'
 
 namespace :style do

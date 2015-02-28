@@ -2,7 +2,7 @@
 
 require_relative 'spec_helper'
 
-describe 'kibana::install' do
+describe 'kibana_lwrp::install' do
   describe 'ubuntu' do
     let(:runner) { ChefSpec::ServerRunner.new(::UBUNTU_OPTS) }
     let(:node) { runner.node }
@@ -44,7 +44,7 @@ describe 'kibana::install' do
     it 'creates kibana config from template' do
       expect(chef_run).to create_template('/opt/kibanana/current/config/kibana.yml').with(
         source: 'kibana.yml.erb',
-        cookbook: 'kibana',
+        cookbook: 'kibana_lwrp',
         mode: '0644',
         user: 'kibanana'
       )
@@ -61,6 +61,5 @@ describe 'kibana::install' do
     it 'creates a runit service for kibana' do
       expect(chef_run).to enable_runit_service('kibana')
     end
-
   end
 end

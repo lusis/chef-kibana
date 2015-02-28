@@ -1,7 +1,8 @@
 # The method used to install kibana.  `git` will clone the git repo,
 # `file` will download from elasticsearch.org
+# git is not really supported since the move to java based server.
 default['kibana']['install_type'] = 'file' # git | file
-default['kibana']['version'] = '4.0.0-beta3' # must match version number of kibana being installed
+default['kibana']['version'] = '4.0.0-linux-x64' # must match version number of kibana being installed
 
 # Values to use for git method of installation
 default['kibana']['git']['url'] = 'https://github.com/elasticsearch/kibana'
@@ -14,7 +15,7 @@ default['kibana']['git']['config_template_cookbook'] = 'kibana_lwrp' # cookbook 
 # Values to use for file method of installation
 default['kibana']['file']['type'] = 'tgz' # zip | tgz
 
-default['kibana']['file']['url'] = 'https://download.elasticsearch.org/kibana/kibana/kibana-4.0.0-beta3.tar.gz'
+default['kibana']['file']['url'] = 'https://download.elasticsearch.org/kibana/kibana/kibana-4.0.0-linux-x64.tar.gz'
 default['kibana']['file']['checksum'] = nil # sha256 ( shasum -a 256 FILENAME )
 default['kibana']['file']['config'] = 'config/kibana.yml' # relative path of config file
 default['kibana']['file']['config_template'] = 'kibana.yml.erb' # template to use for config

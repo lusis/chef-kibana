@@ -1,30 +1,31 @@
 source 'https://rubygems.org'
 
-gem 'berkshelf', '> 3'
+gem 'berkshelf'
 
-# Uncomment these lines if you want to live on the Edge:
-#
-# group :development do
-#   gem "berkshelf", github: "berkshelf/berkshelf"
-#   gem "vagrant", github: "mitchellh/vagrant", tag: "v1.5.2"
-# end
-#
-# group :plugins do
-#   gem "vagrant-berkshelf", github: "berkshelf/vagrant-berkshelf"
-#   gem "vagrant-omnibus", github: "schisamo/vagrant-omnibus"
-# end
-
-gem 'chef', '>= 11.8'
-gem 'rake', '>= 10.2'
-gem 'rubocop', '>= 0.23'
-gem 'foodcritic', '>= 4.0'
-gem 'chefspec', '>= 4.0'
-gem 'serverspec', '>= 2.0'
-gem 'test-kitchen'
-gem 'kitchen-vagrant'
-gem 'guard', '>= 2.6'
-gem 'guard-rubocop', '>= 1.1'
-gem 'guard-foodcritic', '>= 1.0.2'
-gem 'vagrant-wrapper'
-gem 'nokogiri', '= 1.6.4.1'
-gem 'stove'
+if ENV['CI']
+  gem 'serverspec', '>= 2.0'
+  gem 'vagrant-wrapper'
+  gem 'chef', '>= 11.8'
+  gem 'rake', '>= 10.2'
+  gem 'rubocop', '>= 0.23'
+  gem 'foodcritic', '>= 4.0'
+  gem 'chefspec', '>= 4.0'
+  gem 'test-kitchen'
+  gem 'kitchen-vagrant'
+  gem 'nokogiri', '>= 1.6.4.1'
+else
+  gem 'chef'
+  gem 'rake'
+  gem 'rubocop'
+  gem 'foodcritic'
+  gem 'chefspec'
+  gem 'test-kitchen'
+  gem 'kitchen-vagrant'
+  gem 'nokogiri'
+  unless ENV['RAKE']
+    gem 'stove'
+    gem 'guard', '>= 2.6'
+    gem 'guard-rubocop', '>= 1.1'
+    gem 'guard-foodcritic', '>= 1.0.2'
+  end
+end

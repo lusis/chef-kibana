@@ -16,8 +16,7 @@ LineLength:
   Max: 200
 
 MethodLength:
-  Enabled: true
-  Max: 20
+  Enabled: false
 
 AccessorMethodName:
   Enabled: false
@@ -34,11 +33,11 @@ BlockNesting:
 Documentation:
   Enabled: false
 
-MethodLength:
-  Max: 50
-
 SingleSpaceBeforeFirstArg:
   Enabled: false
 
 Metrics/AbcSize:
-  Max: 35
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false

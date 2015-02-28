@@ -10,13 +10,10 @@
 class Chef
   class Resource::KibanaUser < Resource
     include Poise
-
     actions(:create, :remove)
-
     attribute(:user, kind_of: String, name_attribute: true)
     attribute(:group, kind_of: String)
     attribute(:home, kind_of: String)
-
   end
 
   class Provider::KibanaUser < Provider
@@ -64,6 +61,5 @@ class Chef
         end
       end
     end
-
   end
 end

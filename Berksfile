@@ -6,5 +6,4 @@ metadata
 
 cookbook 'elasticsearch'
 cookbook 'logstash'
-
 cookbook 'java'

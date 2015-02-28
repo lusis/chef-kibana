@@ -28,7 +28,6 @@ class Chef
     attribute(:default_site_enabled, kind_of: [TrueClass, FalseClass], default: false)
     attribute(:docroot, kind_of: String, default: '/opt/kibana/current/kibana')
     attribute(:kibana_port, kind_of: Integer, default: '5601')
-
   end
 
   class Provider::KibanaWeb < Provider
@@ -92,7 +91,6 @@ class Chef
           else
             Chef::Application.fatal!("Unknown type: #{resources[:type]}")
           end # end case
-
         end # end notifying_block
       end # end converge by
     end # end def

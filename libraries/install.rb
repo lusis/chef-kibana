@@ -25,7 +25,6 @@ class Chef
     attribute(:file_url, kind_of: String, default: lazy { node['kibana']['file']['url'] })
     attribute(:version, kind_of: String, default: lazy { node['kibana']['version'] })
     attribute(:file_checksum, kind_of: String, default: lazy { node['kibana']['file']['checksum'] })
-
   end
 
   class Provider::KibanaInstall < Provider
@@ -35,7 +34,6 @@ class Chef
     def action_remove
       converge_by("remove resource #{new_resource.name}") do
         notifying_block do
-
           kb_args = kibana_resources
 
           directory kb_args[:install_dir] do
@@ -48,7 +46,7 @@ class Chef
 
     def action_create
       converge_by("create resource #{new_resource.name}") do
-            notifying_block do
+        notifying_block do
           kb_args = kibana_resources
 
           directory kb_args[:install_dir] do
@@ -90,7 +88,7 @@ class Chef
                 extract_to kb_args[:install_dir]
                 owner kb_args[:user]
                 action [:extract]
-                not_if do ::File.exists?("#{kb_args[:install_dir]}/kibana-#{kb_args[:version]}") end
+                not_if { ::File.exist?("#{kb_args[:install_dir]}/kibana-#{kb_args[:version]}") }
               end
 
               link "#{kb_args[:install_dir]}/current" do
@@ -124,6 +122,5 @@ class Chef
       }
       kb
     end
-
   end # end class
 end # end classes
