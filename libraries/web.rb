@@ -7,6 +7,8 @@
 #
 # Copyright 2014, John E. Vincent
 
+require 'poise'
+
 class Chef
   class Resource::KibanaWeb < Resource
     include Poise
