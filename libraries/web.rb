@@ -45,7 +45,7 @@ class Chef
           when 'apache'
             node.set['apache']['default_site_enabled'] = resources[:default_site_enabled]
 
-            node.set['apache']['listen_ports'] = Array.new unless resources[:default_site_enabled]
+            node.set['apache']['listen_ports'] = [] unless resources[:default_site_enabled]
             node.set['apache']['listen_ports'] << resources[:listen_port]
 
             %w(apache2 apache2::mod_dir apache2::mod_proxy apache2::mod_proxy_http).each do |recipe|
@@ -76,15 +76,15 @@ class Chef
               cookbook resources[:template_cookbook]
               notifies :reload, 'service[nginx]'
               variables(
-              es_server: resources[:es_server],
-              es_port: resources[:es_port],
-              server_name: resources[:server_name],
-              server_aliases: resources[:server_aliases],
-              kibana_dir: resources[:docroot],
-              listen_address: resources[:listen_address],
-              listen_port: resources[:listen_port],
-              es_scheme: resources[:es_scheme],
-              kibana_port: resources[:kibana_port]
+                es_server: resources[:es_server],
+                es_port: resources[:es_port],
+                server_name: resources[:server_name],
+                server_aliases: resources[:server_aliases],
+                kibana_dir: resources[:docroot],
+                listen_address: resources[:listen_address],
+                listen_port: resources[:listen_port],
+                es_scheme: resources[:es_scheme],
+                kibana_port: resources[:kibana_port]
               )
             end
             nginx_site resources[:name]

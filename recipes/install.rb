@@ -62,12 +62,12 @@ template kibana_config do
   user kibana_user
   group kibana_user
   variables(
-              index: node['kibana']['config']['kibana_index'],
-              port: node['kibana']['java_webserver_port'],
-              elasticsearch: es_server,
-              default_route: node['kibana']['config']['default_route'],
-              panel_names:  node['kibana']['config']['panel_names']
-            )
+    index: node['kibana']['config']['kibana_index'],
+    port: node['kibana']['java_webserver_port'],
+    elasticsearch: es_server,
+    default_route: node['kibana']['config']['default_route'],
+    panel_names:  node['kibana']['config']['panel_names']
+  )
 end
 
 if install_type == 'file'
