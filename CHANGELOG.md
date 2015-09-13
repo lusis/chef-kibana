@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of kibana.
 
+## 2.0.6
+* fix apache template
+
 ## 2.0.4
 * fix tests
 * support kibana 4 official
