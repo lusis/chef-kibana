@@ -66,7 +66,8 @@ template kibana_config do
     port: node['kibana']['java_webserver_port'],
     elasticsearch: es_server,
     default_route: node['kibana']['config']['default_route'],
-    panel_names:  node['kibana']['config']['panel_names']
+    panel_names:  node['kibana']['config']['panel_names'],
+    default_app_id: node['kibana']['config']['default_app_id']
   )
 end
 

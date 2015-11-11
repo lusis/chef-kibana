@@ -55,6 +55,7 @@ default['kibana']['user'] = 'kibana'
 default['kibana']['config']['kibana_index']  = 'kibana-int'
 default['kibana']['config']['panel_names']   =  %w(histogram map pie table filtering timepicker text fields hits dashcontrol column derivequeries trends bettermap query terms)
 default['kibana']['config']['default_route'] = '/dashboard/file/logstash.json'
+default['kibana']['config']['default_app_id'] = 'discover'
 # include quote inside this next variable if not using window.location style variables...
 # e.g.  = "'http://elasticsearch.example.com:9200'"
 default['kibana']['config']['elasticsearch'] = "window.location.protocol+\"//\"+window.location.hostname+\":\"+window.location.port"
