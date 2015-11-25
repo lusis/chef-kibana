@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'berkshelf'
+gem 'berkshelf', '>= 4.0.0'
 
 if ENV['CI']
   gem 'serverspec', '>= 2.0'

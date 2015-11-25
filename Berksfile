@@ -7,3 +7,5 @@ metadata
 cookbook 'elasticsearch'
 cookbook 'logstash'
 cookbook 'java'
+
+cookbook 'kibana_test', path: 'test/fixtures/kibana_test'
