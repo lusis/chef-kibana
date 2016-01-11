@@ -5,10 +5,17 @@ driver:
   - ["forwarded_port", {guest: 80, host: 8080}]
 
 provisioner:
-  name: chef_solo
+  name: chef_zero
 
 platforms:
   - name: ubuntu-14.04
+    run_list:
+    - recipe[apt]
+    - recipe[curl]
+  - name: centos-6.7
+    run_list:
+    - recipe[yum]
+    - recipe[curl]
 
 suites:
   - name: default
