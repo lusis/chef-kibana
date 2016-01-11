@@ -15,4 +15,8 @@ describe 'kibana' do
   describe file('/opt/kibana') do
     it { should be_directory }
   end
+
+  describe command('wget -qO- http://localhost:80/app/kibana') do
+    its(:stdout) { should match(/the kibana you know and love/) }
+  end
 end

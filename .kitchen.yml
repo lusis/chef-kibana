@@ -8,21 +8,10 @@ provisioner:
   name: chef_solo
 
 platforms:
-  - name: ubuntu-12.04
+  - name: ubuntu-14.04
 
 suites:
   - name: default
     run_list:
       - recipe[apt::default]
-      - recipe[elasticsearch::default]
-      - recipe[kibana_lwrp::install]
-    attributes:
-      java:
-        install_flavor: 'oracle'
-        jdk_version: '7'
-        oracle:
-          accept_oracle_download_terms: true
-      kibana:
-        legacy_mode: false
-      elasticsearch:
-        version: '1.4.4'
+      - recipe[kibana_test::default]
