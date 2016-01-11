@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd /<%= @options[:home] %>
+cd <%= @options[:home] %>
 exec 2>&1
 
 exec chpst -u <%= @options[:user] %> <%= @options[:home] %>/bin/kibana
