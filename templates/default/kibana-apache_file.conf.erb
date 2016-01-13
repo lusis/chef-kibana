@@ -3,8 +3,8 @@
 
   ServerAlias <%= @params[:server_aliases].join(" ") %>
 
-  ProxyPass / http://0.0.0.0:<%= @kibana_port %>/
-  ProxyPassReverse / http://0.0.0.0:<%= @kibana_port %>/
+  ProxyPass / http://0.0.0.0:<%= @params[:kibana_port] %>/
+  ProxyPassReverse / http://0.0.0.0:<%= @params[:kibana_port] %>/
   
   <Location / >
     Require all granted
