@@ -64,6 +64,7 @@ class Chef
               listen_address resources[:listen_address]
               listen_port resources[:listen_port]
               es_scheme resources[:es_scheme]
+              kibana_port resources[:kibana_port]
             end
 
           when 'nginx'
