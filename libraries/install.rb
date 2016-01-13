@@ -58,7 +58,7 @@ class Chef
             mode '0755'
           end
 
-          case  kb_args[:install_type]
+          case kb_args[:install_type]
           when 'git'
             @run_context.include_recipe 'git::default'
             git "#{kb_args[:install_dir]}/#{kb_args[:git_branch]}" do
