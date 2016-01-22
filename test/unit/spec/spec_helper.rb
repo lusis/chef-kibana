@@ -11,10 +11,10 @@ require_relative 'support/matchers'
   platform: 'ubuntu',
   version: '12.04',
   log_level: ::LOG_LEVEL
-}
+}.freeze
 ::CHEFSPEC_OPTS = {
   log_level: ::LOG_LEVEL
-}
+}.freeze
 
 shared_context 'stubs-common' do
   before do
