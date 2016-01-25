@@ -11,6 +11,7 @@ class Chef
   class Resource::KibanaWeb < Chef::Resource::LWRPBase
     provides :kibana_web
     actions(:create, :remove)
+    default_action(:create)
 
     attribute(:name, kind_of: String, name_attribute: true)
     attribute(:type, kind_of: String, default: 'nginx')
@@ -35,71 +36,67 @@ class Chef
 
     action :create do
       converge_by("create resource #{new_resource.name}") do
-        notifying_block do
-          resources = kibana_resources
+        resources = kibana_resources
 
-          case resources[:type]
-          when 'apache'
-            node.set['apache']['default_site_enabled'] = resources[:default_site_enabled]
+        case resources[:type]
+        when 'apache'
+          node.set['apache']['default_site_enabled'] = resources[:default_site_enabled]
 
-            node.set['apache']['listen_ports'] = [] unless resources[:default_site_enabled]
-            node.set['apache']['listen_ports'] << resources[:listen_port]
+          node.set['apache']['listen_ports'] = [] unless resources[:default_site_enabled]
+          node.set['apache']['listen_ports'] << resources[:listen_port]
 
-            %w(apache2 apache2::mod_dir apache2::mod_proxy apache2::mod_proxy_http).each do |recipe|
-              @run_context.include_recipe recipe
-            end
+          %w(apache2 apache2::mod_dir apache2::mod_proxy apache2::mod_proxy_http).each do |recipe|
+            @run_context.include_recipe recipe
+          end
 
-            wa = web_app resources[:name] do
-              cookbook resources[:template_cookbook]
-              docroot resources[:docroot]
-              template resources[:template]
-              es_server resources[:es_server]
-              es_port resources[:es_port]
-              server_name resources[:server_name]
-              server_aliases resources[:server_aliases]
-              kibana_dir resources[:docroot]
-              listen_address resources[:listen_address]
-              listen_port resources[:listen_port]
-              es_scheme resources[:es_scheme]
-              kibana_port resources[:kibana_port]
-            end
+          wa = web_app resources[:name] do
+            cookbook resources[:template_cookbook]
+            docroot resources[:docroot]
+            template resources[:template]
+            es_server resources[:es_server]
+            es_port resources[:es_port]
+            server_name resources[:server_name]
+            server_aliases resources[:server_aliases]
+            kibana_dir resources[:docroot]
+            listen_address resources[:listen_address]
+            listen_port resources[:listen_port]
+            es_scheme resources[:es_scheme]
+            kibana_port resources[:kibana_port]
+          end
 
-          when 'nginx'
-            node.set['nginx']['default_site_enabled'] = resources[:default_site_enabled]
-            node.set['nginx']['install_method'] = node['kibana']['nginx']['install_method']
-            @run_context.include_recipe 'nginx'
+        when 'nginx'
+          node.set['nginx']['default_site_enabled'] = resources[:default_site_enabled]
+          node.set['nginx']['install_method'] = node['kibana']['nginx']['install_method']
+          @run_context.include_recipe 'nginx'
 
-            template "#{node['nginx']['dir']}/sites-available/#{resources[:name]}" do
-              source resources[:template]
-              cookbook resources[:template_cookbook]
-              notifies :reload, 'runit_service[nginx]'
-              variables(
-                es_server: resources[:es_server],
-                es_port: resources[:es_port],
-                server_name: resources[:server_name],
-                server_aliases: resources[:server_aliases],
-                kibana_dir: resources[:docroot],
-                listen_address: resources[:listen_address],
-                listen_port: resources[:listen_port],
-                es_scheme: resources[:es_scheme],
-                kibana_port: resources[:kibana_port]
-              )
-            end
-            nginx_site resources[:name]
-          when ''
-            # do nothing
-          else
-            Chef::Application.fatal!("Unknown type: #{resources[:type]}")
-          end # end case
-        end # end notifying_block
+          template "#{node['nginx']['dir']}/sites-available/#{resources[:name]}" do
+            source resources[:template]
+            cookbook resources[:template_cookbook]
+            notifies :reload, 'runit_service[nginx]'
+            variables(
+              es_server: resources[:es_server],
+              es_port: resources[:es_port],
+              server_name: resources[:server_name],
+              server_aliases: resources[:server_aliases],
+              kibana_dir: resources[:docroot],
+              listen_address: resources[:listen_address],
+              listen_port: resources[:listen_port],
+              es_scheme: resources[:es_scheme],
+              kibana_port: resources[:kibana_port]
+            )
+          end
+          nginx_site resources[:name]
+        when ''
+          # do nothing
+        else
+          Chef::Application.fatal!("Unknown type: #{resources[:type]}")
+        end # end case
       end # end converge by
     end # end def
 
     action :remove do
       converge_by("remove resource #{new_resource.name}") do
-        notifying_block do
-          # Normal Chef recipe code goes here
-        end
+        # Normal Chef recipe code goes here
       end
     end
 

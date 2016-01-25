@@ -11,6 +11,7 @@ class Chef
   class Resource::KibanaInstall < Chef::Resource::LWRPBase
     provides :kibana_install
     actions(:create, :remove)
+    default_action(:create)
 
     attribute(:name, kind_of: String, name_attribute: true)
     attribute(:user, kind_of: String, default: 'kibana')
