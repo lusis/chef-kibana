@@ -72,7 +72,7 @@ class Chef
           template "#{node['nginx']['dir']}/sites-available/#{resources[:name]}" do
             source resources[:template]
             cookbook resources[:template_cookbook]
-            notifies :reload, 'runit_service[nginx]'
+            notifies :reload, 'service[nginx]'
             variables(
               es_server: resources[:es_server],
               es_port: resources[:es_port],
