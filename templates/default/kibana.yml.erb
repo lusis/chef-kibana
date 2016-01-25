@@ -1,15 +1,23 @@
+<% if @port %>
 # Kibana is served by a backend server. This controls which port to use.
 port: <%= @port %>
+<% end %>
 
+<% if @elasticsearch %>
 # The Elasticsearch instance to user for all your queries
 elasticsearch_url: "<%= @elasticsearch %>"
+<% end %>
 
+<% if @index %>
 # Kibana uses and index in Elasticsearch to store saved searches, visualizations
 # and dashboard. It will create an new index if it doesn't already exist.
 kibana_index: "<%= @index %>"
+<% end %>
 
+<% if @default_app_id %>
 # The default application to load.
 default_app_id: "<%= @default_app_id %>"
+<% end %>
 
 # Time in milliseconds to wait for responses from the back end or elasticsearch.
 # This must be > 0
