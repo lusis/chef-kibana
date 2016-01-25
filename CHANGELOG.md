@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of kibana.
 
+## 3.0.2
+* Fix a notification that was to runit_service[nginx] instead of service[nginx].
+
 ## 3.0.1
 * Fix a leftover poise relic -- default_action
 * Remove notifying_block that remained
