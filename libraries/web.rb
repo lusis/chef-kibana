@@ -7,12 +7,12 @@
 #
 # Copyright 2014, John E. Vincent
 
-require 'poise'
+
 
 class Chef
-  class Resource::KibanaWeb < Resource
-    include Poise
+  class Resource::KibanaWeb < Chef::Resource::LWRPBase
 
+    provides :kibana_web
     actions(:create, :remove)
 
     attribute(:name, kind_of: String, name_attribute: true)
@@ -32,11 +32,11 @@ class Chef
     attribute(:kibana_port, kind_of: Integer, default: '5601')
   end
 
-  class Provider::KibanaWeb < Provider
-    include Poise
+  class Provider::KibanaWeb < Chef::Provider::LWRPBase
+    provides :kibana_web
     include Chef::DSL::Recipe # required under chef 12, see poise/poise #8
 
-    def action_create
+    action :create do
       converge_by("create resource #{new_resource.name}") do
         notifying_block do
           resources = kibana_resources
@@ -75,7 +75,7 @@ class Chef
             template "#{node['nginx']['dir']}/sites-available/#{resources[:name]}" do
               source resources[:template]
               cookbook resources[:template_cookbook]
-              notifies :reload, 'service[nginx]'
+              notifies :reload, 'runit_service[nginx]'
               variables(
                 es_server: resources[:es_server],
                 es_port: resources[:es_port],
@@ -98,7 +98,7 @@ class Chef
       end # end converge by
     end # end def
 
-    def action_remove
+    action :remove do
       converge_by("remove resource #{new_resource.name}") do
         notifying_block do
           # Normal Chef recipe code goes here
