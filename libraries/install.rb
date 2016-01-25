@@ -42,9 +42,13 @@ class Chef
     end
 
     action :create do
-      converge_by("create resource #{new_resource.name}") do
-        kb_args = kibana_resources
+      kb_args = kibana_resources
 
+      if kb_args[:file_url] && !kb_args[:file_url].include?(kb_args[:version])
+        Chef::Log.warn("You supplied a download URL and Kibana version, but they don't appear to match (#{kb_args[:version]} version isn't in URL #{kb_args[:file_url]})")
+      end
+
+      converge_by("create resource #{new_resource.name}") do
         directory kb_args[:install_dir] do
           recursive true
           owner kb_args[:user]
@@ -73,9 +77,10 @@ class Chef
           temp_path = Chef::Config[:file_cache_path]
           case kb_args[:file_type]
           when 'tgz', 'zip'
+            download_url = kb_args[:file_url] || "https://download.elastic.co/kibana/kibana/kibana-#{kb_args[:version]}.tar.gz"
             remote_file "#{temp_path}/#{temp_file}" do
               checksum lazy { kb_args[:file_checksum] }
-              source kb_args[:file_url]
+              source download_url
               action [:create]
             end
 

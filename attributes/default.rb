@@ -15,7 +15,7 @@ default['kibana']['git']['config_template_cookbook'] = 'kibana_lwrp' # cookbook 
 # Values to use for file method of installation
 default['kibana']['file']['type'] = 'tgz' # zip | tgz
 
-default['kibana']['file']['url'] = 'https://download.elastic.co/kibana/kibana/kibana-4.2.1-linux-x64.tar.gz'
+default['kibana']['file']['url'] = nil # calculated based on version, unless you override this
 default['kibana']['file']['checksum'] = nil # sha256 ( shasum -a 256 FILENAME )
 default['kibana']['file']['config'] = 'config/kibana.yml' # relative path of config file
 default['kibana']['file']['config_template'] = 'kibana.yml.erb' # template to use for config
