@@ -2,6 +2,18 @@
 
 This file is used to list changes made in each version of kibana.
 
+## 3.0.0
+* Fix a number of Rubocop and Foodcritic complaints
+* Update README.md for contributors, documentation (#26)
+* Don't break kibana.yml template when values are nil (#111)
+* Warn about URL and Version attributes when used incorrectly (#107)
+* Remove poise, add `provides` DSL, and update test fixture to ES 2.1.0
+* Add kibana_port to apache kibana web resource
+* Make default_app_id configurable via attribute (#101)
+* Remove duplicate slashes in paths (#102)
+* Bump kibana file method to 4.2.1
+* Begin testing with Ubuntu 14.04 instead of 12.04
+
 ## 2.0.6
 * fix apache template
 
@@ -73,5 +85,3 @@ This file is used to list changes made in each version of kibana.
 ## 1.0.0:
 
 * Initial release of kibana
-
-
