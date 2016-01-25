@@ -5,9 +5,12 @@ A library cookbook for installing kibana 4.
 
 If you wish to install Kibana3 try using the '1.3.x' releases of the cookbook.
 
-This is a library cookbook,  you can use you included `kibana_lwrp::install` recipe to install kibana, but it is more likely to be really useful for you to call the LWRPs directly from your own cookbook.  You can use the `kibana_lwrp::install` recipe as a guide and customize to your needs. 
+This is a library cookbook,  you can use you included `kibana_lwrp::install` recipe to install kibana, but it is more likely to be really useful for you to call the LWRPs directly from your own cookbook.  You can use the `kibana_lwrp::install` recipe as a guide and customize to your needs.
 
 This cookbook is tested and works well with the `logstash` and the `elasticsearch` cookbooks found on the chef community site.
+
+If you'd like to point kibana to a cluster of Elasticsearch servers instead of a single node, please review the most current recommended instructions at:
+ https://www.elastic.co/guide/en/kibana/current/production.html#load-balancing
 
 Attributes
 ----------
@@ -23,7 +26,7 @@ The default recipe does nothing except for allow access to the LWRPs.
 
 #### kibana_lwrp::install
 
-This is designed to be an example recipe to show you how you might write a wrapper cookbook.   However it should be usable for a 
+This is designed to be an example recipe to show you how you might write a wrapper cookbook.   However it should be usable for a
 simple install of kibana.
 
 - install kibana4 `/opt/kibana/XXXX` and create a symlink called `current` in the same directory.
@@ -87,6 +90,7 @@ Contributors:
 - Chris Ferry (@chrisferry)
 - Ian Neubert (@ianneub)
 - kellam (@klamontagne)
+- Martin Smith (@martinb3)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
