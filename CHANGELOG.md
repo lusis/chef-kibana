@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of kibana.
 
+## 3.0.1
+* Fix a leftover poise relic -- default_action
+* Remove notifying_block that remained
+
 ## 3.0.0
 * Fix a number of Rubocop and Foodcritic complaints
 * Update README.md for contributors, documentation (#26)
