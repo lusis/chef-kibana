@@ -7,11 +7,8 @@
 #
 # Copyright 2014, John E. Vincent
 
-
-
 class Chef
   class Resource::KibanaWeb < Chef::Resource::LWRPBase
-
     provides :kibana_web
     actions(:create, :remove)
 

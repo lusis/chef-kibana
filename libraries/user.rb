@@ -7,8 +7,6 @@
 #
 # Copyright 2014, John E. Vincent
 
-
-
 class Chef
   class Resource::KibanaUser < Chef::Resource::LWRPBase
     provides :kibana_user
