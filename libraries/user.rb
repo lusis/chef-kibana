@@ -16,7 +16,7 @@ class Chef
     attribute(:home, kind_of: String)
   end
 
-  class Provider::KibanaUser < Chef::Provider::LWRPBase
+  class Provider::KibanaUser < Chef::Provider::LWRPBase # ~FC057, ~FC058
     provides :kibana_user
     include Chef::DSL::Recipe # required under chef 12, see poise/poise #8
 

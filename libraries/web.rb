@@ -29,7 +29,7 @@ class Chef
     attribute(:kibana_port, kind_of: Integer, default: '5601')
   end
 
-  class Provider::KibanaWeb < Chef::Provider::LWRPBase
+  class Provider::KibanaWeb < Chef::Provider::LWRPBase # ~FC057, ~FC058
     provides :kibana_web
     include Chef::DSL::Recipe # required under chef 12, see poise/poise #8
 

@@ -26,7 +26,7 @@ class Chef
     attribute(:file_checksum, kind_of: String, default: lazy { node['kibana']['file']['checksum'] })
   end
 
-  class Provider::KibanaInstall < Chef::Provider::LWRPBase
+  class Provider::KibanaInstall < Chef::Provider::LWRPBase # ~FC057, ~FC058
     provides :kibana_install
     include Chef::DSL::Recipe # required under chef 12, see poise/poise #8
 
