@@ -8,26 +8,25 @@
 # Copyright 2014, John E. Vincent
 
 class Chef
-  class Resource::KibanaWeb < Chef::Resource::LWRPBase
+  class Resource::KibanaWeb < ChefCompat::Resource
     provides :kibana_web
-    actions(:create, :remove)
     default_action(:create)
 
-    attribute(:name, kind_of: String, name_attribute: true)
-    attribute(:type, kind_of: String, default: 'nginx')
-    attribute(:template_cookbook, kind_of: String, default: 'kibana_lwrp')
-    attribute(:template, kind_of: String)
-    attribute(:server_name, kind_of: String, default: 'kibana.localhost')
-    attribute(:server_aliases, kind_of: Array, default: ['kibana'])
-    attribute(:listen_address, kind_of: String, default: '0.0.0.0')
-    attribute(:listen_port, kind_of: String, default: '80')
-    attribute(:es_server, kind_of: String, default: '127.0.0.1')
-    attribute(:es_port, kind_of: String, default: '9200')
-    attribute(:es_scheme, kind_of: String, default: 'http://')
-    attribute(:version, kind_of: String, default: lazy { node['kibana']['version'] })
-    attribute(:default_site_enabled, kind_of: [TrueClass, FalseClass], default: false)
-    attribute(:docroot, kind_of: String, default: '/opt/kibana/current/kibana')
-    attribute(:kibana_port, kind_of: Integer, default: 5601)
+    property(:name, String, name_property: true)
+    property(:type, String, default: 'nginx')
+    property(:template_cookbook, String, default: 'kibana_lwrp')
+    property(:template, String)
+    property(:server_name, String, default: 'kibana.localhost')
+    property(:server_aliases, Array, default: ['kibana'])
+    property(:listen_address, String, default: '0.0.0.0')
+    property(:listen_port, String, default: '80')
+    property(:es_server, String, default: '127.0.0.1')
+    property(:es_port, String, default: '9200')
+    property(:es_scheme, String, default: 'http://')
+    property(:version, String, default: lazy { node['kibana']['version'] })
+    property(:default_site_enabled, [true, false], default: false)
+    property(:docroot, String, default: '/opt/kibana/current/kibana')
+    property(:kibana_port, Integer, default: 5601)
   end
 
   class Provider::KibanaWeb < Chef::Provider::LWRPBase # ~FC057, ~FC058

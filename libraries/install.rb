@@ -8,23 +8,22 @@
 # Copyright 2014, John E. Vincent
 
 class Chef
-  class Resource::KibanaInstall < Chef::Resource::LWRPBase
+  class Resource::KibanaInstall < ChefCompat::Resource
     provides :kibana_install
-    actions(:create, :remove)
     default_action(:create)
 
-    attribute(:name, kind_of: String, name_attribute: true)
-    attribute(:user, kind_of: String, default: 'kibana')
-    attribute(:group, kind_of: String, default: 'kibana')
-    attribute(:install_dir, kind_of: String, default: '/opt/kibana')
-    attribute(:install_type, kind_of: String, default: 'file')
-    attribute(:git_branch, kind_of: String, default: lazy { node['kibana']['git']['branch'] })
-    attribute(:git_url, kind_of: String, default: lazy { node['kibana']['git']['url'] })
-    attribute(:git_type, kind_of: String, default: lazy { node['kibana']['git']['type'] })
-    attribute(:file_type, kind_of: String, default: lazy { node['kibana']['file']['type'] })
-    attribute(:file_url, kind_of: String, default: lazy { node['kibana']['file']['url'] })
-    attribute(:version, kind_of: String, default: lazy { node['kibana']['version'] })
-    attribute(:file_checksum, kind_of: String, default: lazy { node['kibana']['file']['checksum'] })
+    property(:name, String, name_property: true)
+    property(:user, String, default: 'kibana')
+    property(:group, String, default: 'kibana')
+    property(:install_dir, String, default: '/opt/kibana')
+    property(:install_type, String, default: 'file')
+    property(:git_branch, String, default: lazy { node['kibana']['git']['branch'] })
+    property(:git_url, String, default: lazy { node['kibana']['git']['url'] })
+    property(:git_type, String, default: lazy { node['kibana']['git']['type'] })
+    property(:file_type, String, default: lazy { node['kibana']['file']['type'] })
+    property(:file_url, String, default: lazy { node['kibana']['file']['url'] })
+    property(:version, String, default: lazy { node['kibana']['version'] })
+    property(:file_checksum, String, default: lazy { node['kibana']['file']['checksum'] })
   end
 
   class Provider::KibanaInstall < Chef::Provider::LWRPBase # ~FC057, ~FC058
