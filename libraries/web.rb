@@ -27,7 +27,7 @@ class Chef
     attribute(:version, kind_of: String, default: lazy { node['kibana']['version'] })
     attribute(:default_site_enabled, kind_of: [TrueClass, FalseClass], default: false)
     attribute(:docroot, kind_of: String, default: '/opt/kibana/current/kibana')
-    attribute(:kibana_port, kind_of: Integer, default: '5601')
+    attribute(:kibana_port, kind_of: Integer, default: 5601)
   end
 
   class Provider::KibanaWeb < Chef::Provider::LWRPBase # ~FC057, ~FC058
