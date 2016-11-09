@@ -19,6 +19,7 @@ describe 'kibana_lwrp::install' do
       runner.node.set['kibana']['nginx']['template_cookbook'] = 'kibana'
       runner.node.set['kibana']['nginx']['enable_default_site'] = false
       runner.node.set['kibana']['nginx']['install_method'] = 'package'
+      runner.node.set['kibana']['service']['options']['sv_timeout'] = 42
       runner.node.automatic['memory']['total'] = '1024kB'
       runner.converge(described_recipe)
     end
@@ -59,7 +60,7 @@ describe 'kibana_lwrp::install' do
     end
 
     it 'creates a runit service for kibana' do
-      expect(chef_run).to enable_runit_service('kibana')
+      expect(chef_run).to enable_runit_service('kibana').with(sv_timeout: 42)
     end
   end
 end
