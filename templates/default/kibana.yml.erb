@@ -19,6 +19,11 @@ kibana_index: "<%= @index %>"
 default_app_id: "<%= @default_app_id %>"
 <% end %>
 
+<% if @default_route %>
+# The default route ["/"].
+server.basePath: "<%= @default_route %>"
+<% end %>
+
 # Time in milliseconds to wait for responses from the back end or elasticsearch.
 # This must be > 0
 request_timeout: 60000
