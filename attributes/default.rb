@@ -71,3 +71,7 @@ default['kibana']['nginx']['install_method'] = 'package'
 default['kibana']['apache']['template'] = 'kibana-apache.conf.erb'
 default['kibana']['apache']['template_cookbook'] = 'kibana_lwrp'
 default['kibana']['apache']['enable_default_site'] = false
+
+# Service options, passed as is to the runit_service resource
+# (see https://github.com/chef-cookbooks/runit#parameter-attributes)
+default['kibana']['service']['options'] = {}
