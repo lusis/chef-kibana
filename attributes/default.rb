@@ -62,13 +62,13 @@ default['kibana']['config']['elasticsearch'] = 'window.location.protocol+"//"+wi
 
 # nginx variables
 default['kibana']['nginx']['install_method'] = 'package'
-default['kibana']['nginx']['template'] = 'kibana-nginx.conf.erb'
+default['kibana']['nginx']['template'] = 'kibana-nginx_file.conf.erb'
 default['kibana']['nginx']['template_cookbook'] = 'kibana_lwrp'
 default['kibana']['nginx']['enable_default_site'] = false
 default['kibana']['nginx']['install_method'] = 'package'
 
 # Apache variables.
-default['kibana']['apache']['template'] = 'kibana-apache.conf.erb'
+default['kibana']['apache']['template'] = 'kibana-apache_file.conf.erb'
 default['kibana']['apache']['template_cookbook'] = 'kibana_lwrp'
 default['kibana']['apache']['enable_default_site'] = false
 

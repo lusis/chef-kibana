@@ -26,9 +26,10 @@ unless Chef::Config[:solo]
   end
 end
 
+webserver = 'nginx' # make nginx a default choice
+webserver = node['kibana']['webserver'] if !node['kibana']['webserver'].empty?
 if node['kibana']['user'].empty?
   if !node['kibana']['webserver'].empty?
-    webserver = node['kibana']['webserver']
     kibana_user = node[webserver]['user']
   else
     kibana_user = 'nobody'
@@ -97,6 +98,7 @@ kibana_web 'kibana' do
   docroot docroot
   es_server node['kibana']['es_server']
   kibana_port node['kibana']['java_webserver_port']
-  template 'kibana-nginx_file.conf.erb'
+  template node['kibana'][webserver]['template']
+  template_cookbook node['kibana'][webserver]['template_cookbook']
   not_if { node['kibana']['webserver'] == '' }
 end
